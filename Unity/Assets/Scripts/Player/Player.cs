@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-            GameController.get.Test();
-    }
+    /***
+    Player values shuch as
+    speed,
+    gravity,
+    controls,
+    etc..
+    ***/
+
+    public float speed = 2;
 }
