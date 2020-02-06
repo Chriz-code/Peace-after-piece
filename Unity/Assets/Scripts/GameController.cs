@@ -9,9 +9,26 @@ public class GameController : MonoBehaviour
     {
         get = this;
     }
-    
+
     public void Test()
     {
         print("Hello");
+    }
+
+    private void Update()
+    {
+        QuitGame();
+    }
+
+    void QuitGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+      Application.Quit();
+#endif
+        }
     }
 }
