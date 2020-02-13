@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    public Perspective perspective = Perspective.Angela;
+    public Perspective perspective;
     private Rigidbody2D rb2D;
 
     public float moveInput;

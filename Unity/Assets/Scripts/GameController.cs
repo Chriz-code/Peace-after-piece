@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum Perspective { None, Angela, Elenor }
+public enum Perspective { None, Angela, Eleanor }
 public class GameController : MonoBehaviour
 {
     private static GameController get;
