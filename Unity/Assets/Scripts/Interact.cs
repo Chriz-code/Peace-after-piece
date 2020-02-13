@@ -38,7 +38,10 @@ public class Interact : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.GetComponent<Player>())
+        {
+            Debug.Log("You're in my 2 meter range!");
             Interactable = true;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

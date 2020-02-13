@@ -7,7 +7,8 @@ public class UIController : MonoBehaviour
     private static UIController get;
     public static UIController Get { get { return get; } }
 
-    public Image interactPopUp = null;
+    [SerializeField] Image interactPopUp = null;
+    public DialogController dc = null;
 
     private void Awake()
     {
@@ -21,9 +22,9 @@ public class UIController : MonoBehaviour
         }
     }
 
-
     public void Interact(bool activate)
     {
-        interactPopUp.gameObject.SetActive(activate);
+        if (interactPopUp)
+            interactPopUp.gameObject.SetActive(activate);
     }
 }
