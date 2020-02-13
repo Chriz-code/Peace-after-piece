@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public static GameController Get { get { return get; } }
 
     public UnityAction<GameController, Perspective> onChangePerspective = delegate { };
-    [SerializeField] Perspective currentPerspective = Perspective.Angela;
+    [SerializeField] Perspective currentPerspective = Perspective.None;
     public bool skipNone = true;
     public Perspective CurrentPerspective
     {
@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
         }
         set
         {
+            Debug.Log("ADASD");
             value = (Perspective)Mathf.Repeat((int)value, Enum.GetNames(typeof(Perspective)).Length);
             if (value == 0 && skipNone)
                 value = Perspective.Angela;
@@ -43,9 +44,11 @@ public class GameController : MonoBehaviour
         {
             get = this;
         }
+    }
+    private void Start()
+    {
         CurrentPerspective = Perspective.Angela;
     }
-
     private void Update()
     {
         QuitGame();
@@ -76,5 +79,4 @@ public class GameController : MonoBehaviour
         return false;
     }
 }
-
 //To subscribe to this singelton, subscribe on Start() and unsubscribe on OnDisable()

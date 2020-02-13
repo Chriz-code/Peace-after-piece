@@ -56,7 +56,7 @@ public class Player_Movement : MonoBehaviour
             {
                 this.gameObject.GetComponent<Transform>().localScale = new Vector3(-1f, 5f, 1f);
             }
-            else
+            else if(moveInput > 0)
             {
                 this.gameObject.GetComponent<Transform>().localScale = new Vector3(1f, 5f, 1f);
             }
