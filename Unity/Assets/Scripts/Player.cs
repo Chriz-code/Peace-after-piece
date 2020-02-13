@@ -4,16 +4,4 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Perspective perspective;
-
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
 }
