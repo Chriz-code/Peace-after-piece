@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController get = null;
     public UnityAction<GameController, Perspective> onChangePerspective = delegate { };
-    [SerializeField] Perspective currentPerspective = Perspective.None;
+    [SerializeField] Perspective currentPerspective = Perspective.Angela;
     public bool skipNone = true;
     public Perspective CurrentPerspective
     {
@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         get = this;
+        CurrentPerspective = Perspective.Angela;
     }
 
     private void Update()
