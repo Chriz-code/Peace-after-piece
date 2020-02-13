@@ -7,7 +7,9 @@ using UnityEngine.Events;
 public enum Perspective { None, Angela, Elenor }
 public class GameController : MonoBehaviour
 {
-    public static GameController get = null;
+    private static GameController get;
+    public static GameController Get { get { return get; } }
+
     public UnityAction<GameController, Perspective> onChangePerspective = delegate { };
     [SerializeField] Perspective currentPerspective = Perspective.Angela;
     public bool skipNone = true;
@@ -31,10 +33,18 @@ public class GameController : MonoBehaviour
     }
     public KeyCode switchKey = KeyCode.Tab;
 
+
+
     private void Awake()
     {
-        get = this;
-        CurrentPerspective = Perspective.Angela;
+        if (get != null && get != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            get = this;
+        }
     }
 
     private void Update()
