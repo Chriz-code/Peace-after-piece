@@ -54,6 +54,10 @@ public class Interact : MonoBehaviour
     {
         if (collision.transform.GetComponent<Player>())
             Interactable = false;
+    }
 
+    private void OnDestroy()
+    {
+        Interactable = false;
     }
 }
