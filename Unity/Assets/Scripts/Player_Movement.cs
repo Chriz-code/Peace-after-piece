@@ -16,7 +16,7 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
-        if (GameController.get.ComparePerspective(perspective))
+        if (GameController.Get.ComparePerspective(perspective))
         {
             Movement();
         }
@@ -24,14 +24,14 @@ public class Player_Movement : MonoBehaviour
 
     private void OnEnable()
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective += SpelaMaginarByte;
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective += DisableOnEvent;
+        //GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective += SpelaMaginarByte;
+       // GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective += DisableOnEvent;
         //GameController.get.onChangePerspective += DisableOnEvent;
     }
     private void OnDisable()
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective -= DisableOnEvent;
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective -= SpelaMaginarByte;
+        //GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective -= DisableOnEvent;
+        //GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective -= SpelaMaginarByte;
 
         //GameController.get.onChangePerspective -= DisableOnEvent;
     }

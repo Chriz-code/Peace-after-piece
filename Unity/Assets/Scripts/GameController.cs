@@ -33,8 +33,6 @@ public class GameController : MonoBehaviour
     }
     public KeyCode switchKey = KeyCode.Tab;
 
-
-
     private void Awake()
     {
         if (get != null && get != this)
@@ -45,6 +43,7 @@ public class GameController : MonoBehaviour
         {
             get = this;
         }
+        CurrentPerspective = Perspective.Angela;
     }
 
     private void Update()
@@ -70,7 +69,6 @@ public class GameController : MonoBehaviour
             CurrentPerspective += 1;
         }
     }
-
     public bool ComparePerspective(Perspective perspective)
     {
         if (perspective == CurrentPerspective)
