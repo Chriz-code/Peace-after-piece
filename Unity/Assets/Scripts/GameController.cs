@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
     {
         get = this;
     }
+
     private void Update()
     {
         QuitGame();
@@ -58,4 +59,13 @@ public class GameController : MonoBehaviour
             CurrentPerspective += 1;
         }
     }
+
+    public bool ComparePerspective(Perspective perspective)
+    {
+        if (perspective == CurrentPerspective)
+            return true;
+        return false;
+    }
 }
+
+//To subscribe to this singelton, subscribe on Start() and unsubscribe on OnDisable()
