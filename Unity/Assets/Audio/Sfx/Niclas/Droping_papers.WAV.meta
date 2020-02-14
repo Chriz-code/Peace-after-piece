@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Programming
 guid: 64af2e40641b513438e2d645413203d5
+=======
+guid: d4cfe4f6348a46a41913d9408b6fc93e
+>>>>>>> Audio Meta Files
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
