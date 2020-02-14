@@ -1,25 +1,61 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+public enum Perspective { None, Angela, Eleanor }
 public class GameController : MonoBehaviour
 {
-    public static GameController get = null;
+    private static GameController get;
+    public static GameController Get { get { return get; } }
+
+    public UnityAction<GameController, Perspective> onChangePerspective = delegate { };
+    [SerializeField] Perspective currentPerspective = Perspective.None;
+    public Perspective startPerspective = Perspective.Eleanor;
+    public bool skipNone = true;
+    public Perspective CurrentPerspective
+    {
+        get
+        {
+            return currentPerspective;
+        }
+        set
+        {
+            value = (Perspective)Mathf.Repeat((int)value, Enum.GetNames(typeof(Perspective)).Length);
+            if (value == 0 && skipNone)
+                value = Perspective.Angela;
+            if (currentPerspective != value)
+            {
+                currentPerspective = value;
+                onChangePerspective?.Invoke(this, currentPerspective);
+            }
+        }
+    }
+    public KeyCode switchKey = KeyCode.Tab;
+
     private void Awake()
     {
-        get = this;
-    }
+        if (get != null && get != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            get = this;
+        }
 
-    public void Test()
+    }
+    private void Start()
     {
-        print("Hello");
+        Invoke("GameControllerStart", 0.01f);
     }
 
     private void Update()
     {
         QuitGame();
+        Switch();
     }
-
     void QuitGame()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -31,4 +67,23 @@ public class GameController : MonoBehaviour
 #endif
         }
     }
+    void Switch()
+    {
+        if (Input.GetKeyDown(switchKey))
+        {
+            CurrentPerspective += 1;
+        }
+    }
+    public bool ComparePerspective(Perspective perspective)
+    {
+        if (perspective == CurrentPerspective)
+            return true;
+        return false;
+    }
+
+    void GameControllerStart()
+    {
+        CurrentPerspective = startPerspective;
+    }
 }
+//To subscribe to this singelton, subscribe on Start() and unsubscribe on OnDisable()
