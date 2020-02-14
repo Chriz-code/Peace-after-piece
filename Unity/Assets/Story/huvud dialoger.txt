@@ -1,0 +1,110 @@
+﻿Eleanor:
+“Where am i? what’s going on?”
+*knock on window* (yes/no)
+“Angela? you there? can you hear me?” 
+It looks as if Angela is frozen for a second and then she turns towards the mirror.
+
+
+Angela:
+“Eleanor! Oh thank goodness, you’re okay!” 
+
+
+Eleanor:
+“Who cares about me, I’ve been through worse. How are you? are you okay?”
+
+
+Angela:
+“Who cares? I care! I’m doing fine now that I know you are fine.” 
+
+
+“...”
+
+
+“I think we need to look around to see if we can find a way to each other”
+
+
+Eleanor:
+“Alright, yeah. Sounds good, I’ll start looking over here then.”
+
+
+Spelaren är i tavelrummet, Eleanor sida. PÅ köksbordet ligger det en lapp
+
+
+Go left with left ← go right → 
+Switch with Tab
+
+
+
+
+tavlor: “why are these on the floor?” 
+        boxning-tavla:
+        Deltagare pris, en ung Eleanor med sina föräldrar och förstapriset.
+        “Mom actually smiled here, and it wasn’t malicious at all. Dad was so excited about me getting a prize. It was just a participation award but dad made it feel like I had won the biggest prize in the world.”
+                “It’s was a long time ago boxing actually made me happy.”
+        Dörr med rök:
+        Under branden var Eleanor instängd i sitt rum, utan någon aning att branden var i full gång. Därför är denna tavlan på hennes dörr där röken tar sig in genom springorna.
+        “I hated that day. Why did you have to run in after me? Just.. why? Maybe you could’ve prevented mom from getting bad.” 
+mamman:
+En bild på mamman med cigg i handen, står ute på en balkong. Man kan även se någon typ av alkohol flaska.
+        “I remember that day after the funeral. Mom refused to look at me. I can’t believe she screamed ‘I wished it was you who died’ to me.. Do you even miss me mom? Are you even alive today?”
+
+
+Objek dialoger:
+
+
+Blomkruka: “oh my god it actually smells like hers.”
+
+
+ugnen: “There’s something in there”
+*open?* (yes/no)
+*no* “Alright then.”
+*yes* -> oven opens “Why is there a painting in here?” 
+        examine painting (door & smoke) -> “What the hell is this?” 
+
+
+examine painting on wall (boxning) -> “That’s me, in the ring at 12 years old.” 
+
+
+Klarade puzzel Eleanor men inte Angela: “Something is missing… *kicks the door*.” 
+
+
+Tavlor Angela:
+
+
+Tavla 1: Två barn som sitter i slutet på en brygga, men ryggarna emot och tittar på en solnedgång.
+“I haven’t been by any beach after that day you died. Thinking about you makes my heart hurt and tears comes to my eyes.”
+
+2: Angela i förgrunden som simmar in, medans hennes brors händer är det enda som syns när han drar under.
+“Who would be doing something like this to us? This is just cruelness.”
+
+3: Begravningen. Silhuetter runt en grav.
+“The cries of my mom stills echoes in my dreams, maybe because she cried every night for a months after the funeral. And dad became very cold. They loved me, but with a sadness.”
+
+
+Angela puzzel är klara men inte Eleanor: “I must be missing something. *Handtagsljud.*”
+
+
+Angela: “Do you have paintings in your room also?”
+
+
+Eleanor: “Yeah they are there... “
+
+
+
+
+________________
+
+
+Eleanor: “Paintings of my life… this is a level of creepy stalking.”
+
+
+Angela: “It is a long time of stalking in that case, and I can say for certain that no one was there that day on one of mine.”
+
+
+Eleanor: “What are your paintings about?”
+
+
+Angela: “My nightmares. Yours?”
+
+
+Eleanor: “... Of things that will never be again.”
