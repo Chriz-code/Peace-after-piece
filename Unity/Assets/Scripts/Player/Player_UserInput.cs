@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Player_UserInput : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Player player = null;
+    [SerializeField] Player_Movement _Movement = null;
+
+    private void Start()
     {
-        
+        OnValidate();
+    }
+    private void OnValidate()
+    {
+        if(!player || !_Movement)
+        {
+            TryGetComponent<Player>(out Player player);
+            this.player = player;
+            TryGetComponent<Player_Movement>(out Player_Movement _Movement);
+            this._Movement = _Movement;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (GameController.Get.ComparePerspective(player.GetPerspective))
+        {
+            _Movement.Movement(Input.GetAxis("Horizontal"));
+        }
     }
 }

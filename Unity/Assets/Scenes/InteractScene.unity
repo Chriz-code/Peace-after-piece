@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPerspective: 0
+  startPerspective: 2
   skipNone: 1
   switchKey: 9
 --- !u!4 &60289641
@@ -536,11 +537,12 @@ GameObject:
   m_Component:
   - component: {fileID: 779497526}
   - component: {fileID: 779497529}
-  - component: {fileID: 779497527}
   - component: {fileID: 779497528}
   - component: {fileID: 779497530}
-  - component: {fileID: 779497531}
   - component: {fileID: 779497532}
+  - component: {fileID: 779497531}
+  - component: {fileID: 779497533}
+  - component: {fileID: 779497527}
   m_Layer: 0
   m_Name: PlayerRed
   m_TagString: Player
@@ -575,7 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481c1398bfe0daa42a4d003098de947c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perspective: 1
   moveInput: 0
   speed: 10
 --- !u!50 &779497528
@@ -699,6 +700,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perspective: 2
+--- !u!114 &779497533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779497525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d8f51b70f22f94eaecafeab1ef7ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 779497531}
+  _Movement: {fileID: 779497527}
 --- !u!1 &940701357
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960933773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 779497526}
@@ -1662,6 +1677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPopUp: {fileID: 1734375325}
+  dc: {fileID: 0}
 --- !u!1 &1883778363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,11 +1688,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1883778364}
   - component: {fileID: 1883778367}
-  - component: {fileID: 1883778365}
   - component: {fileID: 1883778366}
   - component: {fileID: 1883778368}
-  - component: {fileID: 1883778369}
   - component: {fileID: 1883778370}
+  - component: {fileID: 1883778369}
+  - component: {fileID: 1883778371}
+  - component: {fileID: 1883778365}
   m_Layer: 0
   m_Name: PlayerBlue
   m_TagString: Player
@@ -1692,7 +1709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883778363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.58, y: -1.13, z: 0}
+  m_LocalPosition: {x: 1.58, y: -1.13, z: 1}
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_Children:
   - {fileID: 242881581}
@@ -1711,7 +1728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481c1398bfe0daa42a4d003098de947c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perspective: 2
   moveInput: 0
   speed: 10
 --- !u!50 &1883778366
@@ -1835,6 +1851,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perspective: 1
+--- !u!114 &1883778371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883778363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d8f51b70f22f94eaecafeab1ef7ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1883778369}
+  _Movement: {fileID: 1883778365}
 --- !u!1 &1917207868
 GameObject:
   m_ObjectHideFlags: 0
