@@ -32,6 +32,22 @@ public class GameController : MonoBehaviour
         }
     }
     public KeyCode switchKey = KeyCode.Tab;
+    public Player_UserInput GetActivePlayer
+    {
+        get
+        {
+            foreach (Player_UserInput userInput in FindObjectsOfType<Player_UserInput>())
+            {
+                userInput.TryGetComponent<ThisPerspective>(out ThisPerspective playerPerspective);
+                if (playerPerspective.perspective == CurrentPerspective)
+                {
+                    return userInput;
+                }
+            }
+            return null;
+        }
+    }
+
 
     private void Awake()
     {
@@ -78,7 +94,6 @@ public class GameController : MonoBehaviour
             return true;
         return false;
     }
-
     void GameControllerStart()
     {
         CurrentPerspective = startPerspective;

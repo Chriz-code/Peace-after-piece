@@ -23,8 +23,9 @@ public class DialogProfile
     public float textVolume = 0.7f;
     public float textWaitTime = 1f;
     public float textSpeed = 0.05f;
+    public bool playerInput = true;
 
-    public DialogProfile(string message, Sprite profile, Color color, AudioClip textSound, float textVolume, float textWaitTime, float textSpeed)
+    public DialogProfile(string message, Sprite profile, Color color, AudioClip textSound, float textVolume, float textWaitTime, float textSpeed,bool playerInput)
     {
         this.message = message;
         this.profile = profile;
@@ -33,5 +34,6 @@ public class DialogProfile
         this.textVolume = textVolume;
         this.textWaitTime = textWaitTime;
         this.textSpeed = textSpeed;
+        this.playerInput = playerInput;
     }
 }

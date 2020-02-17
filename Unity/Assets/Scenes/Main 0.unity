@@ -1720,25 +1720,28 @@ MonoBehaviour:
   dialogProfiles:
   - message: Mirror, mirror, on the wall tell me what.
     profile: {fileID: 21300000, guid: 6ba8e06583a82c142b36eb5e42eb095e, type: 3}
-    color: {r: 1, g: 1, b: 1, a: 0.627451}
+    color: {r: 1, g: 1, b: 1, a: 1}
     textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
     textVolume: 0.7
-    textWaitTime: 1
+    textWaitTime: 0
     textSpeed: 0.05
+    playerInput: 0
   - message: Yes?
     profile: {fileID: 21300000, guid: dfd3d7b3a88f9bf46b9a1205afccaf7d, type: 3}
-    color: {r: 1, g: 0.68235296, b: 0.8862746, a: 0.7490196}
+    color: {r: 1, g: 0.68235296, b: 0.8862746, a: 1}
     textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
     textVolume: 0.7
     textWaitTime: 1
-    textSpeed: 0.1
+    textSpeed: 0.01
+    playerInput: 1
   - message: You Stink.
     profile: {fileID: 21300000, guid: 6ba8e06583a82c142b36eb5e42eb095e, type: 3}
-    color: {r: 1, g: 1, b: 1, a: 0.7490196}
+    color: {r: 1, g: 1, b: 1, a: 1}
     textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
     textVolume: 0.7
     textWaitTime: 1
     textSpeed: 0.2
+    playerInput: 1
   - message: :(
     profile: {fileID: 21300000, guid: dfd3d7b3a88f9bf46b9a1205afccaf7d, type: 3}
     color: {r: 1, g: 0.68235296, b: 0.8862746, a: 0.7490196}
@@ -1746,6 +1749,7 @@ MonoBehaviour:
     textVolume: 0.7
     textWaitTime: 1
     textSpeed: 0.05
+    playerInput: 1
 --- !u!61 &1397872383
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1875,6 +1879,7 @@ MonoBehaviour:
     textVolume: 0.7
     textWaitTime: 1
     textSpeed: 0.05
+    playerInput: 1
   - message: Sorry, but I ain't your lad..
     profile: {fileID: 21300000, guid: 6ba8e06583a82c142b36eb5e42eb095e, type: 3}
     color: {r: 1, g: 0.10410543, b: 0, a: 1}
@@ -1882,6 +1887,7 @@ MonoBehaviour:
     textVolume: 0.7
     textWaitTime: 1
     textSpeed: 0.05
+    playerInput: 1
   - message: Sad..
     profile: {fileID: 21300000, guid: dfd3d7b3a88f9bf46b9a1205afccaf7d, type: 3}
     color: {r: 1, g: 0.5254902, b: 0.5254902, a: 1}
@@ -1889,6 +1895,7 @@ MonoBehaviour:
     textVolume: 0.7
     textWaitTime: 1
     textSpeed: 0.1
+    playerInput: 1
 --- !u!212 &1409655482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2779,6 +2786,7 @@ GameObject:
   - component: {fileID: 1990816707}
   - component: {fileID: 1990816709}
   - component: {fileID: 1990816708}
+  - component: {fileID: 1990816710}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -2811,7 +2819,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c8581cd2fdeaf224d920d64df1a1225b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.563
   m_Pitch: 1
   Loop: 0
@@ -2908,6 +2916,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505174a97121d0c4fb4514a5900f1748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -2
+      outSlope: -2
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: -2
+      outSlope: -2
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
   mainSource: {fileID: 1990816707}
   shotSource: {fileID: 1990816709}
   sources: []
@@ -3007,6 +3039,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1990816710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990816705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c390760a1781f5d4cb33d161ce55a4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elenorsTheme: {fileID: 8300000, guid: c8581cd2fdeaf224d920d64df1a1225b, type: 3}
+  angelasTheme: {fileID: 8300000, guid: e6801ade201a73b4388518bad0a7b4a8, type: 3}
+  switchCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: -0.15992391
+      outSlope: -0.15992391
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09840256
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  switchSpeed: 5
 --- !u!1 &2013911632
 GameObject:
   m_ObjectHideFlags: 0

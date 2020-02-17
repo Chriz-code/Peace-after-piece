@@ -10,7 +10,9 @@ public class Interact : MonoBehaviour
     {
         get
         {
-            return interactable;
+            if (ParentPerspective == GameController.Get.CurrentPerspective && interactable == true)
+                return true;
+            return false;
         }
         set
         {
@@ -37,7 +39,7 @@ public class Interact : MonoBehaviour
 
     private void Update()
     {
-        if (interactable && Input.GetKeyDown(interactKey))
+        if (Interactable && Input.GetKeyDown(interactKey))
         {
             interact?.Invoke();
         }
@@ -46,7 +48,7 @@ public class Interact : MonoBehaviour
     {
         if (InteractableCheck(collision))
         {
-            Debug.Log("You're inside my 2 meter range! " + ParentPerspective);
+            Debug.Log("Yare Yare You're now within my 2 meter range! " + ParentPerspective);
             Interactable = true;
         }
     }
@@ -54,7 +56,7 @@ public class Interact : MonoBehaviour
     {
         if (InteractableCheck(collision))
         {
-            Debug.Log("You're inside my 2 meter range! " + ParentPerspective);
+            Debug.Log("Yare Yare You're now within my 2 meter range! " + ParentPerspective);
             Interactable = true;
         }
     }
@@ -62,7 +64,7 @@ public class Interact : MonoBehaviour
     {
         if (InteractableCheck(collision))
         {
-            Debug.Log("You're outside my 2 meter range! " + ParentPerspective);
+            Debug.Log("Yare Yare You're now outside my 2 meter range! " + ParentPerspective);
             Interactable = false;
         }
     }
@@ -70,7 +72,7 @@ public class Interact : MonoBehaviour
     {
         if (InteractableCheck(collision))
         {
-            Debug.Log("You're outside my 2 meter range! " + ParentPerspective);
+            Debug.Log("Yare Yare You're now outside my 2 meter range! " + ParentPerspective);
             Interactable = false;
         }
     }

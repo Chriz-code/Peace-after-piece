@@ -61,12 +61,18 @@ public class DialogController : MonoBehaviour
     bool ienumerating = false;
     int rowCount = 1;
 
+    Player_UserInput user = null;
     public IEnumerator StartDialogIEnumerator(DialogProfile[] dialogProfiles)
     {
         if (ienumerating == true)
             yield break;
         ienumerating = true;
-
+        
+        if (GameController.Get.GetActivePlayer != null)
+        {
+            user = GameController.Get.GetActivePlayer;
+            user.enabled = false;
+        }
         for (int i = 0; i < dialogProfiles.Length; i++)
         {
             yield return StartCoroutine(DialogIEnumerator(
@@ -76,13 +82,14 @@ public class DialogController : MonoBehaviour
                 dialogProfiles[i].textSound,
                 dialogProfiles[i].textVolume,
                 dialogProfiles[i].textWaitTime,
-                dialogProfiles[i].textSpeed
+                dialogProfiles[i].textSpeed,
+                dialogProfiles[i].playerInput
                 ));
         }
         StopDialog();
     }
 
-    public IEnumerator DialogIEnumerator(string message, Sprite profile, Color profileColor, AudioClip textSound, float textVolume, float textWaitTime, float textSpeed)
+    public IEnumerator DialogIEnumerator(string message, Sprite profile, Color profileColor, AudioClip textSound, float textVolume, float textWaitTime, float textSpeed, bool playerInput)
     {
         CheckPerspective();
 
@@ -113,7 +120,7 @@ public class DialogController : MonoBehaviour
                     lowerWaitBy += 1;
                 }
                 else if (!(messages[i][j] == '-'))
-                { 
+                {
                     dialogText.text += messages[i][j];
                     if (textSound != null && !(messages[i][j] == ' ' || messages[i][j] == '\n') && (!silenceWhenMultiplying || (silenceWhenMultiplying && deltaSpeedMultiplier == 1)))
                         this.textSound.PlayOneShot(textSound, textVolume);
@@ -132,14 +139,15 @@ public class DialogController : MonoBehaviour
                 yield return new WaitForSeconds(distance / scrollSpeed);
                 scrollTextDelta = false;
             }
-            else
+            else if (playerInput == true)
             {
                 do
                 {
                     yield return null;
                 } while (!Input.GetKeyDown(dialogKey));
-                //yield return new WaitForSeconds(textWaitTime / lowerWaitBy);
             }
+            else
+                yield return new WaitForSeconds(textWaitTime / lowerWaitBy);
         }
     }
 
@@ -182,7 +190,8 @@ public class DialogController : MonoBehaviour
             profileBox.gameObject.SetActive(false);
             dialogText.rectTransform.localPosition = originalPos;
             ienumerating = false;
-
+            if (user != null)
+                user.enabled = true;
             if (dialog != null)
                 StopCoroutine(dialog);
         }

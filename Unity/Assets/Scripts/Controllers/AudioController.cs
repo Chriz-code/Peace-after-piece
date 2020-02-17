@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     public static AudioController Get { get; private set; }
+    public AnimationCurve defaultCurve = null;
     public AudioSource mainSource = null;
     public AudioSource shotSource = null;
     public List<AudioSource> sources = new List<AudioSource>();
@@ -80,9 +81,35 @@ public class AudioController : MonoBehaviour
         source.Play();
     }
 
-    public void ChangeTrack(int audioSourceID = 0, AudioClip clip = null, AnimationCurve volumeCurve = null)
+    public void ChangeTrack(int audioSourceID = 0, AudioClip clip = null, AnimationCurve volumeCurve = null, float curveSpeed = 2f)
     {
-
+        StartCoroutine(TrackChange(audioSourceID, clip, volumeCurve, curveSpeed));
     }
+    bool trackIenumerating = false;
+    IEnumerator TrackChange(int audioSourceID = 0, AudioClip clip = null, AnimationCurve volumeCurve = null, float curveSpeed = 2f)
+    {
+        if (trackIenumerating)
+            yield break;
+        trackIenumerating = true;
 
+        if (volumeCurve == null)
+            volumeCurve = defaultCurve;
+
+        for (float i = 0; i < 1; i += Time.deltaTime * curveSpeed)
+        {
+            //Debug.Log(i);
+            sources[audioSourceID].volume = volumeCurve.Evaluate(i);
+            yield return new WaitForSeconds(Time.deltaTime);
+            if(volumeCurve.Evaluate(i) <= 0.1f)
+            {
+                float length = sources[audioSourceID].time;
+                sources[audioSourceID].Stop();
+                sources[audioSourceID].clip = clip;
+                sources[audioSourceID].time = length;
+                sources[audioSourceID].Play();
+            }
+        }
+        sources[audioSourceID].volume = 1f;
+        trackIenumerating = false;
+    }
 }

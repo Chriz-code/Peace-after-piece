@@ -29,4 +29,9 @@ public class Player_UserInput : MonoBehaviour
             _Movement.Movement(Input.GetAxis("Horizontal"));
         }
     }
+
+    private void OnDisable()
+    {
+        _Movement.Movement(0);
+    }
 }
