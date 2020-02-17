@@ -21,10 +21,23 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void Interact(bool activate)
+    public void Interact(GameObject caller, bool active)
     {
-        if (interactPopUp)
-            interactPopUp.gameObject.SetActive(activate);
+        this.caller = caller;
+        this.active = active;
+    }
+    bool active;
+    GameObject caller;
+    private void FixedUpdate()
+    {
+        if (interactPopUp && caller)
+        {
+            interactPopUp.rectTransform.position = RectTransformUtility.WorldToScreenPoint(Camera.main,
+                new Vector3(caller.transform.position.x, caller.transform.position.y + caller.transform.localScale.y, caller.transform.position.z));
+            interactPopUp.gameObject.SetActive(active);
+            if (active == false)
+                caller = null;
+        }
     }
 
     private void OnEnable()
@@ -39,6 +52,6 @@ public class UIController : MonoBehaviour
     void ClearUi(GameController gc, Perspective perspective)
     {
         dc.StopDialog();
-        Interact(false);
+        Interact(gameObject, false);
     }
 }

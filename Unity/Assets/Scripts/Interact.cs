@@ -17,7 +17,7 @@ public class Interact : MonoBehaviour
             if (interactable != value)
             {
                 interactable = value;
-                UIController.Get.Interact(interactable);
+                UIController.Get.Interact(gameObject, interactable);
             }
         }
     }

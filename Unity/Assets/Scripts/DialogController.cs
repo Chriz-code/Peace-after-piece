@@ -4,22 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogController : MonoBehaviour
 {
-    [SerializeField]
-    Image profileBox = null, profile = null, dialogBox = null;
+    [Header("Refrences")]
+    [SerializeField] Image profileBox = null;
+    [SerializeField] Image profile = null, dialogBox = null;
     [SerializeField]
     Sprite profileBoxAngela = null, dialogBoxAngela = null, profileBoxElenor = null, dialogBoxElenor = null;
-    [SerializeField]
-    Text dialogText = null;
-    [SerializeField]
-    AudioSource textSound = null;
+    [SerializeField] Text dialogText = null;
+    [SerializeField] AudioSource textSound = null;
 
     IEnumerator dialog = null;
 
     Vector3 originalPos = Vector3.zero;
+    [Header("Variables")]
+    [SerializeField] int speedMultiplier = 3;
+    [SerializeField] bool silenceWhenMultiplying = false;
     [SerializeField] bool ready = false;
     [SerializeField] bool scrollText = false;
+    [SerializeField] KeyCode dialogKey = KeyCode.E;
     bool scrollTextDelta = false;
     float scrollSpeed = 30;
+
+    int deltaSpeedMultiplier = 1;
 
     private void OnValidate()
     {
@@ -33,7 +38,10 @@ public class DialogController : MonoBehaviour
             ready = true;
         }
         else
+        {
+            ready = false;
             Debug.LogWarning("Dialog Controller is missing refrences");
+        }
     }
 
     private void Start()
@@ -42,30 +50,40 @@ public class DialogController : MonoBehaviour
         originalPos = dialogText.rectTransform.localPosition;
     }
 
-    public void StartDialog(string message = "", Sprite profile = null, AudioClip textSound = null, float textWaitTime = 2f, float textSpeed = 0.5f)
+    public void StartDialog(DialogProfile[] dialogProfiles)
     {
         if (ready)
         {
-            dialog = StartDialogIEnumerator(message, profile, Color.white, textSound, textWaitTime, textSpeed);
-            StartCoroutine(dialog);
-        }
-    }
-    public void StartDialog(string message, Sprite profile, Color color, AudioClip textSound = null, float textWaitTime = 2f, float textSpeed = 0.5f)
-    {
-        if (ready)
-        {
-            dialog = StartDialogIEnumerator(message, profile, color, textSound, textWaitTime, textSpeed);
+            dialog = StartDialogIEnumerator(dialogProfiles);
             StartCoroutine(dialog);
         }
     }
     bool ienumerating = false;
     int rowCount = 1;
-    public IEnumerator StartDialogIEnumerator(string message, Sprite profile, Color profileColor, AudioClip textSound, float textWaitTime, float textSpeed)
+
+    public IEnumerator StartDialogIEnumerator(DialogProfile[] dialogProfiles)
     {
         if (ienumerating == true)
             yield break;
         ienumerating = true;
 
+        for (int i = 0; i < dialogProfiles.Length; i++)
+        {
+            yield return StartCoroutine(DialogIEnumerator(
+                dialogProfiles[i].message,
+                dialogProfiles[i].profile,
+                dialogProfiles[i].color,
+                dialogProfiles[i].textSound,
+                dialogProfiles[i].textVolume,
+                dialogProfiles[i].textWaitTime,
+                dialogProfiles[i].textSpeed
+                ));
+        }
+        StopDialog();
+    }
+
+    public IEnumerator DialogIEnumerator(string message, Sprite profile, Color profileColor, AudioClip textSound, float textVolume, float textWaitTime, float textSpeed)
+    {
         CheckPerspective();
 
         //Profile
@@ -93,19 +111,17 @@ public class DialogController : MonoBehaviour
                 if (messages[i][j] == '/')
                 {
                     lowerWaitBy += 1;
-                    messages[i].Remove(j, 1);
-                    messages[i].Insert(j, "");
                 }
                 else if (!(messages[i][j] == '-'))
-                {
+                { 
                     dialogText.text += messages[i][j];
-                    if (textSound != null && !(messages[i][j] == ' ' || messages[i][j] == '\n'))
-                        this.textSound.PlayOneShot(textSound);
+                    if (textSound != null && !(messages[i][j] == ' ' || messages[i][j] == '\n') && (!silenceWhenMultiplying || (silenceWhenMultiplying && deltaSpeedMultiplier == 1)))
+                        this.textSound.PlayOneShot(textSound, textVolume);
                     else if (messages[i][j] == '\n')
                     {
                         rowCount++;
                     }
-                    yield return new WaitForSeconds(textSpeed);
+                    yield return new WaitForSeconds(textSpeed == 0 ? 0.001f : textSpeed / deltaSpeedMultiplier);
                 }
             }
             if (scrollText && (i + 1) < messages.Length)
@@ -117,11 +133,16 @@ public class DialogController : MonoBehaviour
                 scrollTextDelta = false;
             }
             else
-                yield return new WaitForSeconds(textWaitTime / lowerWaitBy);
+            {
+                do
+                {
+                    yield return null;
+                } while (!Input.GetKeyDown(dialogKey));
+                //yield return new WaitForSeconds(textWaitTime / lowerWaitBy);
+            }
         }
-
-        StopDialog();
     }
+
     Vector3 nextPos = Vector2.zero;
     private void Update()
     {
@@ -131,9 +152,15 @@ public class DialogController : MonoBehaviour
         if (scrollTextDelta && rowCount > 2 && dialogText.rectTransform.localPosition.y < nextPos.y)
             dialogText.rectTransform.localPosition += Vector3.up * Time.deltaTime * scrollSpeed;
 
+        if (Input.GetKeyDown(dialogKey))
+        {
+            deltaSpeedMultiplier = speedMultiplier;
+        }
+        else if (Input.GetKeyUp(dialogKey))
+        {
+            deltaSpeedMultiplier = 1;
+        }
     }
-
-
     void CheckPerspective()
     {
         if (GameController.Get.CurrentPerspective == Perspective.Angela && ready)
@@ -147,15 +174,17 @@ public class DialogController : MonoBehaviour
             dialogBox.sprite = dialogBoxElenor;
         }
     }
-
     public void StopDialog()
     {
-        dialogBox.gameObject.SetActive(false);
-        profileBox.gameObject.SetActive(false);
-        dialogText.rectTransform.localPosition = originalPos;
-        ienumerating = false;
+        if (ready)
+        {
+            dialogBox.gameObject.SetActive(false);
+            profileBox.gameObject.SetActive(false);
+            dialogText.rectTransform.localPosition = originalPos;
+            ienumerating = false;
 
-        if (dialog != null)
-            StopCoroutine(dialog);
+            if (dialog != null)
+                StopCoroutine(dialog);
+        }
     }
 }

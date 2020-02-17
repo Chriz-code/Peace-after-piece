@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PerspectiveTurnOff : MonoBehaviour
 {
-    [SerializeField] GameObject[] gameObjects;
+    [SerializeField] GameObject[] gameObjects = null;
     Perspective ParentPerspective
     {
         get
