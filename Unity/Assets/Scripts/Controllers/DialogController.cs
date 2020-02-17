@@ -12,7 +12,8 @@ public class DialogController : MonoBehaviour
     [SerializeField] Text dialogText = null;
     [SerializeField] AudioSource textSoundSource = null;
 
-    IEnumerator dialog = null;
+    IEnumerator dialogStarter = null;
+    IEnumerator dialogWritter = null;
 
     Vector3 originalPos = Vector3.zero;
     [Header("Variables")]
@@ -43,7 +44,6 @@ public class DialogController : MonoBehaviour
             Debug.LogWarning("Dialog Controller is missing refrences");
         }
     }
-
     private void Start()
     {
         OnValidate();
@@ -54,8 +54,8 @@ public class DialogController : MonoBehaviour
     {
         if (ready)
         {
-            dialog = StartDialogIEnumerator(dialogProfiles);
-            StartCoroutine(dialog);
+            dialogStarter = StartDialogIEnumerator(dialogProfiles);
+            StartCoroutine(dialogStarter);
         }
     }
     bool ienumerating = false;
@@ -75,7 +75,7 @@ public class DialogController : MonoBehaviour
         }
         for (int i = 0; i < dialogProfiles.Length; i++)
         {
-            yield return StartCoroutine(DialogIEnumerator(
+            dialogWritter = DialogIEnumerator(
                 dialogProfiles[i].message,
                 dialogProfiles[i].profile.profileImage,
                 dialogProfiles[i].profile.color,
@@ -84,7 +84,9 @@ public class DialogController : MonoBehaviour
                 dialogProfiles[i].textWaitTime,
                 dialogProfiles[i].textSpeed,
                 dialogProfiles[i].playerInput
-                ));
+                );
+
+            yield return StartCoroutine(dialogWritter);
         }
         StopDialog();
     }
@@ -94,9 +96,9 @@ public class DialogController : MonoBehaviour
         CheckPerspective();
 
         //Profile
-        profileBox.gameObject.SetActive(true);
-        this.profile.sprite = profile;
-        this.profile.color = profileColor;
+        //profileBox.gameObject.SetActive(true);
+        //this.profile.sprite = profile;
+        //this.profile.color = profileColor;
 
         //Box
         dialogBox.gameObject.SetActive(true);
@@ -169,7 +171,7 @@ public class DialogController : MonoBehaviour
             deltaSpeedMultiplier = 1;
         }
     }
-    void CheckPerspective()
+    public void CheckPerspective()
     {
         if (GameController.Get.CurrentPerspective == Perspective.Angela && ready)
         {
@@ -186,14 +188,17 @@ public class DialogController : MonoBehaviour
     {
         if (ready)
         {
+            dialogText.text = "";
             dialogBox.gameObject.SetActive(false);
-            profileBox.gameObject.SetActive(false);
+            //profileBox.gameObject.SetActive(false);
             dialogText.rectTransform.localPosition = originalPos;
             ienumerating = false;
             if (user != null)
                 user.enabled = true;
-            if (dialog != null)
-                StopCoroutine(dialog);
+            if (dialogStarter != null)
+                StopCoroutine(dialogStarter);
+            if (dialogWritter != null)
+                StopCoroutine(dialogWritter);
         }
     }
 }

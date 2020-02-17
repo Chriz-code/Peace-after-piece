@@ -53,5 +53,6 @@ public class UIController : MonoBehaviour
     {
         dc.StopDialog();
         Interact(gameObject, false);
+        dc.CheckPerspective();
     }
 }
