@@ -10,7 +10,7 @@ public class DialogController : MonoBehaviour
     [SerializeField]
     Sprite profileBoxAngela = null, dialogBoxAngela = null, profileBoxElenor = null, dialogBoxElenor = null;
     [SerializeField] Text dialogText = null;
-    [SerializeField] AudioSource textSound = null;
+    [SerializeField] AudioSource textSoundSource = null;
 
     IEnumerator dialog = null;
 
@@ -33,7 +33,7 @@ public class DialogController : MonoBehaviour
             Debug.LogWarning("Dialog Controller is missing sprite refrences");
 
         }
-        if (dialogBox && profileBox && profile && dialogBox && textSound)
+        if (dialogBox && profileBox && profile && dialogBox && textSoundSource)
         {
             ready = true;
         }
@@ -50,7 +50,7 @@ public class DialogController : MonoBehaviour
         originalPos = dialogText.rectTransform.localPosition;
     }
 
-    public void StartDialog(DialogProfile[] dialogProfiles)
+    public void StartDialog(Dialog[] dialogProfiles)
     {
         if (ready)
         {
@@ -62,12 +62,12 @@ public class DialogController : MonoBehaviour
     int rowCount = 1;
 
     Player_UserInput user = null;
-    public IEnumerator StartDialogIEnumerator(DialogProfile[] dialogProfiles)
+    public IEnumerator StartDialogIEnumerator(Dialog[] dialogProfiles)
     {
         if (ienumerating == true)
             yield break;
         ienumerating = true;
-        
+
         if (GameController.Get.GetActivePlayer != null)
         {
             user = GameController.Get.GetActivePlayer;
@@ -77,9 +77,9 @@ public class DialogController : MonoBehaviour
         {
             yield return StartCoroutine(DialogIEnumerator(
                 dialogProfiles[i].message,
-                dialogProfiles[i].profile,
-                dialogProfiles[i].color,
-                dialogProfiles[i].textSound,
+                dialogProfiles[i].profile.profileImage,
+                dialogProfiles[i].profile.color,
+                dialogProfiles[i].profile.textSounds,
                 dialogProfiles[i].textVolume,
                 dialogProfiles[i].textWaitTime,
                 dialogProfiles[i].textSpeed,
@@ -89,7 +89,7 @@ public class DialogController : MonoBehaviour
         StopDialog();
     }
 
-    public IEnumerator DialogIEnumerator(string message, Sprite profile, Color profileColor, AudioClip textSound, float textVolume, float textWaitTime, float textSpeed, bool playerInput)
+    public IEnumerator DialogIEnumerator(string message, Sprite profile, Color profileColor, AudioClip[] textSounds, float textVolume, float textWaitTime, float textSpeed, bool playerInput)
     {
         CheckPerspective();
 
@@ -122,8 +122,8 @@ public class DialogController : MonoBehaviour
                 else if (!(messages[i][j] == '-'))
                 {
                     dialogText.text += messages[i][j];
-                    if (textSound != null && !(messages[i][j] == ' ' || messages[i][j] == '\n') && (!silenceWhenMultiplying || (silenceWhenMultiplying && deltaSpeedMultiplier == 1)))
-                        this.textSound.PlayOneShot(textSound, textVolume);
+                    if (textSoundSource != null && textSounds.Length > 0 && !(messages[i][j] == ' ' || messages[i][j] == '\n') && (!silenceWhenMultiplying || (silenceWhenMultiplying && deltaSpeedMultiplier == 1)))
+                        this.textSoundSource.PlayOneShot(textSounds[Random.Range(0, textSounds.Length)], textVolume);
                     else if (messages[i][j] == '\n')
                     {
                         rowCount++;

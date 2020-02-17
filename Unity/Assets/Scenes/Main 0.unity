@@ -1717,36 +1717,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogProfiles:
-  - message: Mirror, mirror, on the wall tell me what.
-    profile: {fileID: 21300000, guid: 6ba8e06583a82c142b36eb5e42eb095e, type: 3}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
-    textVolume: 0.7
+  dialogTree:
+  - message: Mirror, mirror, on the wall. Why do you
+    profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
+    textVolume: 0.5
     textWaitTime: 0
-    textSpeed: 0.05
+    textSpeed: 0.1
     playerInput: 0
-  - message: Yes?
-    profile: {fileID: 21300000, guid: dfd3d7b3a88f9bf46b9a1205afccaf7d, type: 3}
-    color: {r: 1, g: 0.68235296, b: 0.8862746, a: 1}
-    textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
-    textVolume: 0.7
+  - message: 'Yes?
+
+'
+    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+    textVolume: 0.5
     textWaitTime: 1
-    textSpeed: 0.01
+    textSpeed: 0.05
     playerInput: 1
-  - message: You Stink.
-    profile: {fileID: 21300000, guid: 6ba8e06583a82c142b36eb5e42eb095e, type: 3}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
-    textVolume: 0.7
+  - message: Stink..
+    profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
+    textVolume: 0.5
     textWaitTime: 1
     textSpeed: 0.2
     playerInput: 1
-  - message: :(
-    profile: {fileID: 21300000, guid: dfd3d7b3a88f9bf46b9a1205afccaf7d, type: 3}
-    color: {r: 1, g: 0.68235296, b: 0.8862746, a: 0.7490196}
-    textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
-    textVolume: 0.7
+  - message: Oh..
+    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+    textVolume: 0.5
     textWaitTime: 1
     textSpeed: 0.05
     playerInput: 1
@@ -1871,30 +1865,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogProfiles:
-  - message: lad?
-    profile: {fileID: 21300000, guid: dfd3d7b3a88f9bf46b9a1205afccaf7d, type: 3}
-    color: {r: 1, g: 0.5254902, b: 0.5254902, a: 1}
-    textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
-    textVolume: 0.7
+  dialogTree:
+  - message: Lad?
+    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+    textVolume: 0.5
     textWaitTime: 1
-    textSpeed: 0.05
+    textSpeed: 0.1
     playerInput: 1
-  - message: Sorry, but I ain't your lad..
-    profile: {fileID: 21300000, guid: 6ba8e06583a82c142b36eb5e42eb095e, type: 3}
-    color: {r: 1, g: 0.10410543, b: 0, a: 1}
-    textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
-    textVolume: 0.7
+  - message: Sorry, but I'm not your lad..
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
+    textVolume: 0.5
     textWaitTime: 1
     textSpeed: 0.05
     playerInput: 1
   - message: Sad..
-    profile: {fileID: 21300000, guid: dfd3d7b3a88f9bf46b9a1205afccaf7d, type: 3}
-    color: {r: 1, g: 0.5254902, b: 0.5254902, a: 1}
-    textSound: {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
-    textVolume: 0.7
+    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+    textVolume: 0.5
     textWaitTime: 1
-    textSpeed: 0.1
+    textSpeed: 0.15
     playerInput: 1
 --- !u!212 &1409655482
 SpriteRenderer:
@@ -2116,7 +2104,7 @@ MonoBehaviour:
   profileBoxElenor: {fileID: 21300000, guid: 9d4a426330cec534b984cf916e5a59b0, type: 3}
   dialogBoxElenor: {fileID: 21300000, guid: b2360d5c6482f1742a1ae8b13a57bbc6, type: 3}
   dialogText: {fileID: 1988567581}
-  textSound: {fileID: 1700317723}
+  textSoundSource: {fileID: 1700317723}
   speedMultiplier: 3
   silenceWhenMultiplying: 0
   ready: 1

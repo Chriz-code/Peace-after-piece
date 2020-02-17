@@ -4,33 +4,29 @@ using UnityEngine;
 
 public class DialogCaller : MonoBehaviour
 {
-    public DialogProfile[] dialogProfiles = null;
+    public Dialog[] dialogTree =  new Dialog[1];
 
     public void CallDialog()
     {
         Debug.Log("Started Dialog");
-        UIController.Get.dc.StartDialog(dialogProfiles);
+        UIController.Get.dc.StartDialog(dialogTree);
     }
 }
 [System.Serializable]
-public class DialogProfile
+public class Dialog
 {
     [TextArea(1, 10)]
     public string message = "";
-    public Sprite profile = null;
-    public Color color = Color.white;
-    public AudioClip textSound = null;
+    public DialogProfile profile;
     public float textVolume = 0.7f;
     public float textWaitTime = 1f;
     public float textSpeed = 0.05f;
     public bool playerInput = true;
 
-    public DialogProfile(string message, Sprite profile, Color color, AudioClip textSound, float textVolume, float textWaitTime, float textSpeed,bool playerInput)
+    public Dialog(DialogProfile profile,string message, float textVolume, float textWaitTime, float textSpeed,bool playerInput)
     {
-        this.message = message;
         this.profile = profile;
-        this.color = color;
-        this.textSound = textSound;
+        this.message = message;
         this.textVolume = textVolume;
         this.textWaitTime = textWaitTime;
         this.textSpeed = textSpeed;
