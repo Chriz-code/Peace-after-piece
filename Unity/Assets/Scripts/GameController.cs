@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum Perspective { None, Angela, Eleanor }
+public enum Perspective { None, Angela, Elenor }
 public class GameController : MonoBehaviour
 {
     private static GameController get;
@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
 
     public UnityAction<GameController, Perspective> onChangePerspective = delegate { };
     [SerializeField] Perspective currentPerspective = Perspective.None;
-    public Perspective startPerspective = Perspective.Eleanor;
+    public Perspective startPerspective = Perspective.Elenor;
     public bool skipNone = true;
     public Perspective CurrentPerspective
     {
