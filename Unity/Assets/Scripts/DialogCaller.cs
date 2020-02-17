@@ -8,7 +8,7 @@ public class DialogCaller : MonoBehaviour
 
     public void CallDialog()
     {
-        Debug.Log("Started Dialog");
+        //Debug.Log("Started Dialog");
         UIController.Get.dc.StartDialog(dialogTree);
     }
 }
