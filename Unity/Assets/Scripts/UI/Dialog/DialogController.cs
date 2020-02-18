@@ -87,6 +87,15 @@ public class DialogController : MonoBehaviour
                 );
 
             yield return StartCoroutine(dialogWritter);
+
+            if (dialogProfiles[i].multipleChoice)
+            {
+                ienumerating = false;
+
+
+
+                yield break;
+            }
         }
         StopDialog();
     }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DialogCaller : MonoBehaviour
 {
-    public Dialog[] dialogTree =  new Dialog[1];
+    public Dialog[] dialogChain =  new Dialog[1];
 
     public void CallDialog()
     {
         //Debug.Log("Started Dialog");
-        UIController.Get.dc.StartDialog(dialogTree);
+        UIController.Get.dc.StartDialog(dialogChain);
     }
 }
 [System.Serializable]
@@ -22,6 +22,12 @@ public class Dialog
     public float textWaitTime = 1f;
     public float textSpeed = 0.05f;
     public bool playerInput = true;
+
+    [Header("MultipleChoice")]
+    public bool multipleChoice;
+    [ConditionalHide("multipleChoice")]
+    public DialogCaller yes, no;
+
 
     public Dialog(DialogProfile profile,string message, float textVolume, float textWaitTime, float textSpeed,bool playerInput)
     {
