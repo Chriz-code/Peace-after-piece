@@ -23,6 +23,7 @@ public class UIController : MonoBehaviour
 
     public void Interact(GameObject caller, bool active)
     {
+        //Debug.Log(caller.name + ":" + active);
         this.caller = caller;
         this.active = active;
     }
@@ -37,6 +38,10 @@ public class UIController : MonoBehaviour
             interactPopUp.gameObject.SetActive(active);
             if (active == false)
                 caller = null;
+        }
+        else if (active == false)
+        {
+            interactPopUp.gameObject.SetActive(active);
         }
     }
 

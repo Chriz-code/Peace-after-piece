@@ -79,6 +79,7 @@ public class Interact : MonoBehaviour
 
     private void OnDestroy()
     {
+        Debug.Log("JAg död");
         Interactable = false;
     }
     private void OnDisable()

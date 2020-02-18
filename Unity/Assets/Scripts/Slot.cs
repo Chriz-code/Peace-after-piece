@@ -11,7 +11,7 @@ public class Slot : MonoBehaviour
 
     private void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        inventory = player.GetComponent<Inventory>();
     }
 
     private void Update()
@@ -32,7 +32,6 @@ public class Slot : MonoBehaviour
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
-
         }
     }
 }
