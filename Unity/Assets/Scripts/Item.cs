@@ -17,8 +17,9 @@ public class Item : MonoBehaviour
 
     private void Update()
     {
-        //if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
-            //PickUpItem();
+        if (Input.GetKeyDown(KeyCode.Q))
+            DropItem();
+
     }
 
     public void PickUpItem()
@@ -32,10 +33,16 @@ public class Item : MonoBehaviour
             {
                 inventory.isFull[i] = true;
                 Instantiate(itemButton, inventory.slots[i].transform, false);
-                Destroy(gameObject);
+                gameObject.GetComponent<Transform>().localPosition = new Vector2(222, 222);
+                //Destroy(gameObject);
                 break;
             }
         }
+    }
+
+    public void DropItem()
+    {
+        gameObject.GetComponent<Transform>().localPosition = player.GetComponent<Transform>().localPosition;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

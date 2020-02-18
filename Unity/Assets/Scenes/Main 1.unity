@@ -2084,33 +2084,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogTree:
-  - message: Mirror, mirror, on the wall. Why do you
+  dialogChain:
+  - message: hejhej
     profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
-    textVolume: 0.5
-    textWaitTime: 0
-    textSpeed: 0.1
-    playerInput: 0
-  - message: 'Yes?
-
-'
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0.5
-    textWaitTime: 1
-    textSpeed: 0.05
+    textVolume: 1
+    textWaitTime: 100
+    textSpeed: 0
     playerInput: 1
-  - message: Stink..
-    profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
-    textVolume: 0.5
-    textWaitTime: 1
-    textSpeed: 0.2
-    playerInput: 1
-  - message: Oh..
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0.5
-    textWaitTime: 1
-    textSpeed: 0.05
-    playerInput: 1
+    multipleChoice: 0
+    yes: {fileID: 0}
+    no: {fileID: 0}
 --- !u!61 &1397872383
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2232,25 +2215,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogTree:
-  - message: Lad?
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0.5
-    textWaitTime: 1
-    textSpeed: 0.1
-    playerInput: 1
-  - message: Sorry, but I'm not your lad..
+  dialogChain:
+  - message: "jag \xE4r Eleanot"
     profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
-    textVolume: 0.5
-    textWaitTime: 1
-    textSpeed: 0.05
-    playerInput: 1
-  - message: Sad..
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0.5
-    textWaitTime: 1
-    textSpeed: 0.15
-    playerInput: 1
+    textVolume: 1
+    textWaitTime: 10
+    textSpeed: 0
+    playerInput: 0
+    multipleChoice: 0
+    yes: {fileID: 0}
+    no: {fileID: 0}
 --- !u!212 &1409655482
 SpriteRenderer:
   m_ObjectHideFlags: 0
