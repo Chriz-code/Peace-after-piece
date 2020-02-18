@@ -8,6 +8,11 @@ public class Audio_Perspective : MonoBehaviour
     public AnimationCurve switchCurve;
     public float switchSpeed = 1;
 
+    private void Start()
+    {
+        AudioController.Get.mainSource.loop = true;
+    }
+
     private void OnEnable()
     {
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().
