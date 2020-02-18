@@ -88,17 +88,30 @@ public class DialogController : MonoBehaviour
 
             yield return StartCoroutine(dialogWritter);
 
+            choice = 0;
             if (dialogProfiles[i].multipleChoice)
             {
+                yield return new WaitWhile(() => choice == 0);
                 ienumerating = false;
-
-
+                if (choice == 1)
+                    dialogProfiles[i].yes.CallDialog();
+                if (choice == 2)
+                    dialogProfiles[i].no.CallDialog();
 
                 yield break;
+            }
+            else
+            {
+                do
+                {
+                    yield return null;
+                } while (!Input.GetKeyDown(dialogKey));
             }
         }
         StopDialog();
     }
+
+    [SerializeField] int choice = 0;
 
     public IEnumerator DialogIEnumerator(string message, Sprite profile, Color profileColor, AudioClip[] textSounds, float textVolume, float textWaitTime, float textSpeed, bool playerInput)
     {
@@ -150,7 +163,7 @@ public class DialogController : MonoBehaviour
                 yield return new WaitForSeconds(distance / scrollSpeed);
                 scrollTextDelta = false;
             }
-            else if (playerInput == true)
+            else if (playerInput == true && i != messages.Length -1 )
             {
                 do
                 {
@@ -165,20 +178,20 @@ public class DialogController : MonoBehaviour
     Vector3 nextPos = Vector2.zero;
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+            choice = 1;
+        if (Input.GetKeyDown(KeyCode.L))
+            choice = 2;
+
         if (Input.GetKeyDown(KeyCode.C))
             scrollText = !scrollText;
-
         if (scrollTextDelta && rowCount > 2 && dialogText.rectTransform.localPosition.y < nextPos.y)
             dialogText.rectTransform.localPosition += Vector3.up * Time.deltaTime * scrollSpeed;
-
         if (Input.GetKeyDown(dialogKey))
-        {
             deltaSpeedMultiplier = speedMultiplier;
-        }
         else if (Input.GetKeyUp(dialogKey))
-        {
             deltaSpeedMultiplier = 1;
-        }
+
     }
     public void CheckPerspective()
     {

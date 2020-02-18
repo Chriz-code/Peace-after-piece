@@ -1578,7 +1578,7 @@ MonoBehaviour:
     multipleChoice: 0
     yes: {fileID: 0}
     no: {fileID: 0}
-  - message: Cringe?
+  - message: Cringe.
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
     textVolume: 0.5
     textWaitTime: 1
@@ -2225,7 +2225,7 @@ MonoBehaviour:
       @Do you like blue?'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
     textVolume: 0.5
-    textWaitTime: 1
+    textWaitTime: 0
     textSpeed: 0.05
     playerInput: 1
     multipleChoice: 1
@@ -2379,16 +2379,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogChain:
-  - message: I Sure do love
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0.5
-    textWaitTime: 1
-    textSpeed: 0.05
-    playerInput: 1
-    multipleChoice: 0
-    yes: {fileID: 0}
-    no: {fileID: 0}
-  - message: blue People
+  - message: 'I Sure do love
+
+      @blue people'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
     textVolume: 0.5
     textWaitTime: 1
@@ -2462,6 +2455,7 @@ MonoBehaviour:
   ready: 1
   scrollText: 0
   dialogKey: 101
+  choice: 0
 --- !u!82 &1700317723
 AudioSource:
   m_ObjectHideFlags: 0
