@@ -1,9 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< Programming
 guid: 4e07a2a155c3dd44f9b9da7e0b663727
 =======
 guid: c798444b5f83f3d44a8bc79983742b13
 >>>>>>> Audio Meta Files
+=======
+<<<<<<< HEAD
+guid: c798444b5f83f3d44a8bc79983742b13
+=======
+guid: 4e07a2a155c3dd44f9b9da7e0b663727
+>>>>>>> Audio
+>>>>>>> Audio
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
