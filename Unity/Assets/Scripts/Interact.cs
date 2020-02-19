@@ -12,6 +12,8 @@ public class Interact : MonoBehaviour
         {
             if (ParentPerspective == GameController.Get.CurrentPerspective && interactable == true)
                 return true;
+            if (ParentPerspective == Perspective.None && interactable == true)
+                return true;
             return false;
         }
         set
@@ -24,7 +26,6 @@ public class Interact : MonoBehaviour
         }
     }
     [SerializeField] public UnityEngine.Events.UnityEvent interact;
-    public KeyCode interactKey = KeyCode.E;
     Perspective ParentPerspective
     {
         get
@@ -37,9 +38,13 @@ public class Interact : MonoBehaviour
         }
     }
 
+    public KeyCode interactKey = KeyCode.E;
+    public KeyCode interactKeyAlternative = KeyCode.Mouse0;
+
+
     private void Update()
     {
-        if (Interactable && Input.GetKeyDown(interactKey))
+        if (Interactable && (Input.GetKeyDown(interactKey) || Input.GetKeyDown(interactKeyAlternative)))
         {
             interact?.Invoke();
         }
@@ -79,7 +84,6 @@ public class Interact : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("JAg död");
         Interactable = false;
     }
     private void OnDisable()

@@ -7,7 +7,12 @@ public class UIController : MonoBehaviour
     public static UIController Get { get; private set; }
 
     [SerializeField] Image interactPopUp = null;
-    public DialogController dc = null;
+    [SerializeField] public InspectController inspectController = null;
+    [SerializeField] public DialogController dialogController = null;
+    bool active;
+    GameObject caller;
+
+
 
     private void Awake()
     {
@@ -20,15 +25,6 @@ public class UIController : MonoBehaviour
             Get = this;
         }
     }
-
-    public void Interact(GameObject caller, bool active)
-    {
-        //Debug.Log(caller.name + ":" + active);
-        this.caller = caller;
-        this.active = active;
-    }
-    bool active;
-    GameObject caller;
     private void FixedUpdate()
     {
         if (interactPopUp && caller)
@@ -44,7 +40,6 @@ public class UIController : MonoBehaviour
             interactPopUp.gameObject.SetActive(active);
         }
     }
-
     private void OnEnable()
     {
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective += ClearUi;
@@ -53,11 +48,16 @@ public class UIController : MonoBehaviour
     {
         GameController.Get.onChangePerspective -= ClearUi;
     }
-
+    public void Interact(GameObject caller, bool active)
+    {
+        //Debug.Log(caller.name + ":" + active);
+        this.caller = caller;
+        this.active = active;
+    }
     void ClearUi(GameController gc, Perspective perspective)
     {
-        dc.StopDialog();
+        dialogController.StopDialog();
         Interact(gameObject, false);
-        dc.CheckPerspective();
+        dialogController.CheckPerspective();
     }
 }

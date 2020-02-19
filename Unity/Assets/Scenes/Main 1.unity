@@ -440,6 +440,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!1 &313483421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 313483422}
+  - component: {fileID: 313483423}
+  m_Layer: 5
+  m_Name: Inspect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &313483422
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313483421}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1111448662}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &313483423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313483421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde87214884239b40b50bd9788fa3bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &337855695
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +658,7 @@ MonoBehaviour:
   leftBorder: {fileID: 754395292}
   rightBorder: {fileID: 1725532632}
   target: {fileID: 1883778364}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1050,6 +1099,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 779497532}
   _Movement: {fileID: 779497527}
+  inventory: {fileID: 779497534}
+  inspectKey: 99
+  inspectKeyAlternative: 324
 --- !u!114 &779497534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,6 +1733,7 @@ RectTransform:
   m_Children:
   - {fileID: 1017849642}
   - {fileID: 1700317721}
+  - {fileID: 313483422}
   - {fileID: 1732706789}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1703,7 +1756,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPopUp: {fileID: 1017849643}
-  dc: {fileID: 1700317722}
+  inspectController: {fileID: 313483423}
+  dialogController: {fileID: 1700317722}
 --- !u!1 &1126629365 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2744481554741899144, guid: d19c271667162fb458fd84c1d20b3a9e,
@@ -1745,6 +1799,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interactKey: 101
+  interactKeyAlternative: 323
 --- !u!114 &1126629369 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2078164719745754550, guid: d19c271667162fb458fd84c1d20b3a9e,
@@ -2072,6 +2127,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interactKey: 101
+  interactKeyAlternative: 323
 --- !u!114 &1397872382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2091,8 +2147,17 @@ MonoBehaviour:
     textWaitTime: 100
     textSpeed: 0
     playerInput: 1
+    _DialogEvent: 0
+    unityEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     multipleChoice: 0
+    buttonTextYes: 
     yes: {fileID: 0}
+    buttonTextNo: 
     no: {fileID: 0}
 --- !u!61 &1397872383
 BoxCollider2D:
@@ -2222,8 +2287,17 @@ MonoBehaviour:
     textWaitTime: 10
     textSpeed: 0
     playerInput: 0
+    _DialogEvent: 0
+    unityEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     multipleChoice: 0
+    buttonTextYes: 
     yes: {fileID: 0}
+    buttonTextNo: 
     no: {fileID: 0}
 --- !u!212 &1409655482
 SpriteRenderer:
@@ -2303,6 +2377,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interactKey: 101
+  interactKeyAlternative: 323
 --- !u!61 &1409655484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2370,6 +2445,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interactKey: 101
+  interactKeyAlternative: 323
 --- !u!114 &1479446389 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2078164719745754550, guid: d19c271667162fb458fd84c1d20b3a9e,
@@ -2628,12 +2704,15 @@ MonoBehaviour:
   profileBoxElenor: {fileID: 21300000, guid: 9d4a426330cec534b984cf916e5a59b0, type: 3}
   dialogBoxElenor: {fileID: 21300000, guid: b2360d5c6482f1742a1ae8b13a57bbc6, type: 3}
   dialogText: {fileID: 1988567581}
+  choiceMenu: {fileID: 0}
   textSoundSource: {fileID: 1700317723}
   speedMultiplier: 3
   silenceWhenMultiplying: 0
   ready: 1
   scrollText: 0
   dialogKey: 101
+  dialogKeyAlternative: 323
+  choiceNum: 0
 --- !u!82 &1700317723
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2864,7 +2943,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1111448662}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1732706790
 MonoBehaviour:
@@ -2992,6 +3071,7 @@ MonoBehaviour:
   leftBorder: {fileID: 754395292}
   rightBorder: {fileID: 1725532632}
   target: {fileID: 779497526}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!114 &1765742912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3359,6 +3439,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1883778370}
   _Movement: {fileID: 1883778365}
+  inventory: {fileID: 1883778372}
+  inspectKey: 99
+  inspectKeyAlternative: 324
 --- !u!114 &1883778372
 MonoBehaviour:
   m_ObjectHideFlags: 0

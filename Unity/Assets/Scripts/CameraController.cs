@@ -6,18 +6,21 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform leftBorder = null, rightBorder = null;
     [SerializeField] Transform target = null;
+    [HideInInspector] public Vector3 pos = Vector3.zero;
+
+    float yPos = 0;
     float zPos = -10;
     private void Start()
     {
         zPos = transform.position.z;
+        yPos = transform.position.y;
     }
     void FixedUpdate()
     {
-        Vector3 pos = Vector3.zero;
-        if(target)
+        if (target)
             pos = target.position;
         pos.z = zPos;
-        pos.y = transform.position.y;
+        pos.y = yPos;
 
         if (leftBorder && rightBorder)
         {

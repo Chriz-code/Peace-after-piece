@@ -42,7 +42,7 @@ public class Item : MonoBehaviour
 
     public void DropItem()
     {
-        gameObject.GetComponent<Transform>().localPosition = player.GetComponent<Transform>().localPosition;
+        gameObject.GetComponent<Transform>().localPosition = player.GetComponent<Transform>().localPosition + Vector3.forward;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
