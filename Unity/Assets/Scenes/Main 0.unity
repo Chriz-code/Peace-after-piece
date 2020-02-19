@@ -2486,11 +2486,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c572f45b5206224295be88607671b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 2d46d978bbd58f047a032c0927c2257e, type: 3}
   timeUntilShot: 0
-  priority: 128
-  volume: 1
-  pitch: 0
+  priority: 127
+  volume: 0.25
+  pitch: 1.2
   stereoPan: 0
   reverbZoneMix: 0
 --- !u!1 &1369742470
@@ -2651,10 +2651,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogChain:
   - message: Daaaaaaam You Loook Goooooood!
-    profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
-    textVolume: 1
+    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+    textVolume: 0.25
     textWaitTime: 1
-    textSpeed: 0.05
+    textSpeed: 0.075
     playerInput: 0
     _DialogEvent: 0
     unityEvent:
@@ -2786,11 +2786,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c572f45b5206224295be88607671b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 2d46d978bbd58f047a032c0927c2257e, type: 3}
   timeUntilShot: 0
-  priority: 128
-  volume: 1
-  pitch: 0
+  priority: 127
+  volume: 0.25
+  pitch: 1.2
   stereoPan: 0
   reverbZoneMix: 0
 --- !u!1 &1409655479
@@ -2848,9 +2848,9 @@ MonoBehaviour:
 
       @Do you like blue?'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0.5
+    textVolume: 0.25
     textWaitTime: 0
-    textSpeed: 0.05
+    textSpeed: 0.075
     playerInput: 1
     _DialogEvent: 0
     unityEvent:

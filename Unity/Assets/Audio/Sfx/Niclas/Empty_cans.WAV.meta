@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Programming
 guid: 52aa9ec6a7598aa4fa971fcd8f1ab7c7
@@ -12,6 +13,9 @@ guid: 862da840dfcd0da40868bbed93559554
 guid: 52aa9ec6a7598aa4fa971fcd8f1ab7c7
 >>>>>>> Audio
 >>>>>>> Audio
+=======
+guid: f3dfcaa77696df8469c865f47ca580d0
+>>>>>>> Stashed changes
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
