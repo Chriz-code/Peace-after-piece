@@ -11,12 +11,12 @@ public class Slot : MonoBehaviour
 
     private void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        inventory = player.GetComponent<Inventory>();
     }
 
     private void Update()
     {
-        if (transform.childCount <= 0)
+        if (transform.childCount > 0)
         {
             inventory.isFull[i] = false;
         }
@@ -32,7 +32,6 @@ public class Slot : MonoBehaviour
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
-
         }
     }
 }

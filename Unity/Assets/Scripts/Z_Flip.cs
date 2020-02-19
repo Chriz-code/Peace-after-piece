@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Z_Flip : MonoBehaviour
 {
-    private void Start()
+    private void OnEnable()
     {
-        GameController.Get.onChangePerspective += SwitchZ;
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().
+        onChangePerspective += SwitchZ;
     }
 
     private void OnDisable()
