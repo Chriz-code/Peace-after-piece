@@ -42,7 +42,7 @@ public class AudioController : MonoBehaviour
         sources.AddRange(GetComponents<AudioSource>());
     }
 
-    public void OneShot(AudioClip clip = null, float volume = 1, float timeUntilShot = 0f, float pitch = 0, float stereoPan = 0, float reverbZoneMix = 0, int priority = 128)
+    public void OneShot(AudioClip clip = null, float volume = 1, float timeUntilShot = 0f, float pitch = 1, float stereoPan = 0, float reverbZoneMix = 0, int priority = 128)
     {
         shotSource.pitch = pitch;
         shotSource.panStereo = stereoPan;
@@ -53,7 +53,9 @@ public class AudioController : MonoBehaviour
     public IEnumerator PlayOneShot(AudioClip clip, float volume, float timeUntilShot = 0)
     {
         yield return new WaitForSeconds(timeUntilShot);
-        shotSource.PlayOneShot(clip, volume);
+        shotSource.PlayOneShot(clip,volume);
+        //AudioSource.PlayClipAtPoint(clip, Vector3.zero,volume);
+        Debug.Log(clip+" : "+volume);
     }
 
     void AddSource()

@@ -15,8 +15,7 @@ public class Audio_Perspective : MonoBehaviour
 
     private void OnEnable()
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().
-        onChangePerspective += ThemeSwitch;
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective += ThemeSwitch;
     }
     private void OnDisable()
     {

@@ -78,7 +78,9 @@ public class DialogController : MonoBehaviour
         }
         for (int i = 0; i < dialogProfiles.Length; i++)
         {
-            dialogWritter = DialogIEnumerator(dialogProfiles[i]); // prepare Text to dialogBox and Produce Sound
+            choiceNum = 0;
+
+            dialogWritter = DialogIEnumerator(dialogProfiles[i]); // prepare IEnumerator
 
             if (dialogProfiles[i]._DialogEvent) // Dialog Events
                 dialogProfiles[i].unityEvent?.events?.Invoke();
@@ -87,14 +89,13 @@ public class DialogController : MonoBehaviour
 
             if (dialogProfiles[i].multipleChoice) // Multiple Choice Area
             {
-                choiceNum = 0;
                 if (choiceMenu.yes.transform.GetChild(0))
                     choiceMenu.yes.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = dialogProfiles[i].buttonTextYes;
                 if (choiceMenu.no.transform.GetChild(0))
                     choiceMenu.no.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = dialogProfiles[i].buttonTextNo;
 
                 choiceMenu.gameObject.SetActive(true);
-                yield return new WaitWhile(() => choiceNum == 0); // Wait for Button Input
+                yield return new WaitUntil(() => choiceNum != 0); // Wait for Button Input
                 ienumerating = false;
                 if (choiceNum == 1)
                 {
@@ -102,7 +103,6 @@ public class DialogController : MonoBehaviour
                 }
                 if (choiceNum == 2)
                     dialogProfiles[i].no.CallDialog();
-
                 choiceMenu.gameObject.SetActive(false);
                 yield break;
             }
@@ -113,6 +113,7 @@ public class DialogController : MonoBehaviour
                     yield return null;
                 } while (KeyDown() == false);
             }
+
         }
         StopDialog();
     }
@@ -121,12 +122,12 @@ public class DialogController : MonoBehaviour
     public void SetChoice(int i) // Yes No Buttons
     {
         choiceNum = i;
+        Debug.Log(choiceNum+" c:i "+ i);
     }
 
     public IEnumerator DialogIEnumerator(Dialog dialog)
     {
         CheckPerspective();
-
         //Profile
         //profileBox.gameObject.SetActive(true);
         //this.profile.sprite = dialogProfile.profile;
@@ -157,7 +158,11 @@ public class DialogController : MonoBehaviour
                 {
                     dialogText.text += messages[i][j];
                     if (textSoundSource != null && dialog.profile.textSounds.Length > 0 && !(messages[i][j] == ' ' || messages[i][j] == '\n') && (!silenceWhenMultiplying || (silenceWhenMultiplying && deltaSpeedMultiplier == 1)))
-                        this.textSoundSource.PlayOneShot(dialog.profile.textSounds[Random.Range(0, dialog.profile.textSounds.Length)], dialog.textVolume);
+                    {
+                        AudioClip sound = dialog.profile.textSounds[Random.Range(0, dialog.profile.textSounds.Length)];
+                        if (sound)
+                            this.textSoundSource.PlayOneShot(sound, dialog.textVolume);
+                    }
                     else if (messages[i][j] == '\n')
                     {
                         rowCount++;
@@ -194,7 +199,7 @@ public class DialogController : MonoBehaviour
         if (scrollTextDelta && rowCount > 2 && dialogText.rectTransform.localPosition.y < nextPos.y)
             dialogText.rectTransform.localPosition += Vector3.up * Time.deltaTime * scrollSpeed;
 
-        if (KeyDown())
+        if (KeyHold())
             deltaSpeedMultiplier = speedMultiplier;
         else if (KeyUp())
             deltaSpeedMultiplier = 1;
@@ -232,6 +237,14 @@ public class DialogController : MonoBehaviour
         }
     }
 
+    public bool KeyHold()
+    {
+        if (Input.GetKey(dialogKey))
+            return true;
+        if (Input.GetKey(dialogKeyAlternative))
+            return true;
+        return false;
+    }
     public bool KeyDown()
     {
         if (Input.GetKeyDown(dialogKey))

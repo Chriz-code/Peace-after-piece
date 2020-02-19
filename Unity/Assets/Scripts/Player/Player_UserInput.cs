@@ -53,6 +53,7 @@ public class Player_UserInput : MonoBehaviour
 
     void InspectObjectInHand()
     {
+        if(inventory.slots[0])
         Debug.Log(inventory.slots[0].GetComponent<Slot>().item.name);
     }
 }
