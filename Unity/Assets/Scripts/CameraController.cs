@@ -7,10 +7,11 @@ public class CameraController : MonoBehaviour
     [SerializeField] Transform leftBorder = null, rightBorder = null;
     [SerializeField] Transform target = null;
     [HideInInspector] public Vector3 pos = Vector3.zero;
-
+    public float distanceUntilFollow = 2f;
+    public float cameraSpeed = 2;
     float yPos = 0;
     float zPos = -10;
-    private void Start()
+    private void Awake()
     {
         zPos = transform.position.z;
         yPos = transform.position.y;
@@ -22,7 +23,10 @@ public class CameraController : MonoBehaviour
         pos.z = zPos;
         pos.y = yPos;
 
-        if (leftBorder && rightBorder)
+
+
+
+        if (leftBorder && rightBorder) // Borders
         {
             float horz = Camera.main.orthographicSize * Screen.width / Screen.height;
 
@@ -36,7 +40,9 @@ public class CameraController : MonoBehaviour
                 pos.x = maxX;
         }
 
-        transform.position = pos;
+        if (Vector2.Distance(transform.position, pos) > distanceUntilFollow)
+            transform.position =
+                new Vector3(Mathf.Lerp(transform.position.x, pos.x, Time.deltaTime * cameraSpeed), yPos, zPos);
     }
 
     private void OnEnable()

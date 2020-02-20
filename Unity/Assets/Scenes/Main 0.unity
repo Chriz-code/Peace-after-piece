@@ -766,7 +766,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: AngelaCamera
@@ -791,19 +790,8 @@ MonoBehaviour:
   rightBorder: {fileID: 1725532632}
   target: {fileID: 1883778364}
   pos: {x: 0, y: 0, z: 0}
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1839ec9fbe526494bb37f2ed883ef3b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  perspective: 1
+  distanceUntilFollow: 0.1
+  cameraSpeed: 4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -3518,7 +3506,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1765742909}
   - component: {fileID: 1765742910}
-  - component: {fileID: 1765742912}
   - component: {fileID: 1765742911}
   m_Layer: 0
   m_Name: ElenorCamera
@@ -3600,19 +3587,8 @@ MonoBehaviour:
   rightBorder: {fileID: 1725532632}
   target: {fileID: 779497526}
   pos: {x: 0, y: 0, z: 0}
---- !u!114 &1765742912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765742908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1839ec9fbe526494bb37f2ed883ef3b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  perspective: 1
+  distanceUntilFollow: 0.1
+  cameraSpeed: 4
 --- !u!1 &1817834925
 GameObject:
   m_ObjectHideFlags: 0
