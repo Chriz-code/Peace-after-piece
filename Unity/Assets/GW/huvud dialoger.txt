@@ -1,6 +1,6 @@
 ﻿Eleanor:
 “Where am i? what’s going on?”
-*knock on window* (yes/no)
+*knock on window?* (yes/no)
 “Angela? you there? can you hear me?” 
 It looks as if Angela is frozen for a second and then she turns towards the mirror.
 

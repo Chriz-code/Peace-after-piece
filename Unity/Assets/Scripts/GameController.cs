@@ -4,15 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum Perspective { None, Angela, Eleanor }
+public enum Perspective { None, Angela, Elenor }
 public class GameController : MonoBehaviour
 {
-    private static GameController get;
-    public static GameController Get { get { return get; } }
+    public static GameController Get { get; private set; }
 
     public UnityAction<GameController, Perspective> onChangePerspective = delegate { };
     [SerializeField] Perspective currentPerspective = Perspective.None;
-    public Perspective startPerspective = Perspective.Eleanor;
+    public Perspective startPerspective = Perspective.Elenor;
     public bool skipNone = true;
     public Perspective CurrentPerspective
     {
@@ -33,18 +32,33 @@ public class GameController : MonoBehaviour
         }
     }
     public KeyCode switchKey = KeyCode.Tab;
+    public Player_UserInput GetActivePlayer
+    {
+        get
+        {
+            foreach (Player_UserInput userInput in FindObjectsOfType<Player_UserInput>())
+            {
+                userInput.TryGetComponent<ThisPerspective>(out ThisPerspective playerPerspective);
+                if (playerPerspective.perspective == CurrentPerspective)
+                {
+                    return userInput;
+                }
+            }
+            return null;
+        }
+    }
+
 
     private void Awake()
     {
-        if (get != null && get != this)
+        if (Get != null && Get != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            get = this;
+            Get = this;
         }
-
     }
     private void Start()
     {
@@ -80,7 +94,6 @@ public class GameController : MonoBehaviour
             return true;
         return false;
     }
-
     void GameControllerStart()
     {
         CurrentPerspective = startPerspective;

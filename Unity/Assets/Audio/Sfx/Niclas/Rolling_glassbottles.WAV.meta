@@ -1,5 +1,21 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<<<<<<< Programming
 guid: 3cbf7e4204513e545b5a96074436d3de
+=======
+guid: 1258220ff25e8fb47a758883bb0405a1
+>>>>>>> Audio Meta Files
+=======
+<<<<<<< HEAD
+guid: 1258220ff25e8fb47a758883bb0405a1
+=======
+guid: 3cbf7e4204513e545b5a96074436d3de
+>>>>>>> Audio
+>>>>>>> Audio
+=======
+guid: a2e1d46797e3db04c9357b593768db4b
+>>>>>>> Stashed changes
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6

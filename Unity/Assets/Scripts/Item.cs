@@ -12,27 +12,37 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        inventory = player.GetComponent<Inventory>();
     }
 
     private void Update()
     {
-        if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
-            PickUpItem();
+        if (Input.GetKeyDown(KeyCode.Q))
+            DropItem();
+
     }
 
-    private void PickUpItem()
+    public void PickUpItem()
     {
+        if (!pickUpAllowed)
+            return;
+
         for (int i = 0; i < inventory.slots.Length; i++)
         {
             if (inventory.isFull[i] == false)
             {
                 inventory.isFull[i] = true;
                 Instantiate(itemButton, inventory.slots[i].transform, false);
-                Destroy(gameObject);
+                gameObject.GetComponent<Transform>().localPosition = new Vector2(222, 222);
+                //Destroy(gameObject);
                 break;
             }
         }
+    }
+
+    public void DropItem()
+    {
+        gameObject.GetComponent<Transform>().localPosition = player.GetComponent<Transform>().localPosition + Vector3.forward;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
