@@ -1,0 +1,59 @@
+﻿Dialog Manus Eleanor
+
+
+Eleanor:                 “Wait… am I? … Home? No can’t be?”
+
+
+                        Eleanor interagerar med spisen
+
+Eleanor                 “There is something in there?”
+
+                        *Open oven?* (yes/no)
+                        (No): “I don’t really care about an oven.”
+                        (yes): “Who putts a painting in the oven?”
+
+
+                        Eleanor interagerar med handfatet.
+                        
+Eleanor:                “That’s weird… There’s no water coming from the tap.”
+
+                        Fönster:
+                        “This damn window, why won’t you open?! And why is it that I can see                        Angela in the mirror and not in the window? What is this place?”
+
+                        Mattan:
+                        “Is this really home before the fire? How? Why?”
+
+
+Stolar:
+“Nah, I don’t feel like sitting down right now.”
+
+
+
+        Försöker öppna dörren innan puzzlet är löst:
+        “Why can I not open ANYTHING to get to Angela?”
+        *Sparkar på dörren*
+
+        Försöker öppna dörren innan Angela har löst sitt puzzel:
+        “Something is missing…“
+        *Sparkar på dörren*
+
+        Blommor: 
+“The only flowers I’ve ever gotten was from angela on valentines day. She also gave me a valentine card that read ‘From your not-so-secret bestie, A <3’. She’s so cheesy sometimes.”
+        “I had to hide them from mom when i got home.”
+
+
+Tegelväggen:
+“I miss the brick wall we had in the old house. It had good memories to it.”
+
+
+tavlor: “why are these on the floor?” 
+        boxning-tavla:
+        Deltagare pris, en ung Eleanor med sina föräldrar och förstapriset.
+        “Mom actually smiled here, and it wasn’t malicious at all. Dad was so excited about me getting a prize. It was just a participation award but dad made it feel like I had won the biggest prize in the world.”
+                “It’s was a long time ago boxing actually made me happy.”
+        Dörr med rök:
+        Under branden var Eleanor instängd i sitt rum, utan någon aning att branden var i full gång. Därför är denna tavlan på hennes dörr där röken tar sig in genom springorna.
+        “I hated that day. Why did you have to run in after me? Just.. why? Maybe you could’ve prevented mom from getting bad.” 
+mamman:
+En bild på mamman med cigg i handen, står ute på en balkong. Man kan även se någon typ av alkohol flaska.
+        “I remember that day after the funeral. Mom refused to look at me. I can’t believe she screamed ‘I wished it was you who died’ to me.. Do you even miss me mom? Are you even alive today?”
