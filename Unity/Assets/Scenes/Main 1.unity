@@ -634,7 +634,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: AngelaCamera
@@ -659,19 +658,8 @@ MonoBehaviour:
   rightBorder: {fileID: 1725532632}
   target: {fileID: 1883778364}
   pos: {x: 0, y: 0, z: 0}
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1839ec9fbe526494bb37f2ed883ef3b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  perspective: 1
+  distanceUntilFollow: 2
+  cameraSpeed: 2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -745,12 +733,12 @@ PrefabInstance:
     - target: {fileID: 3502872954931169971, guid: d19c271667162fb458fd84c1d20b3a9e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.048
+      value: -6.34
       objectReference: {fileID: 0}
     - target: {fileID: 3502872954931169971, guid: d19c271667162fb458fd84c1d20b3a9e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.866
+      value: -3.84
       objectReference: {fileID: 0}
     - target: {fileID: 3502872954931169971, guid: d19c271667162fb458fd84c1d20b3a9e,
         type: 3}
@@ -797,11 +785,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3502872954931169971, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.216464
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502872954931169971, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.69113505
+      objectReference: {fileID: 0}
     - target: {fileID: 2078164719745754550, guid: d19c271667162fb458fd84c1d20b3a9e,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1883778363}
+    - target: {fileID: 3433778703866113306, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfd3d7b3a88f9bf46b9a1205afccaf7d,
+        type: 3}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.6220646
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.0938263
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d19c271667162fb458fd84c1d20b3a9e, type: 3}
 --- !u!1 &754395291
@@ -1114,9 +1148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9659ec256b133ba44a69679b9376c4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 00
-  slots:
-  - {fileID: 1149991493}
+  player: {fileID: 1883778370}
+  itembuttonPrefab: {fileID: 0}
+  itembutton: {fileID: 0}
+  slot: {fileID: 1149991495}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  item: {fileID: 0}
 --- !u!1 &940701357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,7 +1824,7 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1126629369}
+      - m_Target: {fileID: 779497534}
         m_MethodName: PickUpItem
         m_Mode: 1
         m_Arguments:
@@ -1800,18 +1839,6 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   interactKey: 101
   interactKeyAlternative: 323
---- !u!114 &1126629369 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2078164719745754550, guid: d19c271667162fb458fd84c1d20b3a9e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1719882341}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126629365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea4b144d3e9a2e42be452a9b39327d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1137456088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,9 +1968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8378b179d8087c54c89930f9118907a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 0
-  item: {fileID: 1126629365}
-  player: {fileID: 779497525}
+  item: {fileID: 0}
 --- !u!114 &1149991496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2431,7 +2456,7 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1479446389}
+      - m_Target: {fileID: 1883778372}
         m_MethodName: PickUpItem
         m_Mode: 1
         m_Arguments:
@@ -2446,18 +2471,6 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   interactKey: 101
   interactKeyAlternative: 323
---- !u!114 &1479446389 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2078164719745754550, guid: d19c271667162fb458fd84c1d20b3a9e,
-    type: 3}
-  m_PrefabInstance: {fileID: 642650926}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479446385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea4b144d3e9a2e42be452a9b39327d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1489435447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,7 +2721,7 @@ MonoBehaviour:
   textSoundSource: {fileID: 1700317723}
   speedMultiplier: 3
   silenceWhenMultiplying: 0
-  ready: 1
+  ready: 0
   scrollText: 0
   dialogKey: 101
   dialogKeyAlternative: 323
@@ -2881,6 +2894,42 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 779497525}
+    - target: {fileID: 3433778703866113306, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfd3d7b3a88f9bf46b9a1205afccaf7d,
+        type: 3}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.010139465
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.5880985
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.020289898
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595199479843825821, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.0405798
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d19c271667162fb458fd84c1d20b3a9e, type: 3}
 --- !u!1 &1725532631
@@ -2989,7 +3038,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1765742909}
   - component: {fileID: 1765742910}
-  - component: {fileID: 1765742912}
   - component: {fileID: 1765742911}
   m_Layer: 0
   m_Name: ElenorCamera
@@ -3072,19 +3120,8 @@ MonoBehaviour:
   rightBorder: {fileID: 1725532632}
   target: {fileID: 779497526}
   pos: {x: 0, y: 0, z: 0}
---- !u!114 &1765742912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765742908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1839ec9fbe526494bb37f2ed883ef3b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  perspective: 1
+  distanceUntilFollow: 2
+  cameraSpeed: 2
 --- !u!1 &1799590157
 GameObject:
   m_ObjectHideFlags: 0
@@ -3116,9 +3153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8378b179d8087c54c89930f9118907a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 1
-  item: {fileID: 1479446385}
-  player: {fileID: 1883778363}
+  item: {fileID: 0}
 --- !u!114 &1799590159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3454,9 +3489,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9659ec256b133ba44a69679b9376c4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 00
-  slots:
-  - {fileID: 1799590157}
+  player: {fileID: 1883778370}
+  itembuttonPrefab: {fileID: 0}
+  itembutton: {fileID: 0}
+  slot: {fileID: 1799590158}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  item: {fileID: 0}
 --- !u!1 &1988567579
 GameObject:
   m_ObjectHideFlags: 0
