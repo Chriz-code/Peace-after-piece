@@ -2481,7 +2481,7 @@ MonoBehaviour:
   timeUntilShot: 0
   priority: 127
   volume: 0.25
-  pitch: 1.2
+  pitch: 1.1
   stereoPan: 0
   reverbZoneMix: 0
 --- !u!1 &1369742470
@@ -2781,7 +2781,7 @@ MonoBehaviour:
   timeUntilShot: 0
   priority: 127
   volume: 0.25
-  pitch: 1.2
+  pitch: 1.1
   stereoPan: 0
   reverbZoneMix: 0
 --- !u!1 &1409655479
@@ -4194,8 +4194,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.5
-      value: 0
+      time: 0.75028646
+      value: 0.000010153279
       inSlope: -0.15992391
       outSlope: -0.15992391
       tangentMode: 0
