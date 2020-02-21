@@ -2841,7 +2841,7 @@ MonoBehaviour:
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
     textVolume: 0.25
     textWaitTime: 0
-    textSpeed: 0.075
+    textSpeed: 0.06
     playerInput: 1
     _DialogEvent: 0
     unityEvent:
