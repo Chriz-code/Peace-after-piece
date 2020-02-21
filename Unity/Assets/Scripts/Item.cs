@@ -15,35 +15,35 @@ public class Item : MonoBehaviour
         inventory = player.GetComponent<Inventory>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-            DropItem();
+    //private void Update()
+    //{
+      //  if (Input.GetKeyDown(KeyCode.Q))
+            //DropItem();
 
-    }
+//    }
 
-    public void PickUpItem()
-    {
-        if (!pickUpAllowed)
-            return;
+    //public void PickUpItem()
+    //{
+    //    if (!pickUpAllowed)
+    //        return;
 
-        for (int i = 0; i < inventory.slots.Length; i++)
-        {
-            if (inventory.isFull[i] == false)
-            {
-                inventory.isFull[i] = true;
-                Instantiate(itemButton, inventory.slots[i].transform, false);
-                gameObject.GetComponent<Transform>().localPosition = new Vector2(222, 222);
-                //Destroy(gameObject);
-                break;
-            }
-        }
-    }
+    //    for (int i = 0; i < inventory.slots.Length; i++)
+    //    {
+    //        if (inventory.isFull[i] == false)
+    //        {
+    //            inventory.isFull[i] = true;
+    //            Instantiate(itemButton, inventory.slots[i].transform, false);
+    //            gameObject.GetComponent<Transform>().localPosition = new Vector2(222, 222);
+    //            //Destroy(gameObject);
+    //            break;
+    //        }
+    //    }
+    //}
 
-    public void DropItem()
-    {
-        gameObject.GetComponent<Transform>().localPosition = player.GetComponent<Transform>().localPosition + Vector3.forward;
-    }
+    //public void DropItem()
+    //{
+    //    gameObject.GetComponent<Transform>().localPosition = player.GetComponent<Transform>().localPosition + Vector3.forward;
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

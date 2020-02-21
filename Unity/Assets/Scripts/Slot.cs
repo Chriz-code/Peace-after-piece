@@ -4,27 +4,16 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    private Inventory inventory;
-    public int i;
-    public GameObject item;
-    public GameObject player;
+    public Item item;
 
     private void Start()
     {
-        inventory = player.GetComponent<Inventory>();
+   
     }
 
     private void Update()
     {
-        if (transform.childCount > 0)
-        {
-            inventory.isFull[i] = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    DropItem();
-        //}
+ 
     }
 
     public void DropItem()
