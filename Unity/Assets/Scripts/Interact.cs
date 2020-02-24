@@ -46,7 +46,7 @@ public class Interact : MonoBehaviour
     {
         if (Interactable && (Input.GetKeyDown(interactKey) || Input.GetKeyDown(interactKeyAlternative)))
         {
-            interact?.Invoke();
+            interact?.Invoke();           
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

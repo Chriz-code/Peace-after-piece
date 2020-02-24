@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public GameObject player;
+    //public GameObject player;
     private bool pickUpAllowed;
 
-    private Inventory inventory;
-    public GameObject itemButton;
+    //private Inventory inventory;
+    //public GameObject itemButton;
 
-    private void Start()
-    {
-        inventory = player.GetComponent<Inventory>();
-    }
+    //private void Start()
+    //{
+    //    inventory = player.GetComponent<Inventory>();
+    //}
 
     //private void Update()
     //{
-      //  if (Input.GetKeyDown(KeyCode.Q))
-            //DropItem();
+    //  if (Input.GetKeyDown(KeyCode.Q))
+    //DropItem();
 
-//    }
+    //    }
 
     //public void PickUpItem()
     //{

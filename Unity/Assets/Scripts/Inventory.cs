@@ -59,12 +59,30 @@ public class Inventory : MonoBehaviour
 
         slot.item = item;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+        item.GetComponent<Transform>().localPosition = new Vector2(222, 222);
         //itembutton = Instantiate(itembuttonPrefab, inventory.slots[i].transform, false);
     }
 
+
+    public GameObject placeholder;
     public void DropItem()
     {
-        gameObject.GetComponent<Transform>().localPosition = player.GetComponent<Transform>().localPosition + Vector3.forward;
+
+        item.GetComponent<Transform>().localPosition = placeholder.GetComponent<Transform>().localPosition;
+
+        slot.item = null;
+        slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
+
+
+
+    }
+
+    public GameObject oppositeRoom;
+    public void TransferItem()
+    {
+        item.transform.parent = oppositeRoom.transform;
+        item.GetComponent<Transform>().localPosition = new Vector3(-13f, -3f, -0.74f);
+
     }
 
 
@@ -81,7 +99,8 @@ public class Inventory : MonoBehaviour
     {
         if (collision.GetComponent<Item>())
         {
-            item = null;
+            //item = null;
+            item = collision.GetComponent<Item>();
         }
     }
 

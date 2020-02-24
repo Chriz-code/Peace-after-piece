@@ -6,16 +6,7 @@ public class Slot : MonoBehaviour
 {
     public Item item;
 
-    private void Start()
-    {
-   
-    }
-
-    private void Update()
-    {
- 
-    }
-
+  
     public void DropItem()
     {
         foreach (Transform child in transform)
