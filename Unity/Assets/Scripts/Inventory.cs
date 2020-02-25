@@ -11,10 +11,9 @@ public class Inventory : MonoBehaviour
     {
         get
         {
-            if (slot.item == null && item != null)
-            {
-                return true;
-            }
+            if (slot)
+                if (slot.item == null && item != null)
+                    return true;
             return false;
         }
     }
@@ -22,10 +21,9 @@ public class Inventory : MonoBehaviour
     {
         get
         {
-            if (slot.item != null)
-            {
-                return true;
-            }
+            if (slot)
+                if (slot.item != null)
+                    return true;
             return false;
         }
     }
@@ -128,8 +126,10 @@ public class Inventory : MonoBehaviour
     public GameObject oppositeRoom;
     public void TransferItem()
     {
+        /*
         item.transform.parent = oppositeRoom.transform;
         item.GetComponent<Transform>().localPosition = new Vector3(-13f, -3f, -0.74f);
+        */
     }
 
 

@@ -8,7 +8,6 @@ public class DialogCaller : MonoBehaviour
 
     public void CallDialog(Transform transform)
     {
-        Debug.Log("woop");
         UIController.Get.dialogController.StartDialog(dialogChain);
     }
 }

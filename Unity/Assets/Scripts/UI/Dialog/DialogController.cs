@@ -57,7 +57,6 @@ public class DialogController : MonoBehaviour
         if (ready && ienumerating == false)
         {
             dialogStarter = StartDialogIEnumerator(dialogProfiles);
-            //Debug.Log("Hej");
             StartCoroutine(dialogStarter);
         }
     }
@@ -106,13 +105,13 @@ public class DialogController : MonoBehaviour
                 choiceMenu.gameObject.SetActive(false);
                 yield break;
             }
-            else if (dialogProfiles[i].playerInput)
+            /*else if (dialogProfiles[i].playerInput)
             {
-                do
+                do //Wait for playerInput
                 {
                     yield return null;
                 } while (KeyDown() == false);
-            }
+            }*/
 
         }
         StopDialog();
@@ -135,20 +134,20 @@ public class DialogController : MonoBehaviour
 
         //Box
         dialogBox.gameObject.SetActive(true);
-        string[] messages = dialog.message.Split('@');
+        string[] messages = dialog.message.Split('@'); // Split message into parts
         if (scrollText)
             messages = dialog.message.Split('@', '-');
 
         dialogText.text = "";
         rowCount = 1;
-        for (int i = 0; i < messages.Length; i++)
+        for (int i = 0; i < messages.Length; i++) //Loop through parts
         {
             int lowerWaitBy = 1;
-            if (!scrollText)
+            if (!scrollText) //Clear message
             {
                 dialogText.text = "";
             }
-            for (int j = 0; j < messages[i].Length; j++)
+            for (int j = 0; j < messages[i].Length; j++) //Loop through characters
             {
                 if (messages[i][j] == '/') //Lower WaitTime if symbol found in message
                 {
@@ -157,17 +156,19 @@ public class DialogController : MonoBehaviour
                 else if (!(messages[i][j] == '-')) // Skip WaitTime if symbol found in message
                 {
                     dialogText.text += messages[i][j];
-                    if (textSoundSource != null && dialog.profile.textSounds.Length > 0 && !(messages[i][j] == ' ' || messages[i][j] == '\n') && (!silenceWhenMultiplying || (silenceWhenMultiplying && deltaSpeedMultiplier == 1)))
+                    if (textSoundSource != null && dialog.profile.textSounds.Length > 0 && //If there's a audioSource and soundClips
+                        !(messages[i][j] == ' ' || messages[i][j] == '\n') && //If it's not empty space or new line
+                        (!silenceWhenMultiplying || (silenceWhenMultiplying && deltaSpeedMultiplier == 1))) //If you should play when skipping text
                     {
                         AudioClip sound = dialog.profile.textSounds[Random.Range(0, dialog.profile.textSounds.Length)];
                         if (sound)
                             this.textSoundSource.PlayOneShot(sound, dialog.textVolume);
                     }
-                    else if (messages[i][j] == '\n')
+                    else if (messages[i][j] == '\n')//Increase row count
                     {
                         rowCount++;
                     }
-                    yield return new WaitForSeconds(dialog.textSpeed == 0 ? 0.001f : dialog.textSpeed / deltaSpeedMultiplier);
+                    yield return new WaitForSeconds(dialog.textSpeed == 0 ? 0.001f : dialog.textSpeed / deltaSpeedMultiplier);//Wait between characters
                 }
             }
             if (scrollText && (i + 1) < messages.Length) // Scroll Text Effect
@@ -178,15 +179,15 @@ public class DialogController : MonoBehaviour
                 yield return new WaitForSeconds(distance / scrollSpeed);
                 scrollTextDelta = false;
             }
-            else if (dialog.playerInput == true && i != messages.Length - 1) // Player Input to go to next message
+            else if (dialog.playerInput == true && (!dialog.multipleChoice || (dialog.multipleChoice && i != messages.Length - 1))) // Player Input to go to next message and it's not the last message:  
             {
-                do
+                do //Wait for playerInput
                 {
                     yield return null;
                 } while (KeyDown() == false);
             }
             else
-                yield return new WaitForSeconds(dialog.textWaitTime / lowerWaitBy);
+                yield return new WaitForSeconds(dialog.textWaitTime / lowerWaitBy);//Wait between parts
         }
     }
 

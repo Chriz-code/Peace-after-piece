@@ -55,7 +55,6 @@ public class Player_UserInput : MonoBehaviour
         }
         if ((Input.GetKeyDown(dropKey) || Input.GetKeyDown(dropKeyAlternative)) && inventory.DropAllowed)
         {
-            Debug.Log("Woops");
             inventory.DropItem();
         }
     }
