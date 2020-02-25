@@ -5,21 +5,30 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public Player player;
-    public GameObject itembuttonPrefab;
-    public GameObject itembutton;
-    private bool PickUpAllowed
+    public Slot slot;
+    public Item item = null;
+    public bool PickUpAllowed
     {
         get
         {
-            if (slot.item == null)
+            if (slot.item == null && item != null)
             {
-                Debug.Log("HEJ");
                 return true;
             }
             return false;
         }
     }
-    public Slot slot;
+    public bool DropAllowed
+    {
+        get
+        {
+            if (slot.item != null)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
     public LayerMask mask;
     Item CheckItem()
     {
@@ -44,18 +53,44 @@ public class Inventory : MonoBehaviour
         //Debug.Log("Kitos!");
         return null;
     }
+    Perspective ParentPerspective(Transform transform)
+    {
+        transform.root.TryGetComponent<ThisPerspective>(out ThisPerspective thisPerspective);
+        if (thisPerspective)
+            return thisPerspective.perspective;
+        else
+            return Perspective.None;
+    }
+    bool CheckPerspective(GameObject gameObject)
+    {
+
+        if (ParentPerspective(gameObject.transform) == GameController.Get.CurrentPerspective)
+        {
+            return true;
+        }
+        if (ParentPerspective(gameObject.transform) == Perspective.None)
+        {
+            return true;
+        }
+        return false;
+    }
+
+
+    void OpenInteract(GameObject gameObject, bool open)
+    {
+        if (CheckPerspective(gameObject))
+        {
+            UIController.Get.Interact(gameObject, open);
+            return;
+        }
+        UIController.Get.Interact(gameObject, false);
+        return;
+    }
 
     public void PickUpItem()
     {
-
-
         if (PickUpAllowed == false)
             return;
-
-        //Item item = CheckItem();
-        if (item == null)
-            return;
-
 
         slot.item = item;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
@@ -65,45 +100,53 @@ public class Inventory : MonoBehaviour
 
 
     public GameObject placeholder;
-    public void DropItem()
+    public void PlaceItem(Transform transform)
     {
+        if (!DropAllowed)
+            return;
+        Vector3 newPosition = transform.GetComponent<Transform>().localPosition;
+        newPosition.z = -1;
 
-        item.GetComponent<Transform>().localPosition = placeholder.GetComponent<Transform>().localPosition;
-
-        slot.item = null;
+        slot.item.GetComponent<Transform>().localPosition = newPosition;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
-
-
+        slot.item = null;
 
     }
+    public void DropItem()
+    {
+        if (!DropAllowed)
+            return;
+        Vector3 newPosition = transform.GetComponent<Transform>().localPosition;
+        newPosition.z = -1;
+
+        slot.item.GetComponent<Transform>().localPosition = newPosition;
+        slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
+        slot.item = null;
+    }
+
 
     public GameObject oppositeRoom;
     public void TransferItem()
     {
         item.transform.parent = oppositeRoom.transform;
         item.GetComponent<Transform>().localPosition = new Vector3(-13f, -3f, -0.74f);
-
     }
 
 
-    public Item item = null;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Item>())
+        if (collision.GetComponent<Item>() && CheckPerspective(collision.gameObject))
         {
             item = collision.GetComponent<Item>();
+            OpenInteract(collision.gameObject, true);
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Item>())
+        if (collision.GetComponent<Item>() && CheckPerspective(collision.gameObject))
         {
-            //item = null;
-            item = collision.GetComponent<Item>();
+            item = null;
+            OpenInteract(collision.gameObject, false);
         }
     }
-
-
-
 }

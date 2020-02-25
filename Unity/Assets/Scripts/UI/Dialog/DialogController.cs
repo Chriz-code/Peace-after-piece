@@ -99,10 +99,10 @@ public class DialogController : MonoBehaviour
                 ienumerating = false;
                 if (choiceNum == 1)
                 {
-                    dialogProfiles[i].yes.CallDialog();
+                    dialogProfiles[i].yes.CallDialog(transform);
                 }
                 if (choiceNum == 2)
-                    dialogProfiles[i].no.CallDialog();
+                    dialogProfiles[i].no.CallDialog(transform);
                 choiceMenu.gameObject.SetActive(false);
                 yield break;
             }

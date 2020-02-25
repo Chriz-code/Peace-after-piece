@@ -6,8 +6,9 @@ public class DialogCaller : MonoBehaviour
 {
     public Dialog[] dialogChain = new Dialog[1];
 
-    public void CallDialog()
+    public void CallDialog(Transform transform)
     {
+        Debug.Log("woop");
         UIController.Get.dialogController.StartDialog(dialogChain);
     }
 }
