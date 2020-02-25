@@ -12,6 +12,10 @@ public class Player_UserInput : MonoBehaviour
     [Header("Input")]
     [SerializeField] KeyCode inspectKey = KeyCode.C;
     [SerializeField] KeyCode inspectKeyAlternative = KeyCode.Mouse1;
+    [SerializeField] KeyCode pickUpKey = KeyCode.E;
+    [SerializeField] KeyCode pickUpKeyAlternative = KeyCode.Mouse0;
+    [SerializeField] KeyCode dropKey = KeyCode.Q;
+    [SerializeField] KeyCode dropKeyAlternative = KeyCode.Mouse2;
 
     private void Start()
     {
@@ -43,6 +47,16 @@ public class Player_UserInput : MonoBehaviour
         if (Input.GetKeyDown(inspectKey) || Input.GetKeyDown(inspectKeyAlternative))
         {
             InspectObjectInHand();
+        }
+
+        if ((Input.GetKeyDown(pickUpKey) || Input.GetKeyDown(pickUpKeyAlternative)) && inventory.PickUpAllowed)
+        {
+            inventory.PickUpItem();
+        }
+        if ((Input.GetKeyDown(dropKey) || Input.GetKeyDown(dropKeyAlternative)) && inventory.DropAllowed)
+        {
+            Debug.Log("Woops");
+            inventory.DropItem();
         }
     }
 

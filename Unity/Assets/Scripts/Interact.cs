@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class Interact : MonoBehaviour
 {
@@ -25,7 +25,7 @@ public class Interact : MonoBehaviour
             }
         }
     }
-    [SerializeField] public UnityEngine.Events.UnityEvent interact;
+    [SerializeField] public InteractEvent interact;
     Perspective ParentPerspective
     {
         get
@@ -46,7 +46,7 @@ public class Interact : MonoBehaviour
     {
         if (Interactable && (Input.GetKeyDown(interactKey) || Input.GetKeyDown(interactKeyAlternative)))
         {
-            interact?.Invoke();           
+            interact?.Invoke(transform);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -118,3 +118,5 @@ public class Interact : MonoBehaviour
         return false;
     }
 }
+[System.Serializable]
+public class InteractEvent : UnityEvent<Transform> { }
