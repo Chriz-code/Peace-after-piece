@@ -154,6 +154,7 @@ public class Inventory : MonoBehaviour
 
         Vector3 newPosition = this.transform.GetComponent<Transform>().localPosition;
         newPosition.z = -1;
+        newPosition.x += 1;
 
         slot.item.transform.parent = oppositeRoom.transform;
         slot.item.GetComponent<Transform>().localPosition = newPosition;
