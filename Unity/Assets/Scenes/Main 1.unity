@@ -489,7 +489,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369742472}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &642650926
 PrefabInstance:
@@ -1565,11 +1565,11 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 577272474}
   - {fileID: 1489435448}
   - {fileID: 1126629366}
   - {fileID: 2004438261}
   - {fileID: 1861933972}
-  - {fileID: 577272474}
   m_Father: {fileID: 1045845025}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2104,7 +2104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369742472}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1489435449
 BoxCollider2D:
@@ -2312,7 +2312,7 @@ PrefabInstance:
     - target: {fileID: 3502872954931169971, guid: d19c271667162fb458fd84c1d20b3a9e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3502872954931169971, guid: d19c271667162fb458fd84c1d20b3a9e,
         type: 3}
@@ -2697,7 +2697,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1861933972}
   - component: {fileID: 1861933974}
+  - component: {fileID: 1861933976}
   - component: {fileID: 1861933973}
+  - component: {fileID: 1861933975}
   m_Layer: 9
   m_Name: placer
   m_TagString: Untagged
@@ -2717,7 +2719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369742472}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1861933973
 MonoBehaviour:
@@ -2734,6 +2736,17 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1861933975}
+        m_MethodName: CallAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 779497534}
         m_MethodName: PlaceItem
         m_Mode: 0
@@ -2775,6 +2788,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5853338, y: 2.0442533}
   m_EdgeRadius: 0
+--- !u!114 &1861933975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861933971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c572f45b5206224295be88607671b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 3b266f5bfe7f87c4680f4ec8dde18dce, type: 3}
+  timeUntilShot: 0
+  priority: 128
+  volume: 0.697
+  pitch: 1
+  stereoPan: 0
+  reverbZoneMix: 0
+--- !u!114 &1861933976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861933971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f1761c7f1554d4989801fa101dfdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
 --- !u!1 &1883778363
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,7 +3368,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369742472}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2004438262
 MonoBehaviour:

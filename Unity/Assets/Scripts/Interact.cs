@@ -41,6 +41,10 @@ public class Interact : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
     public KeyCode interactKeyAlternative = KeyCode.Mouse0;
 
+    private void Start()
+    {
+        Interactable = false;
+    }
 
     private void Update()
     {

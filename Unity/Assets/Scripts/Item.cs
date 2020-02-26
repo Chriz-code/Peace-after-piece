@@ -7,26 +7,7 @@ public enum ItemType { Book, Key, Painting }
 public class Item : MonoBehaviour
 {
     public ItemType itemType = ItemType.Book;
-    public Sprite book, key, painting;
-
-    private void OnValidate()
-    {
-        switch (itemType)
-        {
-            case ItemType.Book:
-                if (!book)
-                    Debug.LogWarning("NO BOOK IMAGE ON: " + this);
-                break;
-            case ItemType.Key:
-                if (!key)
-                    Debug.LogWarning("NO KEY IMAGE ON: " + this);
-                break;
-            case ItemType.Painting:
-                if (!painting)
-                    Debug.LogWarning("NO PAINTING IMAGE ON: " + this);
-                break;
-        }
-    }
+    public Sprite book = null, key = null, painting = null;
 
     //public GameObject player;
     //private bool pickUpAllowed;

@@ -41,7 +41,7 @@ public class Inventory : MonoBehaviour
         {
             for (int i = 0; i < collider2Ds.Length; i++)
             {
-                //Debug.Log("Hola! " + collider2Ds[i].name);
+                Debug.Log("Hola! " + collider2Ds[i].name);
                 if (collider2Ds[i].GetComponent<Item>())
                 {
                     return collider2Ds[i].GetComponent<Item>();
@@ -87,21 +87,45 @@ public class Inventory : MonoBehaviour
         return;
     }
 
-    public void PickUpItem()
+    public void PickUpItem(Item item = null)
     {
+        if (item != null)
+        {
+            slot.item = item;
+            slot.GetComponent<UnityEngine.UI.Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+            item.GetComponent<Transform>().localPosition = new Vector2(222, 222);
+            return;
+        }
         if (PickUpAllowed == false)
             return;
 
-        slot.item = item;
-        slot.GetComponent<UnityEngine.UI.Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
-        item.GetComponent<Transform>().localPosition = new Vector2(222, 222);
+        slot.item = this.item;
+        slot.GetComponent<UnityEngine.UI.Image>().sprite = this.item.GetComponent<SpriteRenderer>().sprite;
+        this.item.GetComponent<Transform>().localPosition = new Vector2(222, 222);
         //itembutton = Instantiate(itembuttonPrefab, inventory.slots[i].transform, false);
     }
 
     public void PlaceItem(Transform transform)
     {
+        if (transform.TryGetComponent<ItemHolder>(out ItemHolder itemHolder))
+        {
+            if (itemHolder.item)
+            {
+                PickUpItem(itemHolder.item);
+                itemHolder.item = null;
+                return;
+            }
+            else
+            {
+                if (!DropAllowed)
+                    return;
+                itemHolder.item = slot.item;
+            }
+        }
+
         if (!DropAllowed)
             return;
+
         Vector3 newPosition = transform.GetComponent<Transform>().localPosition;
         newPosition.z = -1;
 
