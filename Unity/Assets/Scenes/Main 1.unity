@@ -224,12 +224,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogChain:
-  - message: Closed
+  - message: Done!
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
     textVolume: 0
     textWaitTime: 0
     textSpeed: 0
-    playerInput: 0
+    playerInput: 1
     _DialogEvent: 1
     unityEvent:
       events:
@@ -237,6 +237,28 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 577272478}
             m_MethodName: SpriteSwitch
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 655186376}
+            m_MethodName: DialogSwitch
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 2019077960}
+            m_MethodName: DialogSwitch
             m_Mode: 0
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -320,6 +342,17 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
           - m_Target: {fileID: 2019077960}
+            m_MethodName: DialogSwitch
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 655186376}
             m_MethodName: DialogSwitch
             m_Mode: 0
             m_Arguments:
@@ -930,6 +963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 655186374}
   - component: {fileID: 655186375}
+  - component: {fileID: 655186376}
   m_Layer: 0
   m_Name: No
   m_TagString: Untagged
@@ -972,7 +1006,7 @@ MonoBehaviour:
     textVolume: 0
     textWaitTime: 1
     textSpeed: 0
-    playerInput: 0
+    playerInput: 1
     _DialogEvent: 0
     unityEvent:
       events:
@@ -983,6 +1017,63 @@ MonoBehaviour:
     multipleChoice: 1
     buttonTextYes: Yes
     yes: {fileID: 294090646}
+    buttonTextNo: No
+    no: {fileID: 0}
+--- !u!114 &655186376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655186373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be45c4a8c8698c94ea8dc3a339055864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogCaller: {fileID: 655186375}
+  index: 0
+  dialog:
+    message: 'Understandable.
+
+      @Do you want to open it?'
+    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+    textVolume: 0
+    textWaitTime: 0
+    textSpeed: 0
+    playerInput: 1
+    _DialogEvent: 0
+    unityEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 1
+    buttonTextYes: Yes
+    yes: {fileID: 300971892}
+    buttonTextNo: No
+    no: {fileID: 0}
+  loopBetween: 1
+  dialog2:
+    message: 'Understandable.
+
+      @Do you want to close it?'
+    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+    textVolume: 0
+    textWaitTime: 0
+    textSpeed: 0
+    playerInput: 1
+    _DialogEvent: 0
+    unityEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 1
+    buttonTextYes: Yes
+    yes: {fileID: 300971892}
     buttonTextNo: No
     no: {fileID: 0}
 --- !u!1 &754395291
@@ -1304,6 +1395,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   oppositeRoom: {fileID: 940701357}
+  _Collider: {fileID: 0}
   item: {fileID: 0}
 --- !u!1001 &901208622
 PrefabInstance:
@@ -2126,6 +2218,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8094447316727370875, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e561ff80495f29247bb11031ec34c11a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
 --- !u!1 &1397872379
@@ -3174,6 +3272,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   oppositeRoom: {fileID: 1369742470}
+  _Collider: {fileID: 0}
   item: {fileID: 0}
 --- !u!1 &1990816705
 GameObject:
