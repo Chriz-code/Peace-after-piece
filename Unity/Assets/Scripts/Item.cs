@@ -6,6 +6,7 @@ using UnityEngine;
 public enum ItemType { Book, Key, Painting }
 public class Item : MonoBehaviour
 {
+    public Transform parent = null;
     public ItemType itemType = ItemType.Book;
     public Sprite book = null, key = null, painting = null;
 

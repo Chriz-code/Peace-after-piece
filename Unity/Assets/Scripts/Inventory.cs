@@ -91,17 +91,24 @@ public class Inventory : MonoBehaviour
     {
         if (item != null)
         {
+
             slot.item = item;
-            slot.GetComponent<UnityEngine.UI.Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
-            item.GetComponent<Transform>().localPosition = new Vector2(222, 222);
+            slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
+            item.parent.localPosition = new Vector2(222, 222);
+            item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             return;
         }
         if (PickUpAllowed == false)
             return;
 
-        slot.item = this.item;
-        slot.GetComponent<UnityEngine.UI.Image>().sprite = this.item.GetComponent<SpriteRenderer>().sprite;
-        this.item.GetComponent<Transform>().localPosition = new Vector2(222, 222);
+        item = this.item;
+
+        slot.item = item;
+        
+        slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
+        item.parent.localPosition = new Vector2(222, 222);
+        item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
         //itembutton = Instantiate(itembuttonPrefab, inventory.slots[i].transform, false);
     }
 
@@ -126,10 +133,13 @@ public class Inventory : MonoBehaviour
         if (!DropAllowed)
             return;
 
-        Vector3 newPosition = transform.GetComponent<Transform>().localPosition;
+        Vector3 newPosition = transform.localPosition;
         newPosition.z = -1;
 
-        slot.item.GetComponent<Transform>().localPosition = newPosition;
+        Item item = slot.item;
+
+        item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        item.parent.localPosition = newPosition;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
         slot.item = null;
 
@@ -141,7 +151,10 @@ public class Inventory : MonoBehaviour
         Vector3 newPosition = transform.GetComponent<Transform>().localPosition;
         newPosition.z = -1;
 
-        slot.item.GetComponent<Transform>().localPosition = newPosition;
+        Item item = slot.item;
+
+        item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        item.parent.localPosition = newPosition;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
         slot.item = null;
     }
@@ -156,8 +169,11 @@ public class Inventory : MonoBehaviour
         newPosition.z = -1;
         newPosition.x += 1;
 
-        slot.item.transform.parent = oppositeRoom.transform;
-        slot.item.GetComponent<Transform>().localPosition = newPosition;
+        Item item = slot.item;
+
+        item.parent.parent = oppositeRoom.transform;
+        item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        item.parent.GetComponent<Transform>().localPosition = newPosition;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
         slot.item = null;
     }
