@@ -4,7 +4,22 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    public Item item;
+    Item item;
+    public Item ItemSlot
+    {
+        get
+        {
+            return item;
+        }
+        set
+        {
+            if (value == null)
+                GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 0);
+            else
+                GetComponent<UnityEngine.UI.Image>().color = Color.white;
+            item = value;
+        }
+    }
 
   
     public void DropItem()

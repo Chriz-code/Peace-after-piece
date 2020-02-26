@@ -70,7 +70,7 @@ public class Player_UserInput : MonoBehaviour
     {
         if (UIController.Get.inspectController && inventory)
         {
-            UIController.Get.inspectController.Inspect(inventory.slot.item);
+            UIController.Get.inspectController.Inspect(inventory.slot.ItemSlot);
         }
     }
 }

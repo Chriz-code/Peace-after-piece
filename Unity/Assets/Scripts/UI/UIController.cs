@@ -10,7 +10,9 @@ public class UIController : MonoBehaviour
     [SerializeField] public InspectController inspectController = null;
     [SerializeField] public DialogController dialogController = null;
     bool active;
-    [HideInInspector] public GameObject caller;
+
+    [Header("Debug")]
+    public GameObject caller;
 
 
 
@@ -39,6 +41,7 @@ public class UIController : MonoBehaviour
         {
             interactPopUp.gameObject.SetActive(active);
         }
+        active = false;
     }
     private void OnEnable()
     {

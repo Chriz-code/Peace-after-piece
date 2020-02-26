@@ -5,6 +5,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class Interact : MonoBehaviour
 {
+    public LayerMask colliderMask = 8;
     bool interactable = false;
     public bool Interactable
     {
@@ -20,10 +21,10 @@ public class Interact : MonoBehaviour
         }
         set
         {
-            if (interactable != value)
+            interactable = value;
+            if (value == true)
             {
-                interactable = value;
-                UIController.Get.Interact(gameObject, interactable);
+                UIController.Get.Interact(gameObject, value);
             }
         }
     }
@@ -47,7 +48,19 @@ public class Interact : MonoBehaviour
     {
         Interactable = false;
     }
-
+    Vector2 _ColliderSize;
+    public Collider2D _Collider;
+    private void FixedUpdate()
+    {
+        if (TryGetComponent<BoxCollider2D>(out BoxCollider2D box))
+        {
+            _ColliderSize = box.size;
+            if (InteractableCheck(Physics2D.OverlapBox(transform.position, _ColliderSize, 0, colliderMask)))
+                Interactable = true;
+            else
+                Interactable = false;
+        }
+    }
     private void Update()
     {
         if (Interactable && (Input.GetKeyDown(interactKey) || Input.GetKeyDown(interactKeyAlternative)))
@@ -55,6 +68,21 @@ public class Interact : MonoBehaviour
             interact?.Invoke(transform);
         }
     }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        if (_ColliderSize.y != 0)
+        {
+            Gizmos.DrawCube(transform.position, _ColliderSize);
+        }
+        else
+        {
+            Gizmos.DrawWireSphere(transform.position, _ColliderSize.x);
+        }
+    }
+
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (InteractableCheck(collision))
@@ -87,6 +115,7 @@ public class Interact : MonoBehaviour
             Interactable = false;
         }
     }
+    */
 
     private void OnDestroy()
     {
@@ -99,6 +128,9 @@ public class Interact : MonoBehaviour
 
     bool InteractableCheck(Collider2D collision)
     {
+        _Collider = collision;
+        if (!collision)
+            return false;
         collision.TryGetComponent<Player>(out Player player);
         if (player && ParentPerspective == GameController.Get.CurrentPerspective)
         {

@@ -6,13 +6,45 @@ public class Inventory : MonoBehaviour
 {
     public Player player;
     public Slot slot;
+    public LayerMask colliderMask;
+    Vector2 _ColliderSize;
+    Collider2D _Collider;
+    public GameObject oppositeRoom;
+    [Header("Debug")]
+    public Item item = null;
+
+
+    private void FixedUpdate()
+    {
+        if (TryGetComponent<BoxCollider2D>(out BoxCollider2D box))
+        {
+            _ColliderSize = box.size;
+            _Collider = Physics2D.OverlapBox(transform.position, _ColliderSize, 0, colliderMask);
+            if (_Collider)
+            {
+                if (CheckPerspective(_Collider.gameObject) && _Collider.GetComponent<Item>())
+                {
+                    item = _Collider.GetComponent<Item>();
+                    UIController.Get.Interact(_Collider.gameObject, true);
+                }
+            }
+        }
+    }
+
     public bool PickUpAllowed
     {
         get
         {
             if (slot)
-                if (slot.item == null && item != null)
+            {
+
+                if (slot.ItemSlot == null && item != null)
+                {
+                    if (UIController.Get.caller != item.gameObject)
+                        return false;
                     return true;
+                }
+            }
             return false;
         }
     }
@@ -21,35 +53,10 @@ public class Inventory : MonoBehaviour
         get
         {
             if (slot)
-                if (slot.item != null)
+                if (slot.ItemSlot != null)
                     return true;
             return false;
         }
-    }
-    public LayerMask mask;
-    public GameObject oppositeRoom;
-    Item CheckItem()
-    {
-        Vector3 boxCastRayGrej = new Vector3(
-            Mathf.Abs(GetComponent<BoxCollider2D>().size.x * transform.localScale.x),
-            Mathf.Abs(GetComponent<BoxCollider2D>().size.y * transform.localScale.y),
-            1);
-
-        Collider[] collider2Ds = Physics.OverlapBox(transform.position, boxCastRayGrej, Quaternion.identity, mask);
-
-        if (collider2Ds.Length > 0)
-        {
-            for (int i = 0; i < collider2Ds.Length; i++)
-            {
-                Debug.Log("Hola! " + collider2Ds[i].name);
-                if (collider2Ds[i].GetComponent<Item>())
-                {
-                    return collider2Ds[i].GetComponent<Item>();
-                }
-            }
-        }
-        //Debug.Log("Kitos!");
-        return null;
     }
     Perspective ParentPerspective(Transform transform)
     {
@@ -73,26 +80,14 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    [Header("Debug")]
-    public Item item = null;
-
-    void OpenInteract(GameObject gameObject, bool open)
-    {
-        if (CheckPerspective(gameObject))
-        {
-            UIController.Get.Interact(gameObject, open);
-            return;
-        }
-        UIController.Get.Interact(gameObject, false);
-        return;
-    }
-
     public void PickUpItem(Item item = null)
     {
-        if (item != null)
-        {
 
-            slot.item = item;
+        if (item != null && slot.ItemSlot == null)
+        {
+            print("Take2");
+
+            slot.ItemSlot = item;
             slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
             item.parent.localPosition = new Vector2(222, 222);
             item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
@@ -102,21 +97,20 @@ public class Inventory : MonoBehaviour
             return;
 
         item = this.item;
+        print("Take1");
+        slot.ItemSlot = item;
 
-        slot.item = item;
-        
         slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
         item.parent.localPosition = new Vector2(222, 222);
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
         //itembutton = Instantiate(itembuttonPrefab, inventory.slots[i].transform, false);
     }
-
     public void PlaceItem(Transform transform)
     {
         if (transform.TryGetComponent<ItemHolder>(out ItemHolder itemHolder))
         {
-            if (itemHolder.item)
+            if (itemHolder.item && slot.ItemSlot == null) // PickUp
             {
                 PickUpItem(itemHolder.item);
                 itemHolder.item = null;
@@ -126,22 +120,27 @@ public class Inventory : MonoBehaviour
             {
                 if (!DropAllowed)
                     return;
-                itemHolder.item = slot.item;
+                if (itemHolder.item != null)
+                    return;
+
+                itemHolder.item = slot.ItemSlot;
             }
         }
 
         if (!DropAllowed)
             return;
 
+
         Vector3 newPosition = transform.localPosition;
         newPosition.z = -1;
 
-        Item item = slot.item;
-
+        Item item = slot.ItemSlot;
+        item.GetComponent<Collider2D>().enabled = false;
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         item.parent.localPosition = newPosition;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
-        slot.item = null;
+        print("Place");
+        slot.ItemSlot = null;
 
     }
     public void DropItem()
@@ -151,15 +150,14 @@ public class Inventory : MonoBehaviour
         Vector3 newPosition = transform.GetComponent<Transform>().localPosition;
         newPosition.z = -1;
 
-        Item item = slot.item;
+        Item item = slot.ItemSlot;
 
+        item.GetComponent<Collider2D>().enabled = true;
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         item.parent.localPosition = newPosition;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
-        slot.item = null;
+        slot.ItemSlot = null;
     }
-
-
     public void TransferItem(Transform transform)
     {
         if (!DropAllowed)
@@ -169,16 +167,16 @@ public class Inventory : MonoBehaviour
         newPosition.z = -1;
         newPosition.x += 1;
 
-        Item item = slot.item;
+        Item item = slot.ItemSlot;
 
         item.parent.parent = oppositeRoom.transform;
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         item.parent.GetComponent<Transform>().localPosition = newPosition;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
-        slot.item = null;
+        slot.ItemSlot = null;
     }
 
-
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Item>() && CheckPerspective(collision.gameObject))
@@ -195,4 +193,5 @@ public class Inventory : MonoBehaviour
             OpenInteract(collision.gameObject, false);
         }
     }
+    */
 }

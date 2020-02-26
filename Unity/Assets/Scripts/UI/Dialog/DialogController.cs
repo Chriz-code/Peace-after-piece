@@ -9,7 +9,7 @@ public class DialogController : MonoBehaviour
     [SerializeField] Image dialogProfile = null;
     [SerializeField] Image profile = null, dialogBox = null;
     [SerializeField]
-    Sprite profileBoxAngela = null,dialogProfileAngela = null, dialogBoxAngela = null, profileBoxElenor = null,dialogProfileElenor = null, dialogBoxElenor = null;
+    Sprite profileBoxAngela = null, dialogProfileAngela = null, dialogBoxAngela = null, profileBoxElenor = null, dialogProfileElenor = null, dialogBoxElenor = null;
     [SerializeField] Text dialogText = null;
     [SerializeField] ChoiceMenu choiceMenu = null;
     [SerializeField] AudioSource textSoundSource = null;
@@ -100,10 +100,19 @@ public class DialogController : MonoBehaviour
                 ienumerating = false;
                 if (choiceNum == 1)
                 {
-                    dialogProfiles[i].yes.CallDialog(transform);
+                    if (dialogProfiles[i].yes)
+                        dialogProfiles[i].yes.CallDialog(transform);
+                    else
+                        StopDialog();
                 }
                 if (choiceNum == 2)
-                    dialogProfiles[i].no.CallDialog(transform);
+                {
+                    if (dialogProfiles[i].no)
+                        dialogProfiles[i].no.CallDialog(transform);
+                    else
+                        StopDialog();
+                }
+
                 choiceMenu.gameObject.SetActive(false);
                 yield break;
             }
@@ -129,6 +138,11 @@ public class DialogController : MonoBehaviour
     public IEnumerator DialogIEnumerator(Dialog dialog)
     {
         CheckPerspective();
+
+        if (dialog.profile == null)
+            Debug.LogWarning("DialogProfiel Missing!");
+            //dialog.profile = new DialogProfile(null, Color.white, new AudioClip[0]);
+
         if (showProfile)
         {
             //Profile
@@ -157,8 +171,11 @@ public class DialogController : MonoBehaviour
                 if (messages[i][j] == '/') //Lower WaitTime if symbol found in message
                 {
                     lowerWaitBy += 1;
+                }if((messages[i][j] == '-')) // Skip WaitTime if symbol found in message
+                {
+                    dialogText.text += messages[i][j];
                 }
-                else if (!(messages[i][j] == '-')) // Skip WaitTime if symbol found in message
+                else 
                 {
                     dialogText.text += messages[i][j];
                     if (textSoundSource != null && dialog.profile.textSounds.Length > 0 && //If there's a audioSource and soundClips
