@@ -139,7 +139,7 @@ public class Inventory : MonoBehaviour
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         item.parent.localPosition = newPosition;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
-        print("Place");
+        //print("Place");
         slot.ItemSlot = null;
 
     }
@@ -175,23 +175,4 @@ public class Inventory : MonoBehaviour
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
         slot.ItemSlot = null;
     }
-
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Item>() && CheckPerspective(collision.gameObject))
-        {
-            item = collision.GetComponent<Item>();
-            OpenInteract(collision.gameObject, true);
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Item>() && CheckPerspective(collision.gameObject))
-        {
-            item = null;
-            OpenInteract(collision.gameObject, false);
-        }
-    }
-    */
 }
