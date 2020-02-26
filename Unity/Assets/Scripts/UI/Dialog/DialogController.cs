@@ -6,9 +6,10 @@ public class DialogController : MonoBehaviour
 {
     [Header("Refrences")]
     [SerializeField] Image profileBox = null;
+    [SerializeField] Image dialogProfile = null;
     [SerializeField] Image profile = null, dialogBox = null;
     [SerializeField]
-    Sprite profileBoxAngela = null, dialogBoxAngela = null, profileBoxElenor = null, dialogBoxElenor = null;
+    Sprite profileBoxAngela = null,dialogProfileAngela = null, dialogBoxAngela = null, profileBoxElenor = null,dialogProfileElenor = null, dialogBoxElenor = null;
     [SerializeField] Text dialogText = null;
     [SerializeField] ChoiceMenu choiceMenu = null;
     [SerializeField] AudioSource textSoundSource = null;
@@ -18,6 +19,7 @@ public class DialogController : MonoBehaviour
 
     Vector3 originalPos = Vector3.zero;
     [Header("Variables")]
+    [SerializeField] bool showProfile = false;
     [SerializeField] int speedMultiplier = 3;
     [SerializeField] bool silenceWhenMultiplying = false;
     [SerializeField] bool ready = false;
@@ -121,16 +123,19 @@ public class DialogController : MonoBehaviour
     public void SetChoice(int i) // Yes No Buttons
     {
         choiceNum = i;
-        Debug.Log(choiceNum+" c:i "+ i);
+        Debug.Log(choiceNum + " c:i " + i);
     }
 
     public IEnumerator DialogIEnumerator(Dialog dialog)
     {
         CheckPerspective();
-        //Profile
-        //profileBox.gameObject.SetActive(true);
-        //this.profile.sprite = dialogProfile.profile;
-        //this.profile.color = dialogProfile.profileColor;
+        if (showProfile)
+        {
+            //Profile
+            dialogProfile.gameObject.SetActive(true);
+            this.profile.sprite = dialog.profile.profileImage;
+            this.profile.color = dialog.profile.color;
+        }
 
         //Box
         dialogBox.gameObject.SetActive(true);
@@ -212,11 +217,13 @@ public class DialogController : MonoBehaviour
         {
             profileBox.sprite = profileBoxAngela;
             dialogBox.sprite = dialogBoxAngela;
+            dialogProfile.sprite = dialogProfileAngela;
         }
         else if (GameController.Get.CurrentPerspective == Perspective.Elenor && ready)
         {
             profileBox.sprite = profileBoxElenor;
             dialogBox.sprite = dialogBoxElenor;
+            dialogProfile.sprite = dialogProfileElenor;
         }
     }
     public void StopDialog()
@@ -226,7 +233,7 @@ public class DialogController : MonoBehaviour
             dialogText.text = "";
             dialogBox.gameObject.SetActive(false);
             choiceMenu.gameObject.SetActive(false);
-            //profileBox.gameObject.SetActive(false);
+            dialogProfile.gameObject.SetActive(false); //Profile
             dialogText.rectTransform.localPosition = originalPos;
             ienumerating = false;
             if (user != null)
