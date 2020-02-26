@@ -10,6 +10,8 @@ public class Interact : MonoBehaviour
     {
         get
         {
+            if (UIController.Get.caller != gameObject)
+                return false;
             if (ParentPerspective == GameController.Get.CurrentPerspective && interactable == true)
                 return true;
             if (ParentPerspective == Perspective.None && interactable == true)

@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
     [SerializeField] public InspectController inspectController = null;
     [SerializeField] public DialogController dialogController = null;
     bool active;
-    GameObject caller;
+    [HideInInspector] public GameObject caller;
 
 
 
