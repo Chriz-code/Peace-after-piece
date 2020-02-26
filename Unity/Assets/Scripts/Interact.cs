@@ -14,9 +14,14 @@ public class Interact : MonoBehaviour
             if (UIController.Get.caller != gameObject)
                 return false;
             if (ParentPerspective == GameController.Get.CurrentPerspective && interactable == true)
+            {
+                //print(GameController.Get.CurrentPerspective);
                 return true;
+            }
             if (ParentPerspective == Perspective.None && interactable == true)
+            {
                 return true;
+            }
             return false;
         }
         set
@@ -35,9 +40,13 @@ public class Interact : MonoBehaviour
         {
             transform.root.TryGetComponent<ThisPerspective>(out ThisPerspective thisPerspective);
             if (thisPerspective)
+            {
                 return thisPerspective.perspective;
+            }
             else
+            {
                 return Perspective.None;
+            }
         }
     }
 
@@ -82,40 +91,6 @@ public class Interact : MonoBehaviour
         }
     }
 
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (InteractableCheck(collision))
-        {
-            Debug.Log("Yare Yare You're now within my 2 meter range! " + ParentPerspective);
-            Interactable = true;
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (InteractableCheck(collision))
-        {
-            Debug.Log("Yare Yare You're now within my 2 meter range! " + ParentPerspective);
-            Interactable = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (InteractableCheck(collision))
-        {
-            Debug.Log("Yare Yare You're now outside my 2 meter range! " + ParentPerspective);
-            Interactable = false;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (InteractableCheck(collision))
-        {
-            Debug.Log("Yare Yare You're now outside my 2 meter range! " + ParentPerspective);
-            Interactable = false;
-        }
-    }
-    */
 
     private void OnDestroy()
     {
@@ -129,16 +104,25 @@ public class Interact : MonoBehaviour
     bool InteractableCheck(Collider2D collision)
     {
         _Collider = collision;
-        if (!collision)
+        if (!_Collider)
             return false;
-        collision.TryGetComponent<Player>(out Player player);
-        if (player && ParentPerspective == GameController.Get.CurrentPerspective)
+        _Collider.TryGetComponent<Player>(out Player player);
+        if (!player)
         {
-            return true;
+            return false;
         }
-        if (player && ParentPerspective == Perspective.None)
+
+        player.TryGetComponent<ThisPerspective>(out ThisPerspective playerPerspective);
+        if (playerPerspective.perspective == GameController.Get.CurrentPerspective && playerPerspective)
         {
-            return true;
+            if (ParentPerspective == GameController.Get.CurrentPerspective)
+            {
+                return true;
+            }
+            if (ParentPerspective == Perspective.None)
+            {
+                return true;
+            }
         }
         return false;
     }

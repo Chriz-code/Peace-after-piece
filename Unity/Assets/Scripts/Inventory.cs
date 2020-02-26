@@ -8,9 +8,9 @@ public class Inventory : MonoBehaviour
     public Slot slot;
     public LayerMask colliderMask;
     Vector2 _ColliderSize;
-    Collider2D _Collider;
     public GameObject oppositeRoom;
     [Header("Debug")]
+    public Collider2D _Collider;
     public Item item = null;
 
 
@@ -68,14 +68,16 @@ public class Inventory : MonoBehaviour
     }
     bool CheckPerspective(GameObject gameObject)
     {
-
-        if (ParentPerspective(gameObject.transform) == GameController.Get.CurrentPerspective)
+        if (TryGetComponent<ThisPerspective>(out ThisPerspective playerPerspective) && playerPerspective.perspective == GameController.Get.CurrentPerspective)
         {
-            return true;
-        }
-        if (ParentPerspective(gameObject.transform) == Perspective.None)
-        {
-            return true;
+            if (ParentPerspective(gameObject.transform) == GameController.Get.CurrentPerspective)
+            {
+                return true;
+            }
+            if (ParentPerspective(gameObject.transform) == Perspective.None)
+            {
+                return true;
+            }
         }
         return false;
     }
@@ -85,8 +87,6 @@ public class Inventory : MonoBehaviour
 
         if (item != null && slot.ItemSlot == null)
         {
-            print("Take2");
-
             slot.ItemSlot = item;
             slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
             item.parent.localPosition = new Vector2(222, 222);
@@ -97,7 +97,7 @@ public class Inventory : MonoBehaviour
             return;
 
         item = this.item;
-        print("Take1");
+        //print("Take1");
         slot.ItemSlot = item;
 
         slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;

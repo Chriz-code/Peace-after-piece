@@ -132,7 +132,7 @@ public class DialogController : MonoBehaviour
     public void SetChoice(int i) // Yes No Buttons
     {
         choiceNum = i;
-        Debug.Log(choiceNum + " c:i " + i);
+        //Debug.Log(choiceNum + " c:i " + i);
     }
 
     public IEnumerator DialogIEnumerator(Dialog dialog)
