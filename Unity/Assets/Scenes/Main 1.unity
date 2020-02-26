@@ -578,6 +578,12 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1883778363}
+    - target: {fileID: 2078164719745754550, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: book
+      value: 
+      objectReference: {fileID: 6434753496549035337, guid: 87dae56830016f342be5e79100afde4d,
+        type: 3}
     - target: {fileID: 3433778703866113306, guid: d19c271667162fb458fd84c1d20b3a9e,
         type: 3}
       propertyPath: m_Sprite
@@ -932,12 +938,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1883778370}
   slot: {fileID: 1149991495}
-  item: {fileID: 1126629369}
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  placeholder: {fileID: 1861933971}
+    m_Bits: 1591
   oppositeRoom: {fileID: 940701357}
+  item: {fileID: 0}
 --- !u!1 &940701357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,18 +1320,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1719882341}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1126629369 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2078164719745754550, guid: d19c271667162fb458fd84c1d20b3a9e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1719882341}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea4b144d3e9a2e42be452a9b39327d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1137456088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,6 +1701,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3884287743190877642, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 21.599976
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.199951
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
 --- !u!1 &1397872379
@@ -1770,6 +1778,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1883778372}
+        m_MethodName: TransferItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactKey: 101
@@ -1787,7 +1806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogChain:
-  - message: hejhej
+  - message: Woosh
     profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
     textVolume: 1
     textWaitTime: 100
@@ -1798,8 +1817,8 @@ MonoBehaviour:
       events:
         m_PersistentCalls:
           m_Calls: []
-        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
     multipleChoice: 0
     buttonTextYes: 
     yes: {fileID: 0}
@@ -1938,8 +1957,8 @@ MonoBehaviour:
       events:
         m_PersistentCalls:
           m_Calls: []
-        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
     multipleChoice: 0
     buttonTextYes: 
     yes: {fileID: 0}
@@ -2325,6 +2344,17 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 779497525}
+    - target: {fileID: 2078164719745754550, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: itemType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078164719745754550, guid: d19c271667162fb458fd84c1d20b3a9e,
+        type: 3}
+      propertyPath: painting
+      value: 
+      objectReference: {fileID: -4432779557302195658, guid: 87dae56830016f342be5e79100afde4d,
+        type: 3}
     - target: {fileID: 3433778703866113306, guid: d19c271667162fb458fd84c1d20b3a9e,
         type: 3}
       propertyPath: m_Sprite
@@ -2778,7 +2808,7 @@ Transform:
   m_GameObject: {fileID: 1883778363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.67, y: -1.89, z: 1}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 242881581}
   m_Father: {fileID: 960933774}
@@ -2857,8 +2887,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6ba8e06583a82c142b36eb5e42eb095e, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 91902af743b909440bd8b466a1a64d76, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2885,14 +2915,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5, y: 12.8}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 13}
   m_EdgeRadius: 0
 --- !u!114 &1883778369
 MonoBehaviour:
@@ -2954,12 +2984,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1883778370}
   slot: {fileID: 1799590158}
-  item: {fileID: 0}
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  placeholder: {fileID: 0}
+    m_Bits: 1591
   oppositeRoom: {fileID: 1369742470}
+  item: {fileID: 0}
 --- !u!1 &1990816705
 GameObject:
   m_ObjectHideFlags: 0

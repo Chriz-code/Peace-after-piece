@@ -4,8 +4,32 @@ using UnityEngine;
 
 public class InspectController : MonoBehaviour
 {
-    public void Inpect(Item item)
+    public GameObject panel = null;
+    public UnityEngine.UI.Image image = null;
+
+    public void Inspect(Item item)
     {
-        Debug.Log(item.name);
+        panel.SetActive(!panel.activeSelf);
+
+        if (panel.activeSelf)
+            image.sprite = Switch(item);
+        else
+            image.sprite = null;
+    }
+
+
+    Sprite Switch(Item item)
+    {
+        if (item)
+            switch (item.itemType)
+            {
+                case ItemType.Book:
+                    return item.book;
+                case ItemType.Key:
+                    return item.key;
+                case ItemType.Painting:
+                    return item.painting;
+            }
+        return null;
     }
 }

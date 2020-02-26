@@ -6,7 +6,6 @@ public class Inventory : MonoBehaviour
 {
     public Player player;
     public Slot slot;
-    public Item item = null;
     public bool PickUpAllowed
     {
         get
@@ -28,6 +27,7 @@ public class Inventory : MonoBehaviour
         }
     }
     public LayerMask mask;
+    public GameObject oppositeRoom;
     Item CheckItem()
     {
         Vector3 boxCastRayGrej = new Vector3(
@@ -73,6 +73,8 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+    [Header("Debug")]
+    public Item item = null;
 
     void OpenInteract(GameObject gameObject, bool open)
     {
@@ -96,8 +98,6 @@ public class Inventory : MonoBehaviour
         //itembutton = Instantiate(itembuttonPrefab, inventory.slots[i].transform, false);
     }
 
-
-    public GameObject placeholder;
     public void PlaceItem(Transform transform)
     {
         if (!DropAllowed)
@@ -123,13 +123,18 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public GameObject oppositeRoom;
-    public void TransferItem()
+    public void TransferItem(Transform transform)
     {
-        /*
-        item.transform.parent = oppositeRoom.transform;
-        item.GetComponent<Transform>().localPosition = new Vector3(-13f, -3f, -0.74f);
-        */
+        if (!DropAllowed)
+            return;
+
+        Vector3 newPosition = this.transform.GetComponent<Transform>().localPosition;
+        newPosition.z = -1;
+
+        slot.item.transform.parent = oppositeRoom.transform;
+        slot.item.GetComponent<Transform>().localPosition = newPosition;
+        slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
+        slot.item = null;
     }
 
 

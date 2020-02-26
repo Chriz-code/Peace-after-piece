@@ -42,20 +42,22 @@ public class Player_UserInput : MonoBehaviour
     {
         if (GameController.Get.ComparePerspective(player.GetPerspective))
         {
-            _Movement.Movement(Input.GetAxis("Horizontal"));
-        }
-        if (Input.GetKeyDown(inspectKey) || Input.GetKeyDown(inspectKeyAlternative))
-        {
-            InspectObjectInHand();
-        }
-
-        if ((Input.GetKeyDown(pickUpKey) || Input.GetKeyDown(pickUpKeyAlternative)) && inventory.PickUpAllowed)
-        {
-            inventory.PickUpItem();
-        }
-        if ((Input.GetKeyDown(dropKey) || Input.GetKeyDown(dropKeyAlternative)) && inventory.DropAllowed)
-        {
-            inventory.DropItem();
+            if (Input.GetKeyDown(inspectKey) || Input.GetKeyDown(inspectKeyAlternative))
+            {
+                InspectObjectInHand();
+            }
+            if (!UIController.Get.inspectController || (!UIController.Get.inspectController.panel.activeSelf))
+            {
+                _Movement.Movement(Input.GetAxis("Horizontal"));
+                if ((Input.GetKeyDown(pickUpKey) || Input.GetKeyDown(pickUpKeyAlternative)) && inventory.PickUpAllowed)
+                {
+                    inventory.PickUpItem();
+                }
+                if ((Input.GetKeyDown(dropKey) || Input.GetKeyDown(dropKeyAlternative)) && inventory.DropAllowed)
+                {
+                    inventory.DropItem();
+                }
+            }
         }
     }
 
@@ -66,7 +68,9 @@ public class Player_UserInput : MonoBehaviour
 
     void InspectObjectInHand()
     {
-        //if(inventory.slots[0])
-        //Debug.Log(inventory.slots[0].GetComponent<Slot>().item.name);
+        if (UIController.Get.inspectController && inventory)
+        {
+            UIController.Get.inspectController.Inspect(inventory.slot.item);
+        }
     }
 }

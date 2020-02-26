@@ -2,10 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum ItemType { Book, Key, Painting }
 public class Item : MonoBehaviour
 {
+    public ItemType itemType = ItemType.Book;
+    public Sprite book, key, painting;
+
+    private void OnValidate()
+    {
+        switch (itemType)
+        {
+            case ItemType.Book:
+                if (!book)
+                    Debug.LogWarning("NO BOOK IMAGE ON: " + this);
+                break;
+            case ItemType.Key:
+                if (!key)
+                    Debug.LogWarning("NO KEY IMAGE ON: " + this);
+                break;
+            case ItemType.Painting:
+                if (!painting)
+                    Debug.LogWarning("NO PAINTING IMAGE ON: " + this);
+                break;
+        }
+    }
+
     //public GameObject player;
-    private bool pickUpAllowed;
+    //private bool pickUpAllowed;
 
     //private Inventory inventory;
     //public GameObject itemButton;
@@ -44,16 +68,17 @@ public class Item : MonoBehaviour
     //{
     //    gameObject.GetComponent<Transform>().localPosition = player.GetComponent<Transform>().localPosition + Vector3.forward;
     //}
+    /*
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+                pickUpAllowed = true;
+        }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-            pickUpAllowed = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-            pickUpAllowed = false;
-    }
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+                pickUpAllowed = false;
+        }
+        */
 }

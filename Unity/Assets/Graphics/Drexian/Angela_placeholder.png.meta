@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 87dae56830016f342be5e79100afde4d
+guid: 91902af743b909440bd8b466a1a64d76
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -4432779557302195658
-    second: Elenor Icons 2020-02-13_0
-  - first:
-      213: 159035931574845209
-    second: Elenor Icons 2020-02-13_1
-  - first:
-      213: 6434753496549035337
-    second: Elenor Icons 2020-02-13_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -49,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,70 +96,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Elenor Icons 2020-02-13_0
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 155
-        width: 147
-        height: 136
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 326f692c2c04d154b9c17c97df94e5d9
-      internalID: -4432779557302195658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Elenor Icons 2020-02-13_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 73
-        width: 159
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a7f0ea0b80344241869b47c6831a9e8
-      internalID: 159035931574845209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Elenor Icons 2020-02-13_2
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 0
-        width: 140
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 331e894e0aeec5849acda3b731148ec4
-      internalID: 6434753496549035337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

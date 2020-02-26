@@ -82,7 +82,7 @@ public class DialogController : MonoBehaviour
             dialogWritter = DialogIEnumerator(dialogProfiles[i]); // prepare IEnumerator
 
             if (dialogProfiles[i]._DialogEvent) // Dialog Events
-                dialogProfiles[i].unityEvent?.events?.Invoke();
+                dialogProfiles[i].unityEvent?.events?.Invoke(transform);
 
             yield return StartCoroutine(dialogWritter);// Print Text to dialogBox and Produce Sound
 

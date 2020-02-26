@@ -47,5 +47,5 @@ public class Dialog
 [System.Serializable]
 public class DialogEvent 
 {
-    public UnityEngine.Events.UnityEvent events;
+    public InteractEvent events;
 }
