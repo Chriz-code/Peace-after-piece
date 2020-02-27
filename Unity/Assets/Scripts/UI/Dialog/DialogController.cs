@@ -140,7 +140,10 @@ public class DialogController : MonoBehaviour
         CheckPerspective();
 
         if (dialog.profile == null)
-            Debug.LogWarning("DialogProfiel Missing!");
+        {
+            Debug.LogWarning("DialogProfile Missing!");
+            dialog.profile = new DialogProfile(null, Color.white, new AudioClip[0]);
+        }
         //dialog.profile = new DialogProfile(null, Color.white, new AudioClip[0]);
 
         if (showProfile)

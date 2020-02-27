@@ -112,20 +112,20 @@ public class Inventory : MonoBehaviour
     {
         if (transform.TryGetComponent<ItemHolder>(out ItemHolder itemHolder))
         {
-            if (itemHolder.item && slot.ItemSlot == null) // PickUp
+            if (itemHolder.HeldItem && slot.ItemSlot == null) // PickUp
             {
-                PickUpItem(itemHolder.item);
-                itemHolder.item = null;
+                PickUpItem(itemHolder.HeldItem);
+                itemHolder.HeldItem = null;
                 return;
             }
             else
             {
                 if (!DropAllowed)
                     return;
-                if (itemHolder.item != null)
+                if (itemHolder.HeldItem != null)
                     return;
 
-                itemHolder.item = slot.ItemSlot;
+                itemHolder.HeldItem = slot.ItemSlot;
             }
         }
 
@@ -133,13 +133,17 @@ public class Inventory : MonoBehaviour
             return;
 
 
-        Vector3 newPosition = transform.localPosition;
-        newPosition.z = -1;
+        Vector3 newPosition = transform.position;
 
         Item item = slot.ItemSlot;
         item.GetComponent<Collider2D>().enabled = false;
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+        item.parent.position = newPosition;
+        newPosition = item.parent.position;
+        newPosition.z = -1;
         item.parent.localPosition = newPosition;
+
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
         //print("Place");
         slot.ItemSlot = null;
