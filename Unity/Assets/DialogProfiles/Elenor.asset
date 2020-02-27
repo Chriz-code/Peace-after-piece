@@ -15,5 +15,9 @@ MonoBehaviour:
   profileImage: {fileID: 21300000, guid: 9d93c15c89c372c47ad7a8412abae85d, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   textSounds:
-  - {fileID: 8300000, guid: 5a6ebad5f2fd821458f4349103ea790c, type: 3}
-  - {fileID: 8300000, guid: 7daa1880a4b028242b688a68caecdf27, type: 3}
+  - {fileID: 8300000, guid: 3be61a42c4e33e14eac896c1c5150ee0, type: 3}
+  - {fileID: 8300000, guid: 666cfcccfc5a1cf4483a12e6574c5465, type: 3}
+  - {fileID: 8300000, guid: 7ce2b5c72a4aa5f4288cc5e9f9647418, type: 3}
+  - {fileID: 8300000, guid: 13fc00db285e09f4294ce069b3e30556, type: 3}
+  - {fileID: 0}
+  volume: 0.25

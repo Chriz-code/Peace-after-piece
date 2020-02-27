@@ -22,6 +22,10 @@ public class AudioCaller : MonoBehaviour
     {
         AudioController.Get.OneShot(clip, volume, timeUntilShot, pitch, stereoPan, reverbZoneMix, priority);
     }
+    public void CallAudio(Transform transform)
+    {
+        AudioController.Get.OneShot(clip, volume, timeUntilShot, pitch, stereoPan, reverbZoneMix, priority);
+    }
     public void CallAudio(AudioClip clip, float volume = 1, float timeUntilShot = 0, float pitch = 1, float stereoPan = 0, float reverbZoneMix = 0, int priority = 128)
     {
         AudioController.Get.OneShot(clip, volume, timeUntilShot, pitch, stereoPan, reverbZoneMix, priority);

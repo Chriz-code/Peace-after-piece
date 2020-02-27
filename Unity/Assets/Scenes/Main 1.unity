@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 123318944}
   - component: {fileID: 123318943}
   - component: {fileID: 123318942}
+  - component: {fileID: 123318948}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -495,6 +496,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &123318948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123318941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bd292a4ac66504098ad3d9c19ab088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  none:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  angela:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1983539763}
+        m_MethodName: CallAudio
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  elenor:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 806295191}
+        m_MethodName: CallAudio
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &294090644
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294090645}
   - component: {fileID: 294090646}
+  - component: {fileID: 294090647}
   m_Layer: 0
   m_Name: Yes
   m_TagString: Untagged
@@ -541,7 +592,8 @@ MonoBehaviour:
   dialogChain:
   - message: Done!
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0
+    overrideVolume: 1
+    textVolume: 0.5
     textWaitTime: 0
     textSpeed: 0
     playerInput: 1
@@ -583,6 +635,17 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 294090647}
+            m_MethodName: CallAudio
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
     multipleChoice: 0
@@ -590,6 +653,25 @@ MonoBehaviour:
     yes: {fileID: 0}
     buttonTextNo: 
     no: {fileID: 0}
+--- !u!114 &294090647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294090644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c572f45b5206224295be88607671b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: ae814109e2b526a4da7467d3d09f695d, type: 3}
+  timeUntilShot: 0
+  priority: 128
+  volume: 1
+  pitch: 1
+  stereoPan: 0
+  reverbZoneMix: 0
 --- !u!1 &300971890
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 300971891}
   - component: {fileID: 300971892}
+  - component: {fileID: 300971893}
   m_Layer: 0
   m_Name: Yes
   m_TagString: Untagged
@@ -636,7 +719,8 @@ MonoBehaviour:
   dialogChain:
   - message: Done!
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0.7
+    overrideVolume: 1
+    textVolume: 0.5
     textWaitTime: 1
     textSpeed: 0
     playerInput: 1
@@ -678,6 +762,17 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 294090647}
+            m_MethodName: CallAudio
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
     multipleChoice: 0
@@ -685,6 +780,25 @@ MonoBehaviour:
     yes: {fileID: 0}
     buttonTextNo: 
     no: {fileID: 0}
+--- !u!114 &300971893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300971890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c572f45b5206224295be88607671b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: ae814109e2b526a4da7467d3d09f695d, type: 3}
+  timeUntilShot: 0
+  priority: 128
+  volume: 1
+  pitch: 1
+  stereoPan: 0
+  reverbZoneMix: 0
 --- !u!114 &322954728 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8094447315779476248, guid: 21d8c7f927cb3ec4aa406db8db213acb,
@@ -1203,8 +1317,9 @@ MonoBehaviour:
 
       @Do you like the oven?'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0.5
-    textWaitTime: 1
+    overrideVolume: 0
+    textVolume: 0.25
+    textWaitTime: 0
     textSpeed: 0
     playerInput: 1
     _DialogEvent: 0
@@ -1318,8 +1433,9 @@ MonoBehaviour:
 
       @Do you want to close it?'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0
-    textWaitTime: 1
+    overrideVolume: 0
+    textVolume: 0.5
+    textWaitTime: 0
     textSpeed: 0
     playerInput: 1
     _DialogEvent: 0
@@ -1353,7 +1469,8 @@ MonoBehaviour:
 
       @Do you want to open it?'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0
+    overrideVolume: 0
+    textVolume: 0.5
     textWaitTime: 0
     textSpeed: 0
     playerInput: 1
@@ -1375,7 +1492,8 @@ MonoBehaviour:
 
       @Do you want to close it?'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0
+    overrideVolume: 0
+    textVolume: 0.5
     textWaitTime: 0
     textSpeed: 0
     playerInput: 1
@@ -2685,6 +2803,7 @@ MonoBehaviour:
   dialogChain:
   - message: H-here you go.
     profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
+    overrideVolume: 0
     textVolume: 1
     textWaitTime: 100
     textSpeed: 0
@@ -3802,7 +3921,8 @@ MonoBehaviour:
 
       @Do you want to close it?'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0
+    overrideVolume: 0
+    textVolume: 0.5
     textWaitTime: 0
     textSpeed: 0
     playerInput: 1
@@ -3837,7 +3957,8 @@ MonoBehaviour:
 
       @Do you want to open it?'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0
+    overrideVolume: 0
+    textVolume: 0.5
     textWaitTime: 0
     textSpeed: 0
     playerInput: 1
@@ -3859,7 +3980,8 @@ MonoBehaviour:
 
       @Do you want to close it?'
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    textVolume: 0
+    overrideVolume: 0
+    textVolume: 0.5
     textWaitTime: 0
     textSpeed: 0
     playerInput: 1
@@ -3969,6 +4091,7 @@ MonoBehaviour:
   dialogChain:
   - message: Catch!
     profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
+    overrideVolume: 0
     textVolume: 1
     textWaitTime: 100
     textSpeed: 0

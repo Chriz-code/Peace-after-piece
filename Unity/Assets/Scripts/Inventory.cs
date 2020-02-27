@@ -91,6 +91,7 @@ public class Inventory : MonoBehaviour
             slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
             item.parent.localPosition = new Vector2(222, 222);
             item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            item.GetComponent<Collider2D>().enabled = true;
             return;
         }
         if (PickUpAllowed == false)
@@ -103,6 +104,7 @@ public class Inventory : MonoBehaviour
         slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
         item.parent.localPosition = new Vector2(222, 222);
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        item.GetComponent<Collider2D>().enabled = true;
 
         //itembutton = Instantiate(itembuttonPrefab, inventory.slots[i].transform, false);
     }
@@ -168,7 +170,7 @@ public class Inventory : MonoBehaviour
         newPosition.x += 1;
 
         Item item = slot.ItemSlot;
-
+        item.GetComponent<Collider2D>().enabled = true;
         item.parent.parent = oppositeRoom.transform;
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         item.parent.GetComponent<Transform>().localPosition = newPosition;

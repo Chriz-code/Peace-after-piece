@@ -141,7 +141,7 @@ public class DialogController : MonoBehaviour
 
         if (dialog.profile == null)
             Debug.LogWarning("DialogProfiel Missing!");
-            //dialog.profile = new DialogProfile(null, Color.white, new AudioClip[0]);
+        //dialog.profile = new DialogProfile(null, Color.white, new AudioClip[0]);
 
         if (showProfile)
         {
@@ -171,11 +171,12 @@ public class DialogController : MonoBehaviour
                 if (messages[i][j] == '/') //Lower WaitTime if symbol found in message
                 {
                     lowerWaitBy += 1;
-                }if((messages[i][j] == '-')) // Skip WaitTime if symbol found in message
+                }
+                if ((messages[i][j] == '-')) // Skip WaitTime if symbol found in message
                 {
                     dialogText.text += messages[i][j];
                 }
-                else 
+                else
                 {
                     dialogText.text += messages[i][j];
                     if (textSoundSource != null && dialog.profile.textSounds.Length > 0 && //If there's a audioSource and soundClips
@@ -184,7 +185,7 @@ public class DialogController : MonoBehaviour
                     {
                         AudioClip sound = dialog.profile.textSounds[Random.Range(0, dialog.profile.textSounds.Length)];
                         if (sound)
-                            this.textSoundSource.PlayOneShot(sound, dialog.textVolume);
+                            this.textSoundSource.PlayOneShot(sound, dialog.overrideVolume ? dialog.textVolume : dialog.profile.volume);
                     }
                     else if (messages[i][j] == '\n')//Increase row count
                     {
