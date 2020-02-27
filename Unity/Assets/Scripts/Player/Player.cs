@@ -12,4 +12,5 @@ public class Player : MonoBehaviour
             return GetComponent<ThisPerspective>().perspective;
         }
     }
+    public Player_UserInput userInput = null;
 }

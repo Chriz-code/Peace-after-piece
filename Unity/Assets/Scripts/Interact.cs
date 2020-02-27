@@ -113,15 +113,18 @@ public class Interact : MonoBehaviour
         }
 
         player.TryGetComponent<ThisPerspective>(out ThisPerspective playerPerspective);
-        if (playerPerspective.perspective == GameController.Get.CurrentPerspective && playerPerspective)
+        if (player.userInput.enabled)
         {
-            if (ParentPerspective == GameController.Get.CurrentPerspective)
+            if (playerPerspective.perspective == GameController.Get.CurrentPerspective && playerPerspective)
             {
-                return true;
-            }
-            if (ParentPerspective == Perspective.None)
-            {
-                return true;
+                if (ParentPerspective == GameController.Get.CurrentPerspective)
+                {
+                    return true;
+                }
+                if (ParentPerspective == Perspective.None)
+                {
+                    return true;
+                }
             }
         }
         return false;

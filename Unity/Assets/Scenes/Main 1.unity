@@ -1654,6 +1654,7 @@ GameObject:
   - component: {fileID: 737325525}
   - component: {fileID: 737325526}
   - component: {fileID: 737325527}
+  - component: {fileID: 737325528}
   m_Layer: 10
   m_Name: PaintingPuzzel
   m_TagString: Untagged
@@ -1708,6 +1709,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 737325528}
+        m_MethodName: CallAudio
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &737325527
@@ -1724,12 +1736,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogChain:
   - message: They all seem to fit!
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
-    overrideVolume: 0
+    profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
+    overrideVolume: 1
     textVolume: 0.5
-    textWaitTime: 0
+    textWaitTime: 0.2
     textSpeed: 0
-    playerInput: 0
+    playerInput: 1
     _DialogEvent: 0
     unityEvent:
       events:
@@ -1742,6 +1754,25 @@ MonoBehaviour:
     yes: {fileID: 0}
     buttonTextNo: 
     no: {fileID: 0}
+--- !u!114 &737325528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737325524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c572f45b5206224295be88607671b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: dee667ae7ef48d7458b1d7e3c4c6b164, type: 3}
+  timeUntilShot: 0
+  priority: 128
+  volume: 1
+  pitch: 1
+  stereoPan: 0
+  reverbZoneMix: 0
 --- !u!1 &754395291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,6 +2053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43cc3f5079e949543adce381aae0c591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userInput: {fileID: 779497533}
 --- !u!114 &779497533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4119,6 +4151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43cc3f5079e949543adce381aae0c591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userInput: {fileID: 1883778371}
 --- !u!114 &1883778371
 MonoBehaviour:
   m_ObjectHideFlags: 0
