@@ -6,7 +6,7 @@ public class DialogCaller : MonoBehaviour
 {
     public Dialog[] dialogChain = new Dialog[1];
 
-    public void CallDialog()
+    public void CallDialog(Transform transform)
     {
         UIController.Get.dialogController.StartDialog(dialogChain);
     }
@@ -47,5 +47,5 @@ public class Dialog
 [System.Serializable]
 public class DialogEvent 
 {
-    public UnityEngine.Events.UnityEvent events;
+    public InteractEvent events;
 }

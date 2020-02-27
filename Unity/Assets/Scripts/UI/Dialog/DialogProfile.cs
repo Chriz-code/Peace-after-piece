@@ -9,4 +9,12 @@ public class DialogProfile : ScriptableObject
     public Sprite profileImage = null;
     public Color color = Color.white;
     public AudioClip[] textSounds = null;
+
+
+    public DialogProfile(Sprite profileImage, Color color, AudioClip[] textSounds)
+    {
+        this.profileImage = profileImage;
+        this.color = color;
+        this.textSounds = textSounds;
+    }
 }

@@ -6,9 +6,10 @@ public class DialogController : MonoBehaviour
 {
     [Header("Refrences")]
     [SerializeField] Image profileBox = null;
+    [SerializeField] Image dialogProfile = null;
     [SerializeField] Image profile = null, dialogBox = null;
     [SerializeField]
-    Sprite profileBoxAngela = null, dialogBoxAngela = null, profileBoxElenor = null, dialogBoxElenor = null;
+    Sprite profileBoxAngela = null, dialogProfileAngela = null, dialogBoxAngela = null, profileBoxElenor = null, dialogProfileElenor = null, dialogBoxElenor = null;
     [SerializeField] Text dialogText = null;
     [SerializeField] ChoiceMenu choiceMenu = null;
     [SerializeField] AudioSource textSoundSource = null;
@@ -18,6 +19,7 @@ public class DialogController : MonoBehaviour
 
     Vector3 originalPos = Vector3.zero;
     [Header("Variables")]
+    [SerializeField] bool showProfile = false;
     [SerializeField] int speedMultiplier = 3;
     [SerializeField] bool silenceWhenMultiplying = false;
     [SerializeField] bool ready = false;
@@ -57,7 +59,6 @@ public class DialogController : MonoBehaviour
         if (ready && ienumerating == false)
         {
             dialogStarter = StartDialogIEnumerator(dialogProfiles);
-            //Debug.Log("Hej");
             StartCoroutine(dialogStarter);
         }
     }
@@ -83,7 +84,7 @@ public class DialogController : MonoBehaviour
             dialogWritter = DialogIEnumerator(dialogProfiles[i]); // prepare IEnumerator
 
             if (dialogProfiles[i]._DialogEvent) // Dialog Events
-                dialogProfiles[i].unityEvent?.events?.Invoke();
+                dialogProfiles[i].unityEvent?.events?.Invoke(transform);
 
             yield return StartCoroutine(dialogWritter);// Print Text to dialogBox and Produce Sound
 
@@ -99,20 +100,29 @@ public class DialogController : MonoBehaviour
                 ienumerating = false;
                 if (choiceNum == 1)
                 {
-                    dialogProfiles[i].yes.CallDialog();
+                    if (dialogProfiles[i].yes)
+                        dialogProfiles[i].yes.CallDialog(transform);
+                    else
+                        StopDialog();
                 }
                 if (choiceNum == 2)
-                    dialogProfiles[i].no.CallDialog();
+                {
+                    if (dialogProfiles[i].no)
+                        dialogProfiles[i].no.CallDialog(transform);
+                    else
+                        StopDialog();
+                }
+
                 choiceMenu.gameObject.SetActive(false);
                 yield break;
             }
-            else if (dialogProfiles[i].playerInput)
+            /*else if (dialogProfiles[i].playerInput)
             {
-                do
+                do //Wait for playerInput
                 {
                     yield return null;
                 } while (KeyDown() == false);
-            }
+            }*/
 
         }
         StopDialog();
@@ -122,52 +132,65 @@ public class DialogController : MonoBehaviour
     public void SetChoice(int i) // Yes No Buttons
     {
         choiceNum = i;
-        Debug.Log(choiceNum+" c:i "+ i);
+        //Debug.Log(choiceNum + " c:i " + i);
     }
 
     public IEnumerator DialogIEnumerator(Dialog dialog)
     {
         CheckPerspective();
-        //Profile
-        //profileBox.gameObject.SetActive(true);
-        //this.profile.sprite = dialogProfile.profile;
-        //this.profile.color = dialogProfile.profileColor;
+
+        if (dialog.profile == null)
+            Debug.LogWarning("DialogProfiel Missing!");
+            //dialog.profile = new DialogProfile(null, Color.white, new AudioClip[0]);
+
+        if (showProfile)
+        {
+            //Profile
+            dialogProfile.gameObject.SetActive(true);
+            this.profile.sprite = dialog.profile.profileImage;
+            this.profile.color = dialog.profile.color;
+        }
 
         //Box
         dialogBox.gameObject.SetActive(true);
-        string[] messages = dialog.message.Split('@');
+        string[] messages = dialog.message.Split('@'); // Split message into parts
         if (scrollText)
             messages = dialog.message.Split('@', '-');
 
         dialogText.text = "";
         rowCount = 1;
-        for (int i = 0; i < messages.Length; i++)
+        for (int i = 0; i < messages.Length; i++) //Loop through parts
         {
             int lowerWaitBy = 1;
-            if (!scrollText)
+            if (!scrollText) //Clear message
             {
                 dialogText.text = "";
             }
-            for (int j = 0; j < messages[i].Length; j++)
+            for (int j = 0; j < messages[i].Length; j++) //Loop through characters
             {
                 if (messages[i][j] == '/') //Lower WaitTime if symbol found in message
                 {
                     lowerWaitBy += 1;
-                }
-                else if (!(messages[i][j] == '-')) // Skip WaitTime if symbol found in message
+                }if((messages[i][j] == '-')) // Skip WaitTime if symbol found in message
                 {
                     dialogText.text += messages[i][j];
-                    if (textSoundSource != null && dialog.profile.textSounds.Length > 0 && !(messages[i][j] == ' ' || messages[i][j] == '\n') && (!silenceWhenMultiplying || (silenceWhenMultiplying && deltaSpeedMultiplier == 1)))
+                }
+                else 
+                {
+                    dialogText.text += messages[i][j];
+                    if (textSoundSource != null && dialog.profile.textSounds.Length > 0 && //If there's a audioSource and soundClips
+                        !(messages[i][j] == ' ' || messages[i][j] == '\n') && //If it's not empty space or new line
+                        (!silenceWhenMultiplying || (silenceWhenMultiplying && deltaSpeedMultiplier == 1))) //If you should play when skipping text
                     {
                         AudioClip sound = dialog.profile.textSounds[Random.Range(0, dialog.profile.textSounds.Length)];
                         if (sound)
                             this.textSoundSource.PlayOneShot(sound, dialog.textVolume);
                     }
-                    else if (messages[i][j] == '\n')
+                    else if (messages[i][j] == '\n')//Increase row count
                     {
                         rowCount++;
                     }
-                    yield return new WaitForSeconds(dialog.textSpeed == 0 ? 0.001f : dialog.textSpeed / deltaSpeedMultiplier);
+                    yield return new WaitForSeconds(dialog.textSpeed == 0 ? 0.001f : dialog.textSpeed / deltaSpeedMultiplier);//Wait between characters
                 }
             }
             if (scrollText && (i + 1) < messages.Length) // Scroll Text Effect
@@ -178,15 +201,15 @@ public class DialogController : MonoBehaviour
                 yield return new WaitForSeconds(distance / scrollSpeed);
                 scrollTextDelta = false;
             }
-            else if (dialog.playerInput == true && i != messages.Length - 1) // Player Input to go to next message
+            else if (dialog.playerInput == true && (!dialog.multipleChoice || (dialog.multipleChoice && i != messages.Length - 1))) // Player Input to go to next message and it's not the last message:  
             {
-                do
+                do //Wait for playerInput
                 {
                     yield return null;
                 } while (KeyDown() == false);
             }
             else
-                yield return new WaitForSeconds(dialog.textWaitTime / lowerWaitBy);
+                yield return new WaitForSeconds(dialog.textWaitTime / lowerWaitBy);//Wait between parts
         }
     }
 
@@ -211,11 +234,13 @@ public class DialogController : MonoBehaviour
         {
             profileBox.sprite = profileBoxAngela;
             dialogBox.sprite = dialogBoxAngela;
+            dialogProfile.sprite = dialogProfileAngela;
         }
         else if (GameController.Get.CurrentPerspective == Perspective.Elenor && ready)
         {
             profileBox.sprite = profileBoxElenor;
             dialogBox.sprite = dialogBoxElenor;
+            dialogProfile.sprite = dialogProfileElenor;
         }
     }
     public void StopDialog()
@@ -225,7 +250,7 @@ public class DialogController : MonoBehaviour
             dialogText.text = "";
             dialogBox.gameObject.SetActive(false);
             choiceMenu.gameObject.SetActive(false);
-            //profileBox.gameObject.SetActive(false);
+            dialogProfile.gameObject.SetActive(false); //Profile
             dialogText.rectTransform.localPosition = originalPos;
             ienumerating = false;
             if (user != null)

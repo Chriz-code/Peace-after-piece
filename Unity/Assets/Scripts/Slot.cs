@@ -4,29 +4,24 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    private Inventory inventory;
-    public int i;
-    public GameObject item;
-    public GameObject player;
-
-    private void Start()
+    Item item;
+    public Item ItemSlot
     {
-        inventory = player.GetComponent<Inventory>();
-    }
-
-    private void Update()
-    {
-        if (transform.childCount > 0)
+        get
         {
-            inventory.isFull[i] = false;
+            return item;
         }
-
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    DropItem();
-        //}
+        set
+        {
+            if (value == null)
+                GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 0);
+            else
+                GetComponent<UnityEngine.UI.Image>().color = Color.white;
+            item = value;
+        }
     }
 
+  
     public void DropItem()
     {
         foreach (Transform child in transform)

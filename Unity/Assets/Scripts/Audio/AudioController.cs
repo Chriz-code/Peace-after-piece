@@ -55,7 +55,6 @@ public class AudioController : MonoBehaviour
         yield return new WaitForSeconds(timeUntilShot);
         shotSource.PlayOneShot(clip,volume);
         //AudioSource.PlayClipAtPoint(clip, Vector3.zero,volume);
-        Debug.Log(clip+" : "+volume);
     }
 
     void AddSource()

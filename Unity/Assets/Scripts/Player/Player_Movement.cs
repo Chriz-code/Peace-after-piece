@@ -20,11 +20,16 @@ public class Player_Movement : MonoBehaviour
         rb2D.velocity = new Vector2(moveInput * speed, rb2D.velocity.y);
         if (moveInput < 0)
         {
-            this.gameObject.GetComponent<Transform>().localScale = new Vector3(-1f, 5f, 1f);
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * -1;
+
+            this.gameObject.GetComponent<Transform>().localScale = scale;
         }
         else if (moveInput > 0)
         {
-            this.gameObject.GetComponent<Transform>().localScale = new Vector3(1f, 5f, 1f);
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x);
+            this.gameObject.GetComponent<Transform>().localScale = scale;
         }
     }
 }
