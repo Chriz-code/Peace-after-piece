@@ -984,7 +984,7 @@ PrefabInstance:
     - target: {fileID: 5716787562443265468, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Name
-      value: Collider
+      value: Boxing
       objectReference: {fileID: 0}
     - target: {fileID: 3546021355125012174, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
@@ -996,6 +996,17 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: itemType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: painting
+      value: 
+      objectReference: {fileID: 21300000, guid: a7bee5a6667ae6c4fb3787a5b837907a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ffedf176d801c48b4df5d9840c84aa, type: 3}
 --- !u!4 &408118891 stripped
@@ -1090,6 +1101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
         type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1883778372}
@@ -1117,6 +1133,31 @@ PrefabInstance:
         type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1883778372}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaceItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1445236569937494453, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
         type: 3}
@@ -1262,7 +1303,7 @@ MonoBehaviour:
   rightBorder: {fileID: 1725532632}
   target: {fileID: 1883778364}
   pos: {x: 0, y: 0, z: 0}
-  distanceUntilFollow: 1
+  distanceUntilFollow: 0.5
   cameraSpeed: 2
 --- !u!20 &519420031
 Camera:
@@ -1480,10 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c8fc73f3d215a408cdf74337e75719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderMask:
-    serializedVersion: 2
-    m_Bits: 256
-  interact:
+  interactEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 577272476}
@@ -1501,7 +1539,7 @@ MonoBehaviour:
       PublicKeyToken=null
   interactKey: 101
   interactKeyAlternative: 323
-  _Collider: {fileID: 0}
+  currentCollision: {fileID: 0}
 --- !u!114 &577272478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1812,7 +1850,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 767557604}
-  - component: {fileID: 767557605}
   - component: {fileID: 767557606}
   - component: {fileID: 767557607}
   m_Layer: 0
@@ -1840,14 +1877,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &767557605
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767557603}
-  m_Enabled: 1
 --- !u!114 &767557606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2067,7 +2096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 779497532}
-  _Movement: {fileID: 779497527}
+  movement: {fileID: 779497527}
   inventory: {fileID: 779497534}
   inspectKey: 99
   inspectKeyAlternative: 324
@@ -2089,12 +2118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1883778370}
   slot: {fileID: 1149991495}
-  colliderMask:
-    serializedVersion: 2
-    m_Bits: 2048
   oppositeRoom: {fileID: 940701357}
-  _Collider: {fileID: 0}
-  item: {fileID: 0}
+  colItems: []
 --- !u!1 &806295189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,7 +2286,7 @@ PrefabInstance:
     - target: {fileID: 5716787562443265468, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Name
-      value: Collider
+      value: BurningDoor
       objectReference: {fileID: 0}
     - target: {fileID: 3546021355125012174, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
@@ -2273,6 +2298,17 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: itemType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: painting
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a29d463dcfd2cb49817a5bf09bfebde,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ffedf176d801c48b4df5d9840c84aa, type: 3}
 --- !u!4 &901208623 stripped
@@ -2994,6 +3030,46 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: e561ff80495f29247bb11031ec34c11a,
         type: 3}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341471812311141499, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
 --- !u!1 &1397872379
@@ -3042,10 +3118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c8fc73f3d215a408cdf74337e75719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderMask:
-    serializedVersion: 2
-    m_Bits: 256
-  interact:
+  interactEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1397872382}
@@ -3059,22 +3132,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1883778372}
-        m_MethodName: TransferItem
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactKey: 101
   interactKeyAlternative: 323
-  _Collider: {fileID: 0}
+  currentCollision: {fileID: 0}
 --- !u!114 &1397872382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3099,7 +3161,18 @@ MonoBehaviour:
     unityEvent:
       events:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1883778372}
+            m_MethodName: TransferItem
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
     multipleChoice: 0
@@ -3298,7 +3371,7 @@ PrefabInstance:
     - target: {fileID: 5716787562443265468, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Name
-      value: Collider
+      value: Mom
       objectReference: {fileID: 0}
     - target: {fileID: 3546021355125012174, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
@@ -3310,6 +3383,17 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: itemType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: painting
+      value: 
+      objectReference: {fileID: 21300000, guid: 5eb7b3660ef136b478cd607c9b93de79,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ffedf176d801c48b4df5d9840c84aa, type: 3}
 --- !u!4 &1403679575 stripped
@@ -3404,6 +3488,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
         type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1883778372}
@@ -3431,6 +3520,31 @@ PrefabInstance:
         type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1883778372}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaceItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1445236569937494453, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
         type: 3}
@@ -3795,7 +3909,7 @@ MonoBehaviour:
   rightBorder: {fileID: 1725532632}
   target: {fileID: 779497526}
   pos: {x: 0, y: 0, z: 0}
-  distanceUntilFollow: 1
+  distanceUntilFollow: 0.5
   cameraSpeed: 2
 --- !u!1 &1799590157
 GameObject:
@@ -4165,7 +4279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1883778370}
-  _Movement: {fileID: 1883778365}
+  movement: {fileID: 1883778365}
   inventory: {fileID: 1883778372}
   inspectKey: 99
   inspectKeyAlternative: 324
@@ -4187,12 +4301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1883778370}
   slot: {fileID: 1799590158}
-  colliderMask:
-    serializedVersion: 2
-    m_Bits: 2048
   oppositeRoom: {fileID: 1369742470}
-  _Collider: {fileID: 0}
-  item: {fileID: 0}
+  colItems: []
 --- !u!1 &1983539761
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,10 +4588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c8fc73f3d215a408cdf74337e75719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderMask:
-    serializedVersion: 2
-    m_Bits: 256
-  interact:
+  interactEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2029060862}
@@ -4495,22 +4602,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 779497534}
-        m_MethodName: TransferItem
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactKey: 101
   interactKeyAlternative: 323
-  _Collider: {fileID: 0}
+  currentCollision: {fileID: 0}
 --- !u!114 &2029060862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4531,11 +4627,22 @@ MonoBehaviour:
     textWaitTime: 100
     textSpeed: 0
     playerInput: 1
-    _DialogEvent: 0
+    _DialogEvent: 1
     unityEvent:
       events:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 779497534}
+            m_MethodName: TransferItem
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
     multipleChoice: 0
@@ -4692,6 +4799,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
         type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1883778372}
@@ -4719,6 +4831,31 @@ PrefabInstance:
         type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1883778372}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaceItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494456, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1445236569937494453, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
         type: 3}

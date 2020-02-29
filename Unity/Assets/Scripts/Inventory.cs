@@ -6,27 +6,25 @@ public class Inventory : MonoBehaviour
 {
     public Player player;
     public Slot slot;
-    public LayerMask colliderMask;
-    Vector2 _ColliderSize;
     public GameObject oppositeRoom;
     [Header("Debug")]
-    public Collider2D _Collider;
-    public Item item = null;
-
-
-    private void FixedUpdate()
+    [SerializeField] List<Item> colItems = new List<Item>();
+    Item CurrentColItem
     {
-        if (TryGetComponent<BoxCollider2D>(out BoxCollider2D box))
+        get
         {
-            _ColliderSize = box.size;
-            _Collider = Physics2D.OverlapBox(transform.position, _ColliderSize, 0, colliderMask);
-            if (_Collider)
+            if (colItems.Count > 0)
             {
-                if (CheckPerspective(_Collider.gameObject) && _Collider.GetComponent<Item>())
+                foreach (var item in colItems)
                 {
-                    item = _Collider.GetComponent<Item>();
-                    UIController.Get.Interact(_Collider.gameObject, true);
+                    if (item.gameObject == UIController.Get.Caller)
+                        return item;
                 }
+                return null;
+            }
+            else
+            {
+                return null;
             }
         }
     }
@@ -37,11 +35,11 @@ public class Inventory : MonoBehaviour
         {
             if (slot)
             {
-
-                if (slot.ItemSlot == null && item != null)
+                if (slot.ItemSlot == null && CurrentColItem != null)
                 {
-                    if (UIController.Get.caller != item.gameObject)
+                    if (UIController.Get.Caller != CurrentColItem.gameObject)
                         return false;
+
                     return true;
                 }
             }
@@ -58,6 +56,24 @@ public class Inventory : MonoBehaviour
             return false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (CheckPerspective(collision.gameObject) && collision.GetComponent<Item>())
+        {
+            colItems.Add(collision.GetComponent<Item>());
+            UIController.Get.Interact(collision.gameObject, true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (CheckPerspective(collision.gameObject) && collision.GetComponent<Item>())
+        {
+            colItems.Remove(collision.GetComponent<Item>());
+            UIController.Get.Interact(collision.gameObject, false);
+        }
+    }
+
     Perspective ParentPerspective(Transform transform)
     {
         transform.root.TryGetComponent<ThisPerspective>(out ThisPerspective thisPerspective);
@@ -85,7 +101,7 @@ public class Inventory : MonoBehaviour
     public void PickUpItem(Item item = null)
     {
 
-        if (item != null && slot.ItemSlot == null)
+        if (item != null && slot.ItemSlot == null) //If item is taken from an itemHolder
         {
             slot.ItemSlot = item;
             slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
@@ -97,16 +113,13 @@ public class Inventory : MonoBehaviour
         if (PickUpAllowed == false)
             return;
 
-        item = this.item;
-        //print("Take1");
+        item = this.CurrentColItem;
         slot.ItemSlot = item;
 
         slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
         item.parent.localPosition = new Vector2(222, 222);
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         item.GetComponent<Collider2D>().enabled = true;
-
-        //itembutton = Instantiate(itembuttonPrefab, inventory.slots[i].transform, false);
     }
     public void PlaceItem(Transform transform)
     {

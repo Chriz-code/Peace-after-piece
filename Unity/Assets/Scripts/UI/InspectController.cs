@@ -7,14 +7,19 @@ public class InspectController : MonoBehaviour
     public GameObject panel = null;
     public UnityEngine.UI.Image image = null;
 
-    public void Inspect(Item item)
+    public void InspectItem(Item item)
     {
         panel.SetActive(!panel.activeSelf);
 
         if (panel.activeSelf)
+        {
             image.sprite = Switch(item);
+        }
         else
+        {
+            Debug.Log("No Object");
             image.sprite = null;
+        }
     }
 
 
@@ -24,12 +29,33 @@ public class InspectController : MonoBehaviour
             switch (item.itemType)
             {
                 case ItemType.Book:
+                    InspectBook(item);
                     return item.book;
                 case ItemType.Key:
+                    InspectKey(item);
                     return item.key;
                 case ItemType.Painting:
+                    InspectPainting(item);
                     return item.painting;
             }
+        Debug.LogWarning("Unifentified Object");
         return null;
     }
+
+    void InspectBook(Item item)
+    {
+        image.sprite = item.book;
+        image.SetNativeSize();
+    }
+    void InspectKey(Item item)
+    {
+        image.sprite = item.key;
+        image.SetNativeSize();
+    }
+    void InspectPainting(Item item)
+    {
+        image.sprite = item.painting;
+        image.SetNativeSize();
+    }
+
 }

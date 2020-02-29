@@ -5,17 +5,16 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class Interact : MonoBehaviour
 {
-    public LayerMask colliderMask = 8;
+    [SerializeField] public InteractEvent interactEvent;
     bool interactable = false;
     public bool Interactable
     {
         get
         {
-            if (UIController.Get.caller != gameObject)
+            if (UIController.Get.Caller != gameObject)
                 return false;
             if (ParentPerspective == GameController.Get.CurrentPerspective && interactable == true)
             {
-                //print(GameController.Get.CurrentPerspective);
                 return true;
             }
             if (ParentPerspective == Perspective.None && interactable == true)
@@ -27,13 +26,10 @@ public class Interact : MonoBehaviour
         set
         {
             interactable = value;
-            if (value == true)
-            {
-                UIController.Get.Interact(gameObject, value);
-            }
+            UIController.Get.Interact(gameObject, interactable);
+
         }
     }
-    [SerializeField] public InteractEvent interact;
     Perspective ParentPerspective
     {
         get
@@ -52,45 +48,23 @@ public class Interact : MonoBehaviour
 
     public KeyCode interactKey = KeyCode.E;
     public KeyCode interactKeyAlternative = KeyCode.Mouse0;
+    Vector2 colliderSize;
+    [Header("Debug")]
+    [SerializeField] Collider2D currentCollision;
+
 
     private void Start()
     {
         Interactable = false;
     }
-    Vector2 _ColliderSize;
-    public Collider2D _Collider;
-    private void FixedUpdate()
-    {
-        if (TryGetComponent<BoxCollider2D>(out BoxCollider2D box))
-        {
-            _ColliderSize = box.size;
-            if (InteractableCheck(Physics2D.OverlapBox(transform.position, _ColliderSize, 0, colliderMask)))
-                Interactable = true;
-            else
-                Interactable = false;
-        }
-    }
     private void Update()
     {
-        if (Interactable && (Input.GetKeyDown(interactKey) || Input.GetKeyDown(interactKeyAlternative)))
+        if ((Input.GetKeyDown(interactKey) || Input.GetKeyDown(interactKeyAlternative)))
         {
-            interact?.Invoke(transform);
+            if (Interactable)
+                interactEvent?.Invoke(transform);
         }
     }
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        if (_ColliderSize.y != 0)
-        {
-            Gizmos.DrawCube(transform.position, _ColliderSize);
-        }
-        else
-        {
-            Gizmos.DrawWireSphere(transform.position, _ColliderSize.x);
-        }
-    }
-
 
     private void OnDestroy()
     {
@@ -101,45 +75,57 @@ public class Interact : MonoBehaviour
         Interactable = false;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (InteractableCheck(collision))
+        {
+            Interactable = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (InteractableCheck(collision))
+        {
+            Interactable = false;
+        }
+    }
+
+
     bool InteractableCheck(Collider2D collision)
     {
-        _Collider = collision;
-        if (!_Collider)
-            return false;
-        _Collider.TryGetComponent<Player>(out Player player);
-        if (!player)
+        currentCollision = collision;
+        if (!currentCollision)
         {
+            Interactable = false;
             return false;
         }
 
-        player.TryGetComponent<ThisPerspective>(out ThisPerspective playerPerspective);
-        if (player.userInput.enabled)
+        currentCollision.TryGetComponent<Player>(out Player player);
+        if (!player)
         {
-            if (playerPerspective.perspective == GameController.Get.CurrentPerspective && playerPerspective)
+            Interactable = false;
+            return false;
+        }
+
+        if (player.TryGetComponent<ThisPerspective>(out ThisPerspective playerPerspective))
+        {
+            if (player.userInput.enabled)
             {
-                if (ParentPerspective == GameController.Get.CurrentPerspective)
+                if (playerPerspective.perspective == GameController.Get.CurrentPerspective && playerPerspective)
                 {
-                    return true;
-                }
-                if (ParentPerspective == Perspective.None)
-                {
-                    return true;
+                    if (ParentPerspective == GameController.Get.CurrentPerspective)
+                    {
+                        return true;
+                    }
+                    if (ParentPerspective == Perspective.None)
+                    {
+                        return true;
+                    }
                 }
             }
         }
-        return false;
-    }
-    bool InteractableCheck(Collision2D collision)
-    {
-        collision.transform.TryGetComponent<Player>(out Player player);
-        if (player && ParentPerspective == GameController.Get.CurrentPerspective)
-        {
-            return true;
-        }
-        if (player && ParentPerspective == Perspective.None)
-        {
-            return true;
-        }
+
+        Interactable = false;
         return false;
     }
 }
