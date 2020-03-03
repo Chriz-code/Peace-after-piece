@@ -3157,7 +3157,7 @@ MonoBehaviour:
     textWaitTime: 100
     textSpeed: 0
     playerInput: 1
-    _DialogEvent: 0
+    _DialogEvent: 1
     unityEvent:
       events:
         m_PersistentCalls:
