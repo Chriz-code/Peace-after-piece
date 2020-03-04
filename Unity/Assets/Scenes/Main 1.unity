@@ -2540,7 +2540,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &1034925264
 GameObject:
@@ -2733,7 +2733,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 51, y: 51}
+  m_AnchoredPosition: {x: 51, y: 400}
   m_SizeDelta: {x: 62, y: 62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1149991495
@@ -3157,7 +3157,7 @@ MonoBehaviour:
     textWaitTime: 100
     textSpeed: 0
     playerInput: 1
-    _DialogEvent: 0
+    _DialogEvent: 1
     unityEvent:
       events:
         m_PersistentCalls:
@@ -3754,7 +3754,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &1655923916
 GameObject:
@@ -3996,7 +3996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 51, y: 51}
+  m_AnchoredPosition: {x: 51, y: 400}
   m_SizeDelta: {x: 62, y: 62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1825227191 stripped
@@ -4507,7 +4507,7 @@ MonoBehaviour:
     textWaitTime: 0
     textSpeed: 0
     playerInput: 1
-    _DialogEvent: 0
+    _DialogEvent: 1
     unityEvent:
       events:
         m_PersistentCalls:
