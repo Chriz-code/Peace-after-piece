@@ -6,7 +6,7 @@ public class Player_UserInput : MonoBehaviour
 {
     [Header("Refrences")]
     [SerializeField] Player player = null;
-    [SerializeField] Player_Movement _Movement = null;
+    [SerializeField] Player_Movement movement = null;
     [SerializeField] Inventory inventory = null;
 
     [Header("Input")]
@@ -23,12 +23,12 @@ public class Player_UserInput : MonoBehaviour
     }
     private void OnValidate()
     {
-        if (!player || !_Movement || !inventory)
+        if (!player || !movement || !inventory)
         {
             TryGetComponent<Player>(out Player player);
             this.player = player;
             TryGetComponent<Player_Movement>(out Player_Movement _Movement);
-            this._Movement = _Movement;
+            this.movement = _Movement;
             TryGetComponent<Inventory>(out Inventory inventory);
             this.inventory = inventory;
 
@@ -48,7 +48,7 @@ public class Player_UserInput : MonoBehaviour
             }
             if (!UIController.Get.inspectController || (!UIController.Get.inspectController.panel.activeSelf))
             {
-                _Movement.Movement(Input.GetAxis("Horizontal"));
+                movement.Movement(Input.GetAxis("Horizontal"));
                 if ((Input.GetKeyDown(pickUpKey) || Input.GetKeyDown(pickUpKeyAlternative)) && inventory.PickUpAllowed)
                 {
                     inventory.PickUpItem();
@@ -58,19 +58,23 @@ public class Player_UserInput : MonoBehaviour
                     inventory.DropItem();
                 }
             }
+            else
+            {
+                movement.Movement(0);
+            }
         }
     }
 
     private void OnDisable()
     {
-        _Movement.Movement(0);
+        movement.Movement(0);
     }
 
     void InspectObjectInHand()
     {
         if (UIController.Get.inspectController && inventory)
         {
-            UIController.Get.inspectController.Inspect(inventory.slot.ItemSlot);
+            UIController.Get.inspectController.InspectItem(inventory.slot.ItemSlot);
         }
     }
 }

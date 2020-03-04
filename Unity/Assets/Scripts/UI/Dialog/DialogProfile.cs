@@ -9,7 +9,7 @@ public class DialogProfile : ScriptableObject
     public Sprite profileImage = null;
     public Color color = Color.white;
     public AudioClip[] textSounds = null;
-
+    public float volume = 0.25f;
 
     public DialogProfile(Sprite profileImage, Color color, AudioClip[] textSounds)
     {

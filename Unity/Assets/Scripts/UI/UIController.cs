@@ -12,9 +12,23 @@ public class UIController : MonoBehaviour
     bool active;
 
     [Header("Debug")]
-    public GameObject caller;
-
-
+    [SerializeField] List<GameObject> callers = new List<GameObject>();
+    public GameObject Caller
+    {
+        get
+        {
+            if (callers.Count > 0)
+            {
+                active = true;
+                return callers[0];
+            }
+            else
+            {
+                active = false;
+                return null;
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -29,19 +43,17 @@ public class UIController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (interactPopUp && caller)
+        if (interactPopUp && Caller)
         {
             interactPopUp.rectTransform.position = RectTransformUtility.WorldToScreenPoint(Camera.main,
-                new Vector3(caller.transform.position.x, caller.transform.position.y + caller.transform.localScale.y, caller.transform.position.z));
+                new Vector3(Caller.transform.position.x, Caller.transform.position.y + Caller.transform.localScale.y, Caller.transform.position.z));
             interactPopUp.gameObject.SetActive(active);
-            if (active == false)
-                caller = null;
         }
         else if (active == false)
         {
             interactPopUp.gameObject.SetActive(active);
         }
-        active = false;
+        //active = false;
     }
     private void OnEnable()
     {
@@ -51,16 +63,22 @@ public class UIController : MonoBehaviour
     {
         GameController.Get.onChangePerspective -= ClearUi;
     }
-    public void Interact(GameObject caller, bool active)
+    public void Interact(GameObject caller, bool addCaller)
     {
         //Debug.Log(caller.name + ":" + active);
-        this.caller = caller;
-        this.active = active;
+        if (addCaller)
+        {
+            callers.Add(caller);
+        }
+        else if (!addCaller)
+        {
+            callers.Remove(caller);
+        }
     }
     void ClearUi(GameController gc, Perspective perspective)
     {
         dialogController.StopDialog();
-        Interact(gameObject, false);
+        callers.Clear();
         dialogController.CheckPerspective();
     }
 }

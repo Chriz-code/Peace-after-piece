@@ -5,11 +5,11 @@ using UnityEngine.Events;
 public class PerspectiveChange : MonoBehaviour
 {
     [Header("None")]
-    [SerializeField] public UnityEvent none;
+    [SerializeField] public InteractEvent none;
     [Header("Angela")]
-    [SerializeField] public UnityEvent angela;
+    [SerializeField] public InteractEvent angela;
     [Header("Elenor")]
-    [SerializeField] public UnityEvent elenor;
+    [SerializeField] public InteractEvent elenor;
 
     private void OnEnable()
     {
@@ -25,13 +25,13 @@ public class PerspectiveChange : MonoBehaviour
         switch (perspective)
         {
             case Perspective.None:
-                none?.Invoke();
+                none?.Invoke(transform);
                 break;
             case Perspective.Angela:
-                angela?.Invoke();
+                angela?.Invoke(transform);
                 break;
             case Perspective.Elenor:
-                elenor?.Invoke();
+                elenor?.Invoke(transform);
                 break;
         }
     }

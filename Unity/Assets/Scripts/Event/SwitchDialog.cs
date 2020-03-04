@@ -12,7 +12,7 @@ public class SwitchDialog : MonoBehaviour
 
     [Header("Conditional")]
     public bool loopBetween = false;
-    [ConditionalHide("loopBetween", true)]
+    //[ConditionalHide("loopBetween", true)]
     public Dialog dialog2 = null;
 
     public void DialogSwitch(Transform transform)
