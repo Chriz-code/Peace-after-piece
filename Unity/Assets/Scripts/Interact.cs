@@ -78,28 +78,28 @@ public class Interact : MonoBehaviour
     #region Collision
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (InteractableCheck(collision))
+        if (InteractableCheck(collision) && this.enabled)
         {
             Interactable = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (InteractableCheck(collision))
+        if (InteractableCheck(null) && this.enabled)
         {
             Interactable = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (InteractableCheck(collision.collider))
+        if (InteractableCheck(collision.collider) && this.enabled)
         {
             Interactable = true;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (InteractableCheck(collision.collider))
+        if (InteractableCheck(null) && this.enabled)
         {
             Interactable = false;
         }
@@ -109,6 +109,11 @@ public class Interact : MonoBehaviour
     bool InteractableCheck(Collider2D collision)
     {
         currentCollision = collision;
+        if (!collision)
+        {
+            Interactable = false;
+            return false;
+        }
         if (!currentCollision)
         {
             Interactable = false;

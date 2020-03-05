@@ -10,6 +10,9 @@ public class Codelock : MonoBehaviour
 
     [SerializeField] int code = 123;
 
+    [SerializeField] public InteractEvent matchEvent;
+    [SerializeField] public InteractEvent unMatchEvent;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -62,6 +65,8 @@ public class Codelock : MonoBehaviour
         if(code == this.code)
         {
             Debug.Log("Code Accepted");
+            matchEvent?.Invoke(transform);
+
             x1.color = Color.green;
             x2.color = Color.green;
             x3.color = Color.green;
@@ -70,6 +75,7 @@ public class Codelock : MonoBehaviour
         else
         {
             Debug.Log("Code Denied");
+            unMatchEvent?.Invoke(transform);
             //Clear Text
             StartCoroutine(ClearTextAnimation());
         }

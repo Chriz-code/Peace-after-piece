@@ -69,8 +69,6 @@ public class UIController : MonoBehaviour
 
     public void Interact(GameObject caller, bool addCaller)
     {
-        //Debug.Log(caller.name + ":" + active);
-        localOffset = Vector2.zero;
         if (addCaller)
         {
             callers.Add(caller);
@@ -79,11 +77,10 @@ public class UIController : MonoBehaviour
         {
             callers.Remove(caller);
         }
+        localOffset = Vector2.zero;
     }
     public void Interact(GameObject caller, Vector2 localOffset, bool addCaller)
     {
-        //Debug.Log(caller.name + ":" + active);
-        this.localOffset = localOffset;
         if (addCaller)
         {
             callers.Add(caller);
@@ -92,6 +89,11 @@ public class UIController : MonoBehaviour
         {
             callers.Remove(caller);
         }
+
+        if (Caller == caller) // Bugfix; E_interact is now on the right place
+            this.localOffset = localOffset;
+        else
+            this.localOffset = Vector2.zero;
     }
     void ClearUi(GameController gc, Perspective perspective)
     {
