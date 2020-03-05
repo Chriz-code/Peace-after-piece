@@ -98,6 +98,7 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+    #region InventoryActions
     public void PickUpItem(Item item = null)
     {
 
@@ -194,4 +195,5 @@ public class Inventory : MonoBehaviour
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
         slot.ItemSlot = null;
     }
+    #endregion
 }

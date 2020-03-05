@@ -7,6 +7,13 @@ public class Interact : MonoBehaviour
 {
     [SerializeField] public InteractEvent interactEvent;
     bool interactable = false;
+    public KeyCode interactKey = KeyCode.E;
+    public KeyCode interactKeyAlternative = KeyCode.Mouse0;
+    public Vector2 localOffset = Vector2.zero;
+    Vector2 colliderSize;
+    [Header("Debug")]
+    [SerializeField] Collider2D currentCollision;
+
     public bool Interactable
     {
         get
@@ -26,7 +33,7 @@ public class Interact : MonoBehaviour
         set
         {
             interactable = value;
-            UIController.Get.Interact(gameObject, interactable);
+            UIController.Get.Interact(gameObject, localOffset, interactable);
 
         }
     }
@@ -46,12 +53,6 @@ public class Interact : MonoBehaviour
         }
     }
 
-    public KeyCode interactKey = KeyCode.E;
-    public KeyCode interactKeyAlternative = KeyCode.Mouse0;
-    Vector2 colliderSize;
-    [Header("Debug")]
-    [SerializeField] Collider2D currentCollision;
-
 
     private void Start()
     {
@@ -65,7 +66,6 @@ public class Interact : MonoBehaviour
                 interactEvent?.Invoke(transform);
         }
     }
-
     private void OnDestroy()
     {
         Interactable = false;
@@ -75,6 +75,7 @@ public class Interact : MonoBehaviour
         Interactable = false;
     }
 
+    #region Collision
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (InteractableCheck(collision))
@@ -89,7 +90,21 @@ public class Interact : MonoBehaviour
             Interactable = false;
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (InteractableCheck(collision.collider))
+        {
+            Interactable = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (InteractableCheck(collision.collider))
+        {
+            Interactable = false;
+        }
+    }
+    #endregion
 
     bool InteractableCheck(Collider2D collision)
     {

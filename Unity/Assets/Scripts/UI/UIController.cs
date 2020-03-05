@@ -29,6 +29,8 @@ public class UIController : MonoBehaviour
             }
         }
     }
+    [SerializeField] Vector2 localOffset = Vector2.zero;
+
 
     private void Awake()
     {
@@ -46,7 +48,8 @@ public class UIController : MonoBehaviour
         if (interactPopUp && Caller)
         {
             interactPopUp.rectTransform.position = RectTransformUtility.WorldToScreenPoint(Camera.main,
-                new Vector3(Caller.transform.position.x, Caller.transform.position.y + Caller.transform.localScale.y, Caller.transform.position.z));
+                new Vector3(Caller.transform.position.x, Caller.transform.position.y + (Caller.transform.localScale.y / 2), Caller.transform.position.z)
+                + (Vector3)localOffset);
             interactPopUp.gameObject.SetActive(active);
         }
         else if (active == false)
@@ -63,9 +66,24 @@ public class UIController : MonoBehaviour
     {
         GameController.Get.onChangePerspective -= ClearUi;
     }
+
     public void Interact(GameObject caller, bool addCaller)
     {
         //Debug.Log(caller.name + ":" + active);
+        localOffset = Vector2.zero;
+        if (addCaller)
+        {
+            callers.Add(caller);
+        }
+        else if (!addCaller)
+        {
+            callers.Remove(caller);
+        }
+    }
+    public void Interact(GameObject caller, Vector2 localOffset, bool addCaller)
+    {
+        //Debug.Log(caller.name + ":" + active);
+        this.localOffset = localOffset;
         if (addCaller)
         {
             callers.Add(caller);
