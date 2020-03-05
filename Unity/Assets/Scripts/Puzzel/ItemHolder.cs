@@ -16,6 +16,7 @@ public class ItemHolder : PuzzelBase
         {
             heldItem = value;
             Match = false;
+
             if (heldItem == matchItem)
             {
                 Match = true;
@@ -25,5 +26,13 @@ public class ItemHolder : PuzzelBase
                 }
             }
         }
+    }
+
+    public void SwitchSprite(Sprite sprite)
+    {
+       if (heldItem == true)
+       {
+            heldItem.parent.GetComponent<SpriteRenderer>().sprite = sprite;
+       }
     }
 }
