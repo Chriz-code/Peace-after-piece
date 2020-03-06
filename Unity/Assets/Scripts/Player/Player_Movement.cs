@@ -17,6 +17,7 @@ public class Player_Movement : MonoBehaviour
     public void Movement(float horizontal)
     {
         moveInput = horizontal;
+        if(rb2D)
         rb2D.velocity = new Vector2(moveInput * speed, rb2D.velocity.y);
         if (moveInput < 0)
         {

@@ -1628,6 +1628,16 @@ PrefabInstance:
       propertyPath: matchEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494453, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: mustMatch
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445236569937494453, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
+        type: 3}
+      propertyPath: alternatePosition.y
+      value: -5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb, type: 3}
 --- !u!4 &415360594 stripped
@@ -3049,7 +3059,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0cd255f86a971c546803440fca9514a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21dbece3549a4544f9da68213db87e16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4194,7 +4204,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5ab2bd2b8f77cd047a0c026b19fb27be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 869813385ea4a244dae50378b75c4373, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

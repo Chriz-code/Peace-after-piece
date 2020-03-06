@@ -122,47 +122,6 @@ public class Inventory : MonoBehaviour
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         item.GetComponent<Collider2D>().enabled = true;
     }
-    public void PlaceItem(Transform transform)
-    {
-        if (transform.TryGetComponent<ItemHolder>(out ItemHolder itemHolder))
-        {
-            if (itemHolder.HeldItem && slot.ItemSlot == null) // PickUp
-            {
-                PickUpItem(itemHolder.HeldItem);
-                itemHolder.HeldItem = null;
-                return;
-            }
-            else
-            {
-                if (!DropAllowed)
-                    return;
-                if (itemHolder.HeldItem != null)
-                    return;
-
-                itemHolder.HeldItem = slot.ItemSlot;
-            }
-        }
-
-        if (!DropAllowed)
-            return;
-
-
-        Vector3 newPosition = transform.position;
-
-        Item item = slot.ItemSlot;
-        item.GetComponent<Collider2D>().enabled = false;
-        item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-
-        item.parent.position = newPosition;
-        newPosition = item.parent.position;
-        newPosition.z = -1;
-        item.parent.localPosition = newPosition;
-
-        slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
-        //print("Place");
-        slot.ItemSlot = null;
-
-    }
     public void DropItem()
     {
         if (!DropAllowed)
@@ -177,6 +136,47 @@ public class Inventory : MonoBehaviour
         item.parent.localPosition = newPosition;
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
         slot.ItemSlot = null;
+    }
+    public void PlaceItem(Transform transform)
+    {
+        if (transform.TryGetComponent<ItemHolder>(out ItemHolder itemHolder))
+        {
+            if (itemHolder.HeldItem && slot.ItemSlot == null) // PickUp if there's already an item
+            {
+                PickUpItem(itemHolder.HeldItem);
+                itemHolder.HeldItem = null;
+                return;
+            }
+            else //Place Item in Holder
+            {
+                if (!DropAllowed)
+                    return;
+                if (itemHolder.HeldItem != null)
+                    return;
+                if (itemHolder.mustMatch)
+                    if (itemHolder.matchItem != slot.ItemSlot)
+                        return;
+
+
+                itemHolder.HeldItem = slot.ItemSlot;
+                Vector3 newPosition = transform.position;
+
+                if (itemHolder.alternatePosition != Vector2.zero)
+                    newPosition = transform.position + (Vector3)itemHolder.alternatePosition;
+
+                    Item item = slot.ItemSlot;
+                item.GetComponent<Collider2D>().enabled = false;
+                item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+                item.parent.position = newPosition;
+                newPosition = item.parent.position;
+                newPosition.z = -1;
+                item.parent.localPosition = newPosition;
+
+                slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
+                slot.ItemSlot = null;
+            }
+        }
     }
     public void TransferItem(Transform transform)
     {

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ItemHolder : PuzzelBase
 {
+    public Vector2 alternatePosition = Vector2.zero;
+    public bool mustMatch = false;
     [SerializeField] public Item matchItem = null;
-    [SerializeField] public Item heldItem = null;
+    [SerializeField] Item heldItem = null;
     [SerializeField] public Item HeldItem
     {
         get

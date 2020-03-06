@@ -30,18 +30,24 @@ public class PerspectiveTurnOff : MonoBehaviour
 
     void TurnOff(GameController gc, Perspective perspective)
     {
+        if (gameObjects.Length < 1)
+            return;
+
         if ((parentBased ? ParentPerspective : this.perspective) == perspective)
         {
             for (int i = 0; i < gameObjects.Length; i++)
             {
-                gameObjects[i].SetActive(true);
+                if (gameObjects[i] != null)
+                    gameObjects[i].SetActive(true);
             }
         }
         else
         {
             for (int i = 0; i < gameObjects.Length; i++)
             {
-                gameObjects[i].SetActive(false);
+                //Debug.Log(gameObjects[i].name);
+                if (gameObjects[i] != null)
+                    gameObjects[i].SetActive(false);
             }
         }
     }
