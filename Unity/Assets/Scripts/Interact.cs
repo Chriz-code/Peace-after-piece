@@ -12,7 +12,7 @@ public class Interact : MonoBehaviour
     public Vector2 localOffset = Vector2.zero;
     Vector2 colliderSize;
     [Header("Debug")]
-    [SerializeField] Collider2D currentCollision;
+    [SerializeField] public Collider2D currentCollision;
 
     public bool Interactable
     {

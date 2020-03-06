@@ -195,5 +195,6 @@ public class Inventory : MonoBehaviour
         slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
         slot.ItemSlot = null;
     }
+
     #endregion
 }
