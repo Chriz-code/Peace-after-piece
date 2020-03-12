@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.SceneManagement;
 public enum Perspective { None, Angela, Elenor }
 public class GameController : MonoBehaviour
 {
@@ -52,6 +50,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         if (Get != null && Get != this)
         {
             Destroy(this.gameObject);
@@ -61,15 +60,26 @@ public class GameController : MonoBehaviour
             Get = this;
         }
     }
-    private void Start()
-    {
-        Invoke("GameControllerStart", 0.01f);
-    }
-
     private void Update()
     {
         QuitGame();
         Switch();
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Invoke("GameControllerStart", 0.01f);
     }
     void QuitGame()
     {

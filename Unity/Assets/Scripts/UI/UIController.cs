@@ -20,6 +20,13 @@ public class UIController : MonoBehaviour
             if (callers.Count > 0)
             {
                 active = true;
+                for (int i = 0; i < callers.Count; i++)
+                {
+                    if (callers[i] != null)
+                        if (callers[i].GetComponent<Item>())
+                            return callers[i];
+                }
+
                 return callers[0];
             }
             else
@@ -71,11 +78,13 @@ public class UIController : MonoBehaviour
     {
         if (addCaller)
         {
-            callers.Add(caller);
+            if (!callers.Contains(caller))
+                callers.Add(caller);
         }
         else if (!addCaller)
         {
-            callers.Remove(caller);
+            if (callers.Contains(caller))
+                callers.Remove(caller);
         }
         localOffset = Vector2.zero;
     }

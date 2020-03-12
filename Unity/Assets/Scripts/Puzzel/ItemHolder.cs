@@ -16,6 +16,9 @@ public class ItemHolder : PuzzelBase
         }
         set
         {
+            if(heldItem != null)
+            RevertToDefault(heldItem);
+
             heldItem = value;
             Match = false;
 
@@ -30,11 +33,17 @@ public class ItemHolder : PuzzelBase
         }
     }
 
-    public void SwitchSprite(Sprite sprite)
+    public void RevertToDefault(Item item)
     {
-       if (heldItem == true)
-       {
-            heldItem.parent.GetComponent<SpriteRenderer>().sprite = sprite;
-       }
+        item.parent.GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+        lastHeldItem = null;
+    }
+
+    public void SwitchSprite(/*Sprite sprite*/)
+    {
+        if (HeldItem != null)
+        {
+            HeldItem.parent.GetComponent<SpriteRenderer>().sprite = HeldItem.ChangeSprite;
+        }
     }
 }

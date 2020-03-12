@@ -105,7 +105,6 @@ public class Interact : MonoBehaviour
         }
     }
     #endregion
-
     bool InteractableCheck(Collider2D collision)
     {
         currentCollision = collision;
@@ -148,6 +147,7 @@ public class Interact : MonoBehaviour
         Interactable = false;
         return false;
     }
+
 }
 [System.Serializable]
 public class InteractEvent : UnityEvent<Transform> { }

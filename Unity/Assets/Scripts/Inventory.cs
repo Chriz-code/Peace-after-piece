@@ -29,6 +29,30 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().onChangePerspective += CheckItemOverlap;
+    }
+    private void OnDisable()
+    {
+        GameController.Get.onChangePerspective -= CheckItemOverlap;
+    }
+    void CheckItemOverlap(GameController gc, Perspective perspective)
+    {
+        if (perspective == GetComponent<ThisPerspective>().perspective)
+        {
+            if (TryGetComponent<BoxCollider2D>(out BoxCollider2D box))
+            {
+                Vector2 _ColliderSize = box.size;
+                Collider2D _Collider = Physics2D.OverlapBox(transform.position, _ColliderSize, 0, LayerMask.GetMask("Item"));
+                if (_Collider != null && ParentPerspective(_Collider.transform) == perspective)
+                {
+                    UIController.Get.Interact(_Collider.gameObject, true);
+                }
+            }
+        }
+    }
+
     public bool PickUpAllowed
     {
         get
@@ -38,11 +62,15 @@ public class Inventory : MonoBehaviour
                 if (slot.ItemSlot == null && CurrentColItem != null)
                 {
                     if (UIController.Get.Caller != CurrentColItem.gameObject)
+                    {
+                        print("Pickup was not allowed");
                         return false;
+                    }
 
                     return true;
                 }
             }
+            print("Pickup was not allowed");
             return false;
         }
     }
@@ -53,10 +81,12 @@ public class Inventory : MonoBehaviour
             if (slot)
                 if (slot.ItemSlot != null)
                     return true;
+            print("Drop was not allowed");
             return false;
         }
     }
 
+    #region Collision
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (CheckPerspective(collision.gameObject) && collision.GetComponent<Item>())
@@ -73,6 +103,7 @@ public class Inventory : MonoBehaviour
             UIController.Get.Interact(collision.gameObject, false);
         }
     }
+    #endregion
 
     Perspective ParentPerspective(Transform transform)
     {
@@ -105,10 +136,10 @@ public class Inventory : MonoBehaviour
         if (item != null && slot.ItemSlot == null) //If item is taken from an itemHolder
         {
             slot.ItemSlot = item;
-            slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
-            item.parent.localPosition = new Vector2(222, 222);
+            slot.GetComponent<UnityEngine.UI.Image>().sprite = item.defaultSprite;
+            /*item.parent.localPosition = new Vector2(222, 222);
             item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            item.GetComponent<Collider2D>().enabled = true;
+            item.GetComponent<Collider2D>().enabled = true; */
             return;
         }
         if (PickUpAllowed == false)
@@ -117,10 +148,25 @@ public class Inventory : MonoBehaviour
         item = this.CurrentColItem;
         slot.ItemSlot = item;
 
-        slot.GetComponent<UnityEngine.UI.Image>().sprite = item.parent.GetComponent<SpriteRenderer>().sprite;
-        item.parent.localPosition = new Vector2(222, 222);
+        slot.GetComponent<UnityEngine.UI.Image>().sprite = item.defaultSprite;
+        /*item.parent.localPosition = new Vector2(222, 222);
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        item.GetComponent<Collider2D>().enabled = true;*/
+    }
+    public void DropItem()
+    {
+        if (!DropAllowed)
+            return;
+        Vector3 newPosition = transform.GetComponent<Transform>().localPosition;
+        newPosition.z = -1;
+
+        Item item = slot.ItemSlot;
+        slot.ItemSlot = null;
+
         item.GetComponent<Collider2D>().enabled = true;
+        item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        item.parent.localPosition = newPosition;
+        //slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
     }
     public void DropItem()
     {
@@ -182,7 +228,6 @@ public class Inventory : MonoBehaviour
     {
         if (!DropAllowed)
             return;
-
         Vector3 newPosition = this.transform.GetComponent<Transform>().localPosition;
         newPosition.z = -1;
         newPosition.x += 1;
@@ -192,7 +237,7 @@ public class Inventory : MonoBehaviour
         item.parent.parent = oppositeRoom.transform;
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         item.parent.GetComponent<Transform>().localPosition = newPosition;
-        slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
+        //slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
         slot.ItemSlot = null;
     }
 
