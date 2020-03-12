@@ -10,7 +10,8 @@ public class Item : MonoBehaviour
     public ItemType itemType = ItemType.Book;
     [Header("OverWorldSprites")]
     public Sprite defaultSprite = null;
-    private Sprite changeSprite = null;
+    [SerializeField] private Sprite changeSprite = null;
+
     public Sprite ChangeSprite
     {
         get
