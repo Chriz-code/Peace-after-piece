@@ -36,7 +36,6 @@ public class ItemHolder : PuzzelBase
     public void RevertToDefault(Item item)
     {
         item.parent.GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
-        lastHeldItem = null;
     }
 
     public void SwitchSprite(/*Sprite sprite*/)

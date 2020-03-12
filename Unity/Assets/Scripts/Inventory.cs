@@ -168,21 +168,6 @@ public class Inventory : MonoBehaviour
         item.parent.localPosition = newPosition;
         //slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
     }
-    public void DropItem()
-    {
-        if (!DropAllowed)
-            return;
-        Vector3 newPosition = transform.GetComponent<Transform>().localPosition;
-        newPosition.z = -1;
-
-        Item item = slot.ItemSlot;
-
-        item.GetComponent<Collider2D>().enabled = true;
-        item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        item.parent.localPosition = newPosition;
-        slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
-        slot.ItemSlot = null;
-    }
     public void PlaceItem(Transform transform)
     {
         if (transform.TryGetComponent<ItemHolder>(out ItemHolder itemHolder))
