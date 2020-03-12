@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 447740483275875651}
   - component: {fileID: 3747602851690070350}
   - component: {fileID: 3979744346341993269}
+  - component: {fileID: 4901230167466762408}
   m_Layer: 8
   m_Name: ItemObj
   m_TagString: Untagged
@@ -130,6 +131,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4901230167466762408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199695017386468792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c943cce7f15044cacad3e55f424f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMaterial: {fileID: 2100000, guid: 5eef4e9cf88239240a760f610b1ba821, type: 2}
+  burnSpeed: 2
+  burnComplete: 0
+  dissolveAmount: 0
 --- !u!1 &5716787562443265468
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1581996133386077366}
   itemType: 0
+  defaultSprite: {fileID: 0}
+  changeSprite: {fileID: 0}
   book: {fileID: 0}
   key: {fileID: 0}
   painting: {fileID: 0}
