@@ -6,6 +6,7 @@ public class ItemHolder : PuzzelBase
 {
     public Vector2 alternatePosition = Vector2.zero;
     public bool mustMatch = false;
+    public Item lastHeldItem;
     [SerializeField] public Item matchItem = null;
     [SerializeField] Item heldItem = null;
     [SerializeField] public Item HeldItem
@@ -16,6 +17,9 @@ public class ItemHolder : PuzzelBase
         }
         set
         {
+            if (heldItem != null)
+                RevertToDefault(heldItem);
+
             heldItem = value;
             Match = false;
 
@@ -30,11 +34,17 @@ public class ItemHolder : PuzzelBase
         }
     }
 
-    public void SwitchSprite(Sprite sprite)
+    public void RevertToDefault(Item item)
     {
-       if (heldItem == true)
-       {
-            heldItem.parent.GetComponent<SpriteRenderer>().sprite = sprite;
-       }
+        item.parent.GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+        lastHeldItem = null;
+    }
+
+    public void SwitchSprite()
+    {
+        if (HeldItem != null)
+        {
+            HeldItem.parent.GetComponent<SpriteRenderer>().sprite = HeldItem.changeSprite;
+        }
     }
 }
