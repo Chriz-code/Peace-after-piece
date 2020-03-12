@@ -116,14 +116,6 @@ public class DialogController : MonoBehaviour
                 choiceMenu.gameObject.SetActive(false);
                 yield break;
             }
-            /*else if (dialogProfiles[i].playerInput)
-            {
-                do //Wait for playerInput
-                {
-                    yield return null;
-                } while (KeyDown() == false);
-            }*/
-
         }
         StopDialog();
     }

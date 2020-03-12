@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 811a1ff46df0a3541adb97f1c3f7a6ff
+=======
+guid: aef93b37d3844984ca5453c0bb1ee146
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -31,12 +35,20 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< Updated upstream
     filterMode: -1
+=======
+    filterMode: 0
+>>>>>>> Stashed changes
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
+<<<<<<< Updated upstream
     wrapW: -1
+=======
+    wrapW: 1
+>>>>>>> Stashed changes
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -83,6 +95,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+<<<<<<< Updated upstream
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -95,6 +108,8 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+=======
+>>>>>>> Stashed changes
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -112,7 +127,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+    spriteID: 
+=======
     spriteID: 5e97eb03825dee720800000000000000
+>>>>>>> Stashed changes
+=======
+    spriteID: 5e97eb03825dee720800000000000000
+>>>>>>> Programming
     internalID: 0
     vertices: []
     indices: 

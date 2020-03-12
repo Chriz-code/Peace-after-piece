@@ -10,10 +10,21 @@ public class Item : MonoBehaviour
     public ItemType itemType = ItemType.Book;
     [Header("OverWorldSprites")]
     public Sprite defaultSprite = null;
-    public Sprite changeSprite = null;
+    private Sprite changeSprite = null;
+    public Sprite ChangeSprite
+    {
+        get
+        {
+            if (changeSprite == null)
+                return defaultSprite;
+            return changeSprite;
+        }
+    }
 
     [Header("InspectImage")]
     public Sprite book = null;
     public Sprite key = null;
     public Sprite painting = null;
+
+    
 }

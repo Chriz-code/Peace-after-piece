@@ -21,6 +21,7 @@ public class AudioController : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         if (Get != null && Get != this)
         {
             Destroy(this.gameObject);
