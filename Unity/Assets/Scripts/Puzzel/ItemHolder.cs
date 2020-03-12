@@ -6,6 +6,9 @@ public class ItemHolder : PuzzelBase
 {
     public Vector2 alternatePosition = Vector2.zero;
     public bool mustMatch = false;
+
+    public Item lastHeldItem;
+
     [SerializeField] public Item matchItem = null;
     [SerializeField] Item heldItem = null;
     [SerializeField] public Item HeldItem
@@ -36,6 +39,7 @@ public class ItemHolder : PuzzelBase
     public void RevertToDefault(Item item)
     {
         item.parent.GetComponent<SpriteRenderer>().sprite = item.defaultSprite;
+        lastHeldItem = null;
     }
 
     public void SwitchSprite(/*Sprite sprite*/)

@@ -195,7 +195,7 @@ public class Inventory : MonoBehaviour
                 if (itemHolder.alternatePosition != Vector2.zero)
                     newPosition = transform.position + (Vector3)itemHolder.alternatePosition;
 
-                    Item item = slot.ItemSlot;
+                Item item = slot.ItemSlot;
                 item.GetComponent<Collider2D>().enabled = false;
                 item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
@@ -204,7 +204,7 @@ public class Inventory : MonoBehaviour
                 newPosition.z = -1;
                 item.parent.localPosition = newPosition;
 
-                slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
+                //slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
                 slot.ItemSlot = null;
             }
         }
