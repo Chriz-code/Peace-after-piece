@@ -1,0 +1,147 @@
+﻿Dialog Manus Angela
+
+
+                RUM 1, TAVLELPUSSEL:
+
+
+                        Har pratat med Eleanor
+Angela:                “This place feels weird. Where are we?”
+
+
+                        spegeln:
+                        “I already talked to Eleanor, I should just take a look around.”
+
+
+                        skrivbordet:
+                        “this desk… It reminds me of my fathers old desk..”
+                        
+                        Dagbokssida, Eleanors (sida 6 “hitting back”):
+                        “Díos mios Eleanor… You never told me about this. Qué horríble… I didn’t know you felt like that back then. You were not to blame for any of it and I hope you can realize that.” 
+
+
+                        Kaktusen:
+                        “This looks like the cactus Eleanor gave me. She doesn’t know anything about plants so she’d gotten me one that ‘was hard to kill’. She got mad at me for laughing at that, but I couldn’t help myself. I saw her smile about it anyways though. 
+
+
+                        Fönstret:
+                        “I hear        thunder. Why does it have to be thunder... “
+
+
+                        soffan:
+                        “Wow… This is exactly like our old couch back home. Who’s doing this?” 
+                        “It even has the stain we could never get off from when I spilled chocolate sauce on it.”
+
+
+                        Dagbokssida, Angelas (sida 2, hennes vänskap med Eleanor):
+                        “Dios mios, this was from when I first met Eleanor. It was really ‘at first sight’ huh…”
+
+
+                        Tavlor: 
+                        Tavla 1: Två barn som sitter i slutet på en brygga, men ryggarna emot och tittar på en solnedgång.
+                        “Nosotros éramos dos niños, we thought that we could conquer the world. And nothing could stop us. Oh, how wrong we were…”
+
+			Tavla 2: Angela i förgrunden som simmar in, medans hennes brors händer är det enda som syns när han drar under.
+       			 “Who would be doing something like this to us? This is just cruelness.”
+
+			Tavla 3: Begravningen. Silhuetter runt en grav.
+			“I have never seen mamá and dad look so old. Their eyes empty and every movement slow and heavy. They still loved me, but I could see the sadness they carried.”
+                        
+			hittar tavla i soffan: 
+                        “This painting… Why is this...”
+                
+                        hittar tavla bredvid skrivbordet: 
+                        “What’s this? A painting? And that motive.... I don’t recognize this…”
+
+
+                        soffborden:
+                        “These old tables… There’s even the drawings me and Andés did on them when we were little…” 
+
+
+                        Tekoppen:
+                        “It smells like manzanilla… That is mom's favorite tea... and churros…? She loved those too.“ 
+
+
+                        fotot på hyllan:
+                        “My first science fair, the whole family was so proud of me. I didn’t even win but he still bragged about ‘su hermana genial’ to his friends.” 
+
+
+                        väggen med längdmätningar:
+                        “Qué nostálgico… Mamá kept a close tab on our heights. Until… We stopped tracking my height after that. But I did it myself once… If only you could see how much I’ve grown mi hermano... ” 
+
+
+                        låst dörr (innan båda pusslen är färdigt):
+                        “It’s locked… I feel like I’m supposed to do something.” 
+
+
+                        keypad:
+                        “A keypad? I guess this is the way forward then.”
+
+
+                        *use keypad*
+                        (yes): “I really hope this works or else we’re screwed.”
+                        (no): “I don’t think I have enough info right now.”
+                        *fel kod*: 
+			“I must be missing something.”
+
+
+
+
+        
+________________
+RUM 2, BOKPUSSEL:
+
+
+                        sänglampa: 
+                        “This looks like the nightlight I stole from André when I was 5.”
+
+
+                        sängen: 
+                        “Me and Eleanor have spent many nights on my bed just talking, many good nights.”
+
+
+                        laptop:
+                        “This old fighter has been through many things with me. I’m surprised it can run half the games we play.” 
+
+
+			gitarr:
+			“Eleanor has told me she loves listening to me play and sing. I can’t lie, it’s a special feeling playing for her.” 
+
+
+			flaggan:
+			“I remember when mamá first started teaching us about spanish culture. I was still very young but loved every moment of it. She was always so happy when she talked about where she’s from.”
+
+
+			bokhyllan:
+			“Díos… All the memories contained in this shelf. Seashells from our trips to the coast… The hollow globe I used to hide candy in when I was little… Nostalgia... ”
+
+
+			Dagbokssida faller ut första gången:
+			“Ay! a note?”
+
+
+			Andra gången:
+			“Díos! Again? Who keeps loose paper in a book?” 
+
+
+			tredje gången:
+			“Some would say third time's the charm, but apparently not.”
+
+
+			dagbokssida 3 (dagsvandring):
+			“I was only 9 and thought you’d always be by my side. I have never felt so alone as I did after you were gone.”
+
+
+			dagbokssida 4 (Fyren Torekov):
+			 “Little did I know that my world was gonna end the next day. We should’ve realized there was a reason people kept away from that beach… “
+
+
+			Dagbokssida, Eleanors (first prize):
+			“This was before we met. I didn’t know she felt that lonely, or angry. She never showed that side to me. I’m glad I can be there for her now, I’ll never leave her side.” 
+
+
+			Mat hissen:
+			“This doesn’t belong here… But what’s this? A key?”
+
+
+			Dörren innan pusslet är låst:
+			“Dad bought this poster for me while we were at a science convention once.”

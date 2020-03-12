@@ -1,0 +1,254 @@
+﻿Dialog Manus Eleanor
+ 
+RUM 1
+ 
+Speglen första interagerar (framtvingat event?)
+Kontext: Eleanor är den spelaren börjar hos. Spelaren ska börja med att få alternativ att knacka på spegeln som visar Angela på andra sidan.
+
+
+Eleanor:
+“Where am I? What’s going on?”
+*knock on window?* (yes/no)
+“Angela? You there? Can you hear me?”
+ 
+*It looks as if Angela is frozen for a second and then she turns towards the mirror.*
+ 
+Angela:
+“Eleanor! Oh thank goodness, you’re okay!”
+ 
+Eleanor:
+“Who cares about me, I’ve been through worse. How are you? Are you okay?”
+ 
+Angela:
+“Who cares? I care! I’m doing fine now that I know you are fine.”
+ 
+Tystnad
+*…*
+ 
+Angela:
+“I think we need to look around to see if we can find a way to each other.”
+ 
+Eleanor:
+“Fuck that, I’m coming over.”
+
+
+*Bonk!*
+
+
+”Damn this mirror!”
+
+
+(Kan det stå text?: “Pick upp” med pil ner)
+
+
+Eleanor slänger en mugg genom fönstret.
+
+
+Angela:
+”Okay? That was very thought out and weird. Let’s look around.”
+ 
+Om spelaren går till spegeln igen:
+”I’ve already talked to Angela, I should look around.”
+ 
+Kontext: Spelaren i Eleanors barndomskök innan branden.
+ 
+Eleanor:
+“Wait… am I? … Home? No can’t be?”
+ 
+Eleanor interagerar med spisen
+
+
+Eleanor
+“There’s something in there?”
+
+
+*Open oven?* (yes/no)
+(No): “I don’t really care about an oven.”
+(yes): “Who putts a painting in the oven?”
+*Painting in oven, take it?*
+(No): “I better leave it.”
+(Yes): “Not going to let that start a fire… again.”
+ 
+Eleanor interagerar med handfatet.
+                                                                     
+Eleanor:
+“That’s weird… There’s no water coming from the tap.”
+
+
+Fönster första gången:
+“Fire? Why is it burning? Is Angela okay!?”
+                                                                     
+Tillbaka vid spegel:
+“Angela? It is not burning in there. I don’t understand.”
+
+
+Fönster andra gången:
+“As long as it stays there … I guess.”
+
+
+Tegelväggen:
+“I miss the brick wall we had in the old house. It had good memories to it.”
+
+
+Mattan:
+“I remember running in and gliding on this mat.”
+ 
+Stolar:
+“Nah, I don’t feel like sitting down right now.”
+ 
+Eleanors mammas kruka med cigg:
+“It evens smell like her kind of cigg.”
+                          
+Gardinerna
+“Oh I remember those curtains! I used to whirl myself in to them as a kid. Hide behind them. Mom didn’t really buy curtains after…”
+“I need to figure how to get to Angela, not be stuck in the past.”
+ 
+Kodlåset
+“Keypad? This place is getting more stupid every step I take.”
+
+
+*Use keypad*
+(Yes): “You better work.”
+(No): No, I still need to know something.”
+*Fel kod*
+“Wrong? No, you are wrong stupid device!”
+
+
+Eleanor spegel efter interagerat med kodlås:
+“Do you have some kind of code panel?”
+
+
+Angela svarar:
+“Yes, that means there has to be a code? You see any?”
+
+
+Försöker öppna dörren innan puzzlet är löst:
+“Studip door, open up!”
+*Sparkar på dörren*
+
+
+Försöker öppna dörren innan Angela har löst sitt puzzel:
+“Something is missing…“
+*Sparkar på dörren*
+
+
+Blommor: 
+“The only flowers I’ve ever gotten was from Angela on valentine’s day. She also gave me a valentine card that read ‘From your not-so-secret bestie, A <3’. She’s so cheesy sometimes.”
+“I had to hide them from mom when I got home.”
+ 
+tavlor:
+“why are these on the floor?” 
+ 
+boxning-tavla:
+Deltagare pris, en ung Eleanor med sina föräldrar och förstapriset.
+“Mom actually smiled here, and it wasn’t malicious at all. Dad was so excited about me getting a prize. It was just a participation award but dad made it feel like I had won the biggest prize in the world.”
+“It’s was a long time ago boxing actually made me happy.”
+
+
+Dörr med rök:
+Under branden var Eleanor instängd i sitt rum, utan någon aning att branden var i full gång. Därför är denna tavlan på hennes dörr där röken tar sig in genom springorna.
+“I hated that day. Why did you have to run in after me? Just... why? Maybe you could’ve prevented mom from getting bad.” 
+
+
+mamman:
+En bild på mamman med cigg i handen, står ute på en balkong. Man kan även se någon typ av alkohol flaska.
+“I remember that day after the funeral. Mom refused to look at me. I can’t believe she screamed ‘I wished it was you who died’ to me... Do you even miss me mom? Are you even alive today?”
+
+
+RUM 2
+
+
+Eleanor:
+“This starting to get even more creepy, this is my bedroom in my apartment.”
+
+
+Speglen Eleanor:
+“Angela? Did you also come in to a new room?”
+
+
+Speglen Angela:
+“Yeah, this is starting to get more and more confusing.”
+ 
+Soffbordet
+Eleanor:
+“Angela’s dad gave me the bedside table when he and Angela’s mom switched out theirs.”
+
+
+Sängen
+Eleanor:
+“Looks just how I left it. Pillows under the window to keep away the cold air.”
+
+
+Fönstret:
+“Still fire… This is a cruel trick.”
+
+
+Klistermärken på väggen bredvid fönstret:
+”Angela put those up, she said that if I don’t planning on getting anything on the walls then she is going to add random stickers. I like that.”
+
+
+Mat hissen:
+“Ehh what is this? This shit doesn’t belong here.”
+ 
+Boxningsäcken:
+“Punching you Hamlet, it wouldn’t help right now.”
+
+
+Lådan med pappans saker:
+“I still have stuff to go through in that box, luckily mom don’t know I took it.”
+ 
+Bokhyllan:
+“Prizes and my helmet and … books? I don’t own any books? And again with that pot. Like the smell, it keeps showing up.”
+
+
+ Planschen på dörren ifall spelaren inte har löst bokpuzzlet:
+”The greatest movie ever made.”
+ 
+Böcker dialog:
+
+
+En sida faller ut:
+”Oh something fell out?”
+
+
+Andra sidan faller ut:
+”Shit another page.”
+
+
+Tredje sidan ramlar ut:
+“I should have catch that the third time.”
+
+
+Gitarr dagbok:
+”This might be Angela’s?” I kind of get my feeling that day now. Angela is the best part in my life.”
+
+
+Angelas Skolminne dagbok: Engelska lektion där de går igenom amerikanska poeter:
+
+
+Eleanor:
+“She is talking to him… telling him how much she misses him … She once told me she wants that quote on a painting, but I told her that it might just bring her back to that sadness every time she saw it. Maybe I was wrong?”
+ 
+Cigg dagbok:
+“I didn’t know that that day was only the beginning of that behavior, that I would be caring those scars for so long. I wonder if she ever regretted driving me away?”
+
+Försöker öppna dörr 2 innan puzzlet är löst:
+“Why can I not open ANYTHING to get to Angela?”
+*Sparkar på dörren*
+
+Böckerna på plats:
+"Finally something right."
+
+Nycklen i mathissen:
+"A key! Yes! Maybe I can get to Angela now?"
+
+Dörren öppnas:
+"Angela!?"
+
+
+Borttaget:
+Fönster:
+“This damn window, why won’t you open?! And why is it that I can see
+Angela in the mirror and not in the window? What is this place?”
+ 
+”Thirds the charm.”
