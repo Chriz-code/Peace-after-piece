@@ -44,7 +44,7 @@ public class ItemHolder : PuzzelBase
     {
         if (HeldItem != null)
         {
-            HeldItem.parent.GetComponent<SpriteRenderer>().sprite = HeldItem.changeSprite;
+            HeldItem.parent.GetComponent<SpriteRenderer>().sprite = HeldItem.ChangeSprite;
         }
     }
 }
