@@ -676,7 +676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151684995}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 8.03, y: -4.46, z: 0}
+  m_LocalPosition: {x: 0.29, y: 0.06, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 870104884}
@@ -752,7 +752,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &151684999
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7549,6 +7549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 803980607}
   - component: {fileID: 803980608}
+  - component: {fileID: 803980609}
   m_Layer: 0
   m_Name: room2_ClosedDorr
   m_TagString: Untagged
@@ -7619,6 +7620,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &803980609
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803980606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.69, y: 8.3}
+    newSize: {x: 1.69, y: 8.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.69, y: 8.3}
+  m_EdgeRadius: 0
 --- !u!1 &806295189
 GameObject:
   m_ObjectHideFlags: 0
@@ -8083,8 +8110,8 @@ Transform:
   m_Children:
   - {fileID: 737325525}
   - {fileID: 1585287705}
-  - {fileID: 901208623}
   - {fileID: 1581996132988855004}
+  - {fileID: 901208623}
   m_Father: {fileID: 2013911633}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8288,7 +8315,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &1069401371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8372,7 +8399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069401369}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 10.87, y: -3.977, z: 0.5}
+  m_LocalPosition: {x: 0.31, y: 0.14, z: 0.5}
   m_LocalScale: {x: 0.10000006, y: 0.10000006, z: 1}
   m_Children:
   - {fileID: 78710508}
@@ -14296,8 +14323,13 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultSprite
       value: 
-      objectReference: {fileID: 21300000, guid: c871593e1370b2b41bdb911f41282540,
+      objectReference: {fileID: 21300000, guid: 061fdd0643240e8478134f71e9a44c18,
         type: 3}
+    - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ffedf176d801c48b4df5d9840c84aa, type: 3}
 --- !u!4 &1403679575 stripped
@@ -21605,7 +21637,7 @@ PrefabInstance:
     - target: {fileID: 2303683292359083219, guid: e09dd95cfac73ad4cbd36a609ee17cd5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 2303683292359083219, guid: e09dd95cfac73ad4cbd36a609ee17cd5,
         type: 3}
@@ -21630,7 +21662,7 @@ PrefabInstance:
     - target: {fileID: 2303683292359083219, guid: e09dd95cfac73ad4cbd36a609ee17cd5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2303683292359083219, guid: e09dd95cfac73ad4cbd36a609ee17cd5,
         type: 3}
