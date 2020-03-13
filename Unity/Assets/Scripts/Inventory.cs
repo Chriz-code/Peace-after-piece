@@ -170,7 +170,7 @@ public class Inventory : MonoBehaviour
     }
     public void PlaceItem(Transform caller, Transform sender)
     {
-        if (transform.TryGetComponent<ItemHolder>(out ItemHolder itemHolder))
+        if (caller.TryGetComponent<ItemHolder>(out ItemHolder itemHolder))
         {
             if (itemHolder.HeldItem && slot.ItemSlot == null) // PickUp if there's already an item
             {
@@ -190,10 +190,10 @@ public class Inventory : MonoBehaviour
 
 
                 itemHolder.HeldItem = slot.ItemSlot;
-                Vector3 newPosition = transform.position;
+                Vector3 newPosition = caller.position;
 
                 if (itemHolder.alternatePosition != Vector2.zero)
-                    newPosition = transform.position + (Vector3)itemHolder.alternatePosition;
+                    newPosition = caller.position + (Vector3)itemHolder.alternatePosition;
 
                 Item item = slot.ItemSlot;
                 item.GetComponent<Collider2D>().enabled = false;
