@@ -8,7 +8,7 @@ public class Player_Movement : MonoBehaviour
 
     public float moveInput;
     public float speed = 10f;
-
+    public Animator animator = null;
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -17,8 +17,8 @@ public class Player_Movement : MonoBehaviour
     public void Movement(float horizontal)
     {
         moveInput = horizontal;
-        if(rb2D)
-        rb2D.velocity = new Vector2(moveInput * speed, rb2D.velocity.y);
+        if (rb2D)
+            rb2D.velocity = new Vector2(moveInput * speed, rb2D.velocity.y);
         if (moveInput < 0)
         {
             Vector3 scale = transform.localScale;
@@ -32,5 +32,7 @@ public class Player_Movement : MonoBehaviour
             scale.x = Mathf.Abs(scale.x);
             this.gameObject.GetComponent<Transform>().localScale = scale;
         }
+        if (animator)
+            animator.SetFloat("Speed", Mathf.Abs(rb2D.velocity.x));
     }
 }
