@@ -81,12 +81,15 @@ public class Codelock : PuzzelBase
         {
             case 1:
                 x1.text = i.ToString();
+                x1.color = Color.yellow;
                 break;
             case 2:
                 x2.text = i.ToString();
+                x2.color = Color.yellow;
                 break;
             case 3:
                 x3.text = i.ToString();
+                x3.color = Color.yellow;
                 break;
         }
         if (id == 3)
