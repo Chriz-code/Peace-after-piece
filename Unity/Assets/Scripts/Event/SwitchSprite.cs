@@ -18,7 +18,7 @@ public class SwitchSprite : MonoBehaviour
         }
     }
 
-    public void SpriteSwitch(Transform transform)
+    public void SpriteSwitch(Transform caller, Transform sender)
     {
         GetComponent<SpriteRenderer>().sprite = Sprite;
     }

@@ -168,7 +168,7 @@ public class Inventory : MonoBehaviour
         item.parent.localPosition = newPosition;
         //slot.GetComponent<UnityEngine.UI.Image>().sprite = null;
     }
-    public void PlaceItem(Transform transform)
+    public void PlaceItem(Transform caller, Transform sender)
     {
         if (transform.TryGetComponent<ItemHolder>(out ItemHolder itemHolder))
         {
@@ -209,7 +209,7 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    public void TransferItem(Transform transform)
+    public void TransferItem(Transform caller, Transform sender)
     {
         if (!DropAllowed)
             return;

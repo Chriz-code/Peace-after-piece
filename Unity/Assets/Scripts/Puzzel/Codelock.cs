@@ -3,25 +3,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Codelock : MonoBehaviour
+public class Codelock : PuzzelBase
 {
     [SerializeField] Text x1 = null, x2 = null, x3 = null;
     [SerializeField] int id = 0;
 
     [SerializeField] int code = 123;
 
-    [SerializeField] public InteractEvent matchEvent;
     [SerializeField] public InteractEvent unMatchEvent;
 
+    private void OnEnable()
+    {
+        ClearText();
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            transform.parent.gameObject.SetActive(false);
+            NotInteract();
+        }
+        KeyboardInput();
+    }
+    void KeyboardInput()
+    {
+        if (Input.anyKeyDown)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+                AddNumber(0);
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+                AddNumber(1);
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+                AddNumber(2);
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+                AddNumber(3);
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+                AddNumber(4);
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+                AddNumber(5);
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+                AddNumber(6);
+            if (Input.GetKeyDown(KeyCode.Alpha7))
+                AddNumber(7);
+            if (Input.GetKeyDown(KeyCode.Alpha8))
+                AddNumber(8);
+            if (Input.GetKeyDown(KeyCode.Alpha9))
+                AddNumber(9);
         }
     }
 
-    bool ienumertaing = false;
+    [SerializeField]Player_UserInput sender = null;
+    public void Interact(Transform call, Transform sender)
+    {
+        call.parent.gameObject.SetActive(true);
+        if (sender.GetComponent<Player_UserInput>())
+        {
+            this.sender = sender.GetComponent<Player_UserInput>();
+            this.sender.enabled = false;
+        }
+    }
+    public void NotInteract()
+    {
+        transform.parent.gameObject.SetActive(false);
+        if (sender)
+        {
+            sender.enabled = true;
+        }
+    }
+
+
     public void AddNumber(int i)
     {
         if (ienumertaing)
@@ -45,39 +94,22 @@ public class Codelock : MonoBehaviour
             CheckCode(x1.text + x2.text + x3.text);
         }
     }
-    private void OnEnable()
-    {
-        ClearText();
-    }
-    IEnumerator ClearTextAnimation()
-    {
-        ienumertaing = true;
-
-        x1.color = Color.red;
-        x2.color = Color.red;
-        x3.color = Color.red;
-        yield return new WaitForSeconds(0.5f);
-        ClearText();
-    }
     void CheckCode(string stringCode)
     {
         int code = int.Parse(stringCode);
-        if(code == this.code)
+        if (code == this.code)
         {
             Debug.Log("Code Accepted");
-            matchEvent?.Invoke(transform);
+            Match = true;
 
-            x1.color = Color.green;
-            x2.color = Color.green;
-            x3.color = Color.green;
-            ienumertaing = true;
+            StartCoroutine(CorrectCode());
         }
         else
         {
             Debug.Log("Code Denied");
-            unMatchEvent?.Invoke(transform);
+            unMatchEvent?.Invoke(transform, null);
             //Clear Text
-            StartCoroutine(ClearTextAnimation());
+            StartCoroutine(WrongCode());
         }
         id = 0;
     }
@@ -92,9 +124,25 @@ public class Codelock : MonoBehaviour
         ienumertaing = false;
     }
 
-    void NumberInput()
+    bool ienumertaing = false;
+    IEnumerator WrongCode()
     {
+        ienumertaing = true;
 
+        x1.color = Color.red;
+        x2.color = Color.red;
+        x3.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        ClearText();
     }
+    IEnumerator CorrectCode()
+    {
+        ienumertaing = true;
 
+        x1.color = Color.green;
+        x2.color = Color.green;
+        x3.color = Color.green;
+        yield return new WaitForSeconds(0.5f);
+        NotInteract();
+    }
 }

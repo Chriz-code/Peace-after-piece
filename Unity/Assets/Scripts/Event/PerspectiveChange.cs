@@ -25,13 +25,13 @@ public class PerspectiveChange : MonoBehaviour
         switch (perspective)
         {
             case Perspective.None:
-                none?.Invoke(transform);
+                none?.Invoke(transform, null);
                 break;
             case Perspective.Angela:
-                angela?.Invoke(transform);
+                angela?.Invoke(transform, null);
                 break;
             case Perspective.Elenor:
-                elenor?.Invoke(transform);
+                elenor?.Invoke(transform, null);
                 break;
         }
     }

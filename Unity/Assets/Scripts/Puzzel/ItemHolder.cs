@@ -28,7 +28,7 @@ public class ItemHolder : PuzzelBase
                 Match = true;
                 if (heldItem != null)
                 {
-                    matchEvent?.Invoke(transform);
+                    matchEvent?.Invoke(transform, null);
                 }
             }
         }

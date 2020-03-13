@@ -7,7 +7,7 @@ public class MatchCheck : MonoBehaviour
     public PuzzelBase[] puzzels = new PuzzelBase[0];
     public InteractEvent matchEvent;
 
-    public void CheckAllMatch(Transform transform)
+    public void CheckAllMatch(Transform caller, Transform sender)
     {
         int matchCount = 0;
         for (int i = 0; i < puzzels.Length; i++)
@@ -16,6 +16,6 @@ public class MatchCheck : MonoBehaviour
                 matchCount++;
         }
         if (matchCount == puzzels.Length)
-            matchEvent?.Invoke(transform);
+            matchEvent?.Invoke(transform, null);
     }
 }

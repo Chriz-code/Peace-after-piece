@@ -2854,28 +2854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 0
---- !u!1 &990186579 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4199695017386468792, guid: 06ffedf176d801c48b4df5d9840c84aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 408118890}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &990186580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990186579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c943cce7f15044cacad3e55f424f49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newMaterial: {fileID: 2100000, guid: 5eef4e9cf88239240a760f610b1ba821, type: 2}
-  burnSpeed: 2
-  burnComplete: 0
-  dissolveAmount: 0
 --- !u!1 &1038845139
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,11 +3141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831fdf391995a5745ba0cd05012e4de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x1: {fileID: 1044172094}
-  x2: {fileID: 1152266195}
-  x3: {fileID: 1466226574}
-  id: 0
-  code: 231
   matchEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3206,6 +3179,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  x1: {fileID: 1044172094}
+  x2: {fileID: 1152266195}
+  x3: {fileID: 1466226574}
+  id: 0
+  code: 231
   unMatchEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3222,6 +3200,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  sender: {fileID: 0}
 --- !u!114 &1109778482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,28 +3509,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256757984}
   m_CullTransparentMesh: 0
---- !u!1 &1333642368 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4199695017386468792, guid: 06ffedf176d801c48b4df5d9840c84aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 901208622}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1333642369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333642368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c943cce7f15044cacad3e55f424f49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newMaterial: {fileID: 2100000, guid: 5eef4e9cf88239240a760f610b1ba821, type: 2}
-  burnSpeed: 2
-  burnComplete: 0
-  dissolveAmount: 0
 --- !u!114 &1348199536 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1445236569937494453, guid: 8a3a33dae6918684b9a5bf9a7a0ea9eb,
@@ -4724,6 +4681,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1109778481}
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   interactKey: 101
@@ -5062,28 +5030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1761c7f1554d4989801fa101dfdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1674216904 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4199695017386468792, guid: 06ffedf176d801c48b4df5d9840c84aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 1403679574}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1674216905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674216904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c943cce7f15044cacad3e55f424f49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newMaterial: {fileID: 2100000, guid: 5eef4e9cf88239240a760f610b1ba821, type: 2}
-  burnSpeed: 2
-  burnComplete: 0
-  dissolveAmount: 0
 --- !u!1 &1700419156
 GameObject:
   m_ObjectHideFlags: 0

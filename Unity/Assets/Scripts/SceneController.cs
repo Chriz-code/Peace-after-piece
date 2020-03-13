@@ -20,7 +20,7 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(i);
         //LoadSceneAsync(i);
     }
-    public void ChangeScene(Transform transform)
+    public void ChangeScene(Transform caller, Transform sender)
     {
         ChangeScene();
     }

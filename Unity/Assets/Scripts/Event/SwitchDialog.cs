@@ -15,7 +15,7 @@ public class SwitchDialog : MonoBehaviour
     //[ConditionalHide("loopBetween", true)]
     public Dialog dialog2 = null;
 
-    public void DialogSwitch(Transform transform)
+    public void DialogSwitch(Transform caller, Transform sender)
     {
         if (loopBetween && dialogCaller.dialogChain[index] == dialog)
             dialogCaller.dialogChain[index] = dialog2;

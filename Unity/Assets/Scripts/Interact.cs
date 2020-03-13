@@ -63,7 +63,7 @@ public class Interact : MonoBehaviour
         if ((Input.GetKeyDown(interactKey) || Input.GetKeyDown(interactKeyAlternative)))
         {
             if (Interactable)
-                interactEvent?.Invoke(transform);
+                interactEvent?.Invoke(transform, currentCollision.transform);
         }
     }
     private void OnDestroy()
@@ -150,4 +150,4 @@ public class Interact : MonoBehaviour
 
 }
 [System.Serializable]
-public class InteractEvent : UnityEvent<Transform> { }
+public class InteractEvent : UnityEvent<Transform, Transform> { }

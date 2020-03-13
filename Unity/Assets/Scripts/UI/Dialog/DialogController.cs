@@ -84,7 +84,7 @@ public class DialogController : MonoBehaviour
             dialogWritter = DialogIEnumerator(dialogProfiles[i]); // prepare IEnumerator
 
             if (dialogProfiles[i]._DialogEvent) // Dialog Events
-                dialogProfiles[i].unityEvent?.events?.Invoke(transform);
+                dialogProfiles[i].unityEvent?.events?.Invoke(transform, null);
 
             yield return StartCoroutine(dialogWritter);// Print Text to dialogBox and Produce Sound
 
@@ -101,14 +101,14 @@ public class DialogController : MonoBehaviour
                 if (choiceNum == 1)
                 {
                     if (dialogProfiles[i].yes)
-                        dialogProfiles[i].yes.CallDialog(transform);
+                        dialogProfiles[i].yes.CallDialog(transform, null);
                     else
                         StopDialog();
                 }
                 if (choiceNum == 2)
                 {
                     if (dialogProfiles[i].no)
-                        dialogProfiles[i].no.CallDialog(transform);
+                        dialogProfiles[i].no.CallDialog(transform, null);
                     else
                         StopDialog();
                 }

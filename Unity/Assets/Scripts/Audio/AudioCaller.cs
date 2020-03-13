@@ -22,7 +22,7 @@ public class AudioCaller : MonoBehaviour
     {
         AudioController.Get.OneShot(clip, volume, timeUntilShot, pitch, stereoPan, reverbZoneMix, priority);
     }
-    public void CallAudio(Transform transform)
+    public void CallAudio(Transform caller, Transform sender)
     {
         AudioController.Get.OneShot(clip, volume, timeUntilShot, pitch, stereoPan, reverbZoneMix, priority);
     }

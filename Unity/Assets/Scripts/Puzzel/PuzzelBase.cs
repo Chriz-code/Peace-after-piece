@@ -16,7 +16,7 @@ public class PuzzelBase : MonoBehaviour
         {
             match = value;
             if (match == true)
-                matchEvent?.Invoke(transform);
+                matchEvent?.Invoke(transform, null);
         }
     }
 }
