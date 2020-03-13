@@ -48,6 +48,27 @@ public class Codelock : PuzzelBase
                 AddNumber(8);
             if (Input.GetKeyDown(KeyCode.Alpha9))
                 AddNumber(9);
+
+            if (Input.GetKeyDown(KeyCode.Keypad0))
+                AddNumber(0);
+            if (Input.GetKeyDown(KeyCode.Keypad1))
+                AddNumber(1);
+            if (Input.GetKeyDown(KeyCode.Keypad2))
+                AddNumber(2);
+            if (Input.GetKeyDown(KeyCode.Keypad3))
+                AddNumber(3);
+            if (Input.GetKeyDown(KeyCode.Keypad4))
+                AddNumber(4);
+            if (Input.GetKeyDown(KeyCode.Keypad5))
+                AddNumber(5);
+            if (Input.GetKeyDown(KeyCode.Keypad6))
+                AddNumber(6);
+            if (Input.GetKeyDown(KeyCode.Keypad7))
+                AddNumber(7);
+            if (Input.GetKeyDown(KeyCode.Keypad8))
+                AddNumber(8);
+            if (Input.GetKeyDown(KeyCode.Keypad9))
+                AddNumber(9);
         }
     }
 
