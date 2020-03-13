@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 public enum Perspective { None, Angela, Elenor }
 public class GameController : MonoBehaviour
 {
@@ -66,21 +65,6 @@ public class GameController : MonoBehaviour
         Switch();
     }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        Debug.Log("OnSceneLoaded: " + scene.name);
-        Invoke("GameControllerStart", 0.01f);
-    }
     void QuitGame()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -105,7 +89,7 @@ public class GameController : MonoBehaviour
             return true;
         return false;
     }
-    void GameControllerStart()
+    public void GameControllerStart()
     {
         CurrentPerspective = startPerspective;
     }
