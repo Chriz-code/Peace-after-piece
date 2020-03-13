@@ -45,17 +45,31 @@ public class InspectController : MonoBehaviour
     void InspectBook(Item item)
     {
         image.sprite = item.book;
-        image.SetNativeSize();
+        //image.SetNativeSize();
     }
     void InspectKey(Item item)
     {
         image.sprite = item.key;
-        image.SetNativeSize();
+        //image.SetNativeSize();
     }
     void InspectPainting(Item item)
     {
         image.sprite = item.painting;
-        image.SetNativeSize();
+        //image.SetNativeSize();
     }
+    public void InspectItem(Sprite sprite)
+    {
+        panel.SetActive(!panel.activeSelf);
 
+        if (panel.activeSelf)
+        {
+            image.sprite = sprite;
+            //image.SetNativeSize();
+        }
+        else
+        {
+            Debug.Log("No Object");
+            image.sprite = null;
+        }
+    }
 }
