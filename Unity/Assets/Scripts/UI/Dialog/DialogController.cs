@@ -17,13 +17,11 @@ public class DialogController : MonoBehaviour
     IEnumerator dialogStarter = null;
     IEnumerator dialogWritter = null;
 
-    Vector3 originalPos = Vector3.zero;
     [Header("Variables")]
     [SerializeField] bool showProfile = false;
     [SerializeField] int speedMultiplier = 3;
     [SerializeField] bool silenceWhenMultiplying = false;
     [SerializeField] bool ready = false;
-    [SerializeField] bool scrollText = false;
     [SerializeField] KeyCode dialogKey = KeyCode.E;
     [SerializeField] KeyCode dialogKeyAlternative = KeyCode.Mouse0;
     bool scrollTextDelta = false;
@@ -51,7 +49,6 @@ public class DialogController : MonoBehaviour
     private void Start()
     {
         OnValidate();
-        originalPos = dialogText.rectTransform.localPosition;
     }
 
     public void StartDialog(Dialog[] dialogProfiles)
@@ -149,18 +146,12 @@ public class DialogController : MonoBehaviour
         //Box
         dialogBox.gameObject.SetActive(true);
         string[] messages = dialog.message.Split('@'); // Split message into parts
-        if (scrollText)
-            messages = dialog.message.Split('@', '-');
 
         dialogText.text = "";
         rowCount = 1;
         for (int i = 0; i < messages.Length; i++) //Loop through parts
         {
             int lowerWaitBy = 1;
-            if (!scrollText) //Clear message
-            {
-                dialogText.text = "";
-            }
             for (int j = 0; j < messages[i].Length; j++) //Loop through characters
             {
                 if (messages[i][j] == '/') //Lower WaitTime if symbol found in message
@@ -189,15 +180,7 @@ public class DialogController : MonoBehaviour
                     yield return new WaitForSeconds(dialog.textSpeed == 0 ? 0.001f : dialog.textSpeed / deltaSpeedMultiplier);//Wait between characters
                 }
             }
-            if (scrollText && (i + 1) < messages.Length) // Scroll Text Effect
-            {
-                nextPos = dialogText.rectTransform.localPosition + (Vector3.up * (24 + 5f));
-                float distance = (nextPos - dialogText.rectTransform.localPosition).y;
-                scrollTextDelta = true;
-                yield return new WaitForSeconds(distance / scrollSpeed);
-                scrollTextDelta = false;
-            }
-            else if (dialog.playerInput == true && (!dialog.multipleChoice || (dialog.multipleChoice && i != messages.Length - 1))) // Player Input to go to next message and it's not the last message:  
+            if (dialog.playerInput == true && (!dialog.multipleChoice || (dialog.multipleChoice && i != messages.Length - 1))) // Player Input to go to next message and it's not the last message:  
             {
                 do //Wait for playerInput
                 {
@@ -212,8 +195,6 @@ public class DialogController : MonoBehaviour
     Vector3 nextPos = Vector2.zero;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-            scrollText = !scrollText;
 
         if (scrollTextDelta && rowCount > 2 && dialogText.rectTransform.localPosition.y < nextPos.y)
             dialogText.rectTransform.localPosition += Vector3.up * Time.deltaTime * scrollSpeed;
@@ -247,7 +228,6 @@ public class DialogController : MonoBehaviour
             dialogBox.gameObject.SetActive(false);
             choiceMenu.gameObject.SetActive(false);
             dialogProfile.gameObject.SetActive(false); //Profile
-            dialogText.rectTransform.localPosition = originalPos;
             ienumerating = false;
             if (user != null)
                 user.enabled = true;
