@@ -12,6 +12,7 @@ public class Item : MonoBehaviour
     public Sprite defaultSprite = null;
     [SerializeField] private Sprite changeSprite = null;
 
+
     public Sprite ChangeSprite
     {
         get
@@ -27,5 +28,15 @@ public class Item : MonoBehaviour
     public Sprite key = null;
     public Sprite painting = null;
 
-    
+    public bool firstPickup = true;
+    [SerializeField] InteractEvent pickupEvent = null;
+
+    public void CallEvent()
+    {
+        if (!firstPickup)
+            return;
+
+            pickupEvent?.Invoke(transform, null);
+            firstPickup = false;
+    }
 }

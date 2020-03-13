@@ -137,6 +137,8 @@ public class Inventory : MonoBehaviour
         {
             slot.ItemSlot = item;
             slot.GetComponent<UnityEngine.UI.Image>().sprite = item.defaultSprite;
+            item.CallEvent();
+
             /*item.parent.localPosition = new Vector2(222, 222);
             item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             item.GetComponent<Collider2D>().enabled = true; */
@@ -147,6 +149,7 @@ public class Inventory : MonoBehaviour
 
         item = this.CurrentColItem;
         slot.ItemSlot = item;
+        item.CallEvent();
 
         slot.GetComponent<UnityEngine.UI.Image>().sprite = item.defaultSprite;
         /*item.parent.localPosition = new Vector2(222, 222);
