@@ -22,4 +22,8 @@ public class SwitchSprite : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = Sprite;
     }
+    public void SpriteSwitch(int index)
+    {
+        GetComponent<SpriteRenderer>().sprite = sprites[index];
+    }
 }

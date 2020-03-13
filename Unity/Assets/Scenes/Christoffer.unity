@@ -3184,6 +3184,7 @@ MonoBehaviour:
   x3: {fileID: 1466226574}
   id: 0
   code: 231
+  codelockCorrectTime: 1
   unMatchEvent:
     m_PersistentCalls:
       m_Calls:
