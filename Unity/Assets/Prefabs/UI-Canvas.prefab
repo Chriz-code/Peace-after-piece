@@ -504,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8094447315779476251
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1139,7 +1139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8094447316976139391
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1765,4 +1765,5 @@ MonoBehaviour:
   interactPopUp: {fileID: 8094447315752456525}
   inspectController: {fileID: 8094447315774450930}
   dialogController: {fileID: 8094447316976139388}
-  caller: {fileID: 0}
+  callers: []
+  localOffset: {x: 0, y: 0}

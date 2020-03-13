@@ -18,20 +18,20 @@ public class Dissolve_Burn : MonoBehaviour
                 if (GetComponent<UnityEngine.UI.Image>())
                     m_Material = GetComponent<UnityEngine.UI.Image>().material;
             }
-
-            if (m_Material.shader != newMaterial.shader)
-            {
-                //print("Making new");
-                m_Material = new Material(newMaterial)
+            if (newMaterial)
+                if (m_Material.shader != newMaterial.shader)
                 {
-                    hideFlags = HideFlags.HideAndDontSave
-                };
-                if (GetComponent<Renderer>())
-                    GetComponent<Renderer>().material = m_Material;
-                if (GetComponent<UnityEngine.UI.Image>())
-                    GetComponent<UnityEngine.UI.Image>().material = m_Material;
-                return m_Material;
-            }
+                    //print("Making new");
+                    m_Material = new Material(newMaterial)
+                    {
+                        hideFlags = HideFlags.HideAndDontSave
+                    };
+                    if (GetComponent<Renderer>())
+                        GetComponent<Renderer>().material = m_Material;
+                    if (GetComponent<UnityEngine.UI.Image>())
+                        GetComponent<UnityEngine.UI.Image>().material = m_Material;
+                    return m_Material;
+                }
 
             return m_Material;
         }
@@ -69,7 +69,7 @@ public class Dissolve_Burn : MonoBehaviour
         {
             DissolveAmount += burnSpeed * Time.deltaTime;
         }
-        else if(dissolveGoal < 1 && DissolveAmount > dissolveGoal)
+        else if (dissolveGoal < 1 && DissolveAmount > dissolveGoal)
         {
             DissolveAmount -= burnSpeed * Time.deltaTime;
         }

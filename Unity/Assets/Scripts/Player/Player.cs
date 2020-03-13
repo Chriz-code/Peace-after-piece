@@ -13,4 +13,9 @@ public class Player : MonoBehaviour
         }
     }
     public Player_UserInput userInput = null;
+
+    private void Start()
+    {
+        GameController.Get.GameControllerStart();
+    }
 }
