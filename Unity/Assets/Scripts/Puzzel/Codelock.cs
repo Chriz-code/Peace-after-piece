@@ -9,7 +9,7 @@ public class Codelock : PuzzelBase
     [SerializeField] int id = 0;
 
     [SerializeField] int code = 123;
-
+    public float codelockCorrectTime = 1;
     [SerializeField] public InteractEvent unMatchEvent;
 
     private void OnEnable()
@@ -115,6 +115,7 @@ public class Codelock : PuzzelBase
     }
     void ClearText()
     {
+        id = 0;
         x1.text = "0";
         x2.text = "0";
         x3.text = "0";
@@ -142,7 +143,7 @@ public class Codelock : PuzzelBase
         x1.color = Color.green;
         x2.color = Color.green;
         x3.color = Color.green;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(codelockCorrectTime);
         NotInteract();
     }
 }
