@@ -72,23 +72,13 @@ public class Codelock : PuzzelBase
         }
     }
 
-    [SerializeField]Player_UserInput sender = null;
     public void Interact(Transform call, Transform sender)
     {
         call.parent.gameObject.SetActive(true);
-        if (sender.GetComponent<Player_UserInput>())
-        {
-            this.sender = sender.GetComponent<Player_UserInput>();
-            this.sender.enabled = false;
-        }
     }
     public void NotInteract()
     {
         transform.parent.gameObject.SetActive(false);
-        if (sender)
-        {
-            sender.enabled = true;
-        }
     }
 
 

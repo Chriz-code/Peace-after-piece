@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class DialogController : MonoBehaviour
 {
     [Header("Refrences")]
-    [SerializeField] Image profileBox = null;
     [SerializeField] Image dialogProfile = null;
     [SerializeField] Image profile = null, dialogBox = null;
     [SerializeField]
@@ -36,7 +35,7 @@ public class DialogController : MonoBehaviour
             Debug.LogWarning("Dialog Controller is missing sprite refrences");
 
         }
-        if (dialogBox && profileBox && profile && dialogBox && textSoundSource && choiceMenu)
+        if (dialogBox && profile && dialogBox && textSoundSource && choiceMenu)
         {
             ready = true;
         }
@@ -62,18 +61,19 @@ public class DialogController : MonoBehaviour
     bool ienumerating = false;
     int rowCount = 1;
 
-    Player_UserInput user = null;
+    [SerializeField] Player_UserInput user = null;
     public IEnumerator StartDialogIEnumerator(Dialog[] dialogProfiles)
     {
         if (ienumerating == true)
             yield break;
         ienumerating = true;
 
-        if (GameController.Get.GetActivePlayer != null)
+        /*if (GameController.Get.GetActivePlayer != null)
         {
             user = GameController.Get.GetActivePlayer;
             user.enabled = false;
-        }
+        }*/
+
         for (int i = 0; i < dialogProfiles.Length; i++)
         {
             choiceNum = 0;
@@ -209,13 +209,11 @@ public class DialogController : MonoBehaviour
     {
         if (GameController.Get.CurrentPerspective == Perspective.Angela && ready)
         {
-            profileBox.sprite = profileBoxAngela;
             dialogBox.sprite = dialogBoxAngela;
             dialogProfile.sprite = dialogProfileAngela;
         }
         else if (GameController.Get.CurrentPerspective == Perspective.Elenor && ready)
         {
-            profileBox.sprite = profileBoxElenor;
             dialogBox.sprite = dialogBoxElenor;
             dialogProfile.sprite = dialogProfileElenor;
         }

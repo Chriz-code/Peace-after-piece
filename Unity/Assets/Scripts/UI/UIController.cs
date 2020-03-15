@@ -10,6 +10,9 @@ public class UIController : MonoBehaviour
     [SerializeField] public InspectController inspectController = null;
     [SerializeField] public DialogController dialogController = null;
     bool active;
+    [SerializeField]
+    GameObject[] clearUI = null;
+    [SerializeField] GameObject[] freezePlayer = null;
 
     [Header("Debug")]
     [SerializeField] List<GameObject> callers = new List<GameObject>();
@@ -63,6 +66,19 @@ public class UIController : MonoBehaviour
         {
             interactPopUp.gameObject.SetActive(active);
         }
+
+        for (int i = 0; i < freezePlayer.Length; i++)
+        {
+            if (freezePlayer[i].activeSelf)
+            {
+                GameController.Get.FreezePlayer();
+                return;
+            }
+            else if (GameController.Get.PlayerFrozen)
+                GameController.Get.UnFreezePlayer();
+        }
+
+
         //active = false;
     }
     private void OnEnable()
@@ -109,5 +125,10 @@ public class UIController : MonoBehaviour
         dialogController.StopDialog();
         callers.Clear();
         dialogController.CheckPerspective();
+
+        for (int i = 0; i < clearUI.Length; i++)
+        {
+            clearUI[i].SetActive(false);
+        }
     }
 }

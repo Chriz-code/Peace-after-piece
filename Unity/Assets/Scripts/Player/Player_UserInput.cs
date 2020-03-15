@@ -38,6 +38,7 @@ public class Player_UserInput : MonoBehaviour
             }
         }
     }
+    public bool frozen = false;
     void Update()
     {
         if (GameController.Get.ComparePerspective(player.GetPerspective))
@@ -46,22 +47,25 @@ public class Player_UserInput : MonoBehaviour
             {
                 InspectObjectInHand();
             }
-            if (!UIController.Get.inspectController || (!UIController.Get.inspectController.panel.activeSelf))
+            if (!frozen)
             {
-                movement.Movement(Input.GetAxis("Horizontal"));
-                if ((Input.GetKeyDown(pickUpKey) || Input.GetKeyDown(pickUpKeyAlternative)) && inventory.PickUpAllowed)
+                if (!UIController.Get.inspectController || (!UIController.Get.inspectController.panel.activeSelf))
                 {
-                    inventory.PickUpItem();
-                }
-                if ((Input.GetKeyDown(dropKey) || Input.GetKeyDown(dropKeyAlternative)) && inventory.DropAllowed)
-                {
-                    inventory.DropItem();
+                    movement.Movement(Input.GetAxis("Horizontal"));
+                    if ((Input.GetKeyDown(pickUpKey) || Input.GetKeyDown(pickUpKeyAlternative)) && inventory.PickUpAllowed)
+                    {
+                        inventory.PickUpItem();
+                    }
+                    if ((Input.GetKeyDown(dropKey) || Input.GetKeyDown(dropKeyAlternative)) && inventory.DropAllowed)
+                    {
+                        inventory.DropItem();
+                    }
                 }
             }
-            else
-            {
-                movement.Movement(0);
-            }
+        }
+        if (frozen)
+        {
+            movement.Movement(0);
         }
     }
 

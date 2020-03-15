@@ -62,8 +62,9 @@ public class Interact : MonoBehaviour
     {
         if ((Input.GetKeyDown(interactKey) || Input.GetKeyDown(interactKeyAlternative)))
         {
-            if (Interactable)
-                interactEvent?.Invoke(transform, currentCollision.transform);
+            if (!GameController.Get.PlayerFrozen)
+                if (Interactable)
+                    interactEvent?.Invoke(transform, currentCollision.transform);
         }
     }
     private void OnDestroy()
