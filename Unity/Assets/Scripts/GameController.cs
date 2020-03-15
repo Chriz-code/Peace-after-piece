@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
     }
 
     public KeyCode switchKey = KeyCode.Tab;
-    public Player_UserInput GetActivePlayer
+    public bool PlayerFrozen
     {
         get
         {
@@ -39,13 +39,32 @@ public class GameController : MonoBehaviour
                 userInput.TryGetComponent<ThisPerspective>(out ThisPerspective playerPerspective);
                 if (playerPerspective.perspective == CurrentPerspective)
                 {
-                    return userInput;
+                    return userInput.frozen;
                 }
             }
-            return null;
+            return false;
+        }
+        set
+        {
+            foreach (Player_UserInput userInput in FindObjectsOfType<Player_UserInput>())
+            {
+                userInput.TryGetComponent<ThisPerspective>(out ThisPerspective playerPerspective);
+                if (playerPerspective.perspective == CurrentPerspective)
+                {
+                    userInput.frozen = value;
+                }
+            }
         }
     }
 
+    public void FreezePlayer()
+    {
+        PlayerFrozen = true;
+    }
+    public void UnFreezePlayer()
+    {
+        PlayerFrozen = false;
+    }
 
     private void Awake()
     {

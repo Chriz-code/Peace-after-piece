@@ -8,11 +8,14 @@ public class AudioCaller : MonoBehaviour
     [SerializeField] AudioCallType audioCallType = AudioCallType.OneShot;
     [SerializeField] int audioSourceID = 0;
     [SerializeField] bool loop = true;
-    public AudioCall audioCall = new AudioCall();
+    public AudioCall[] audioCall = {new AudioCall()};
 
+    [Header("Conditionals")]
+    [SerializeField] bool randomShot = false;
 
     public void CallAudio()
     {
+        AudioCall audioCall = this.audioCall[randomShot ? Random.Range(0, this.audioCall.Length) : 0];
         switch (audioCallType)
         {
             case AudioCallType.OneShot:
@@ -31,6 +34,7 @@ public class AudioCaller : MonoBehaviour
     }
     public void CallAudio(Transform caller, Transform sender)
     {
+        AudioCall audioCall = this.audioCall[randomShot ? Random.Range(0, this.audioCall.Length) : 0];
         switch (audioCallType)
         {
             case AudioCallType.OneShot:

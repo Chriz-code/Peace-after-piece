@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,10 +16,16 @@ public class Z_Flip : MonoBehaviour
         GameController.Get.onChangePerspective -= SwitchZ;
     }
 
+    private void Start()
+    {
+        List<Delegate> invokeList = new List<Delegate>(GameController.Get.onChangePerspective.GetInvocationList());
+        
+    }
+
     void SwitchZ(GameController gc, Perspective perspective)
     {
         Debug.Log("Switch background");
-        ThisPerspective[] perspectives = Object.FindObjectsOfType<ThisPerspective>();
+        ThisPerspective[] perspectives = UnityEngine.Object.FindObjectsOfType<ThisPerspective>();
         for (int i = 0; i < perspectives.Length; i++)
         {
             if (perspectives[i].perspective == perspective)
