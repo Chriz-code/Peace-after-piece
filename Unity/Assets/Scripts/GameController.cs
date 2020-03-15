@@ -67,14 +67,15 @@ public class GameController : MonoBehaviour
 
     void QuitGame()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
 #if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.Escape))
             UnityEditor.EditorApplication.isPlaying = false;
+        if (Input.GetKeyDown(KeyCode.R))
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
 #else
-      Application.Quit();
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
 #endif
-        }
     }
     void Switch()
     {

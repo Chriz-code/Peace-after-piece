@@ -132,16 +132,12 @@ public class Inventory : MonoBehaviour
     #region InventoryActions
     public void PickUpItem(Item item = null)
     {
-
         if (item != null && slot.ItemSlot == null) //If item is taken from an itemHolder
         {
             slot.ItemSlot = item;
             slot.GetComponent<UnityEngine.UI.Image>().sprite = item.defaultSprite;
-            item.CallEvent();
 
-            /*item.parent.localPosition = new Vector2(222, 222);
-            item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            item.GetComponent<Collider2D>().enabled = true; */
+            item.CallEvent();
             return;
         }
         if (PickUpAllowed == false)
@@ -149,12 +145,9 @@ public class Inventory : MonoBehaviour
 
         item = this.CurrentColItem;
         slot.ItemSlot = item;
-        item.CallEvent();
-
         slot.GetComponent<UnityEngine.UI.Image>().sprite = item.defaultSprite;
-        /*item.parent.localPosition = new Vector2(222, 222);
-        item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        item.GetComponent<Collider2D>().enabled = true;*/
+
+        item.CallEvent();
     }
     public void DropItem()
     {

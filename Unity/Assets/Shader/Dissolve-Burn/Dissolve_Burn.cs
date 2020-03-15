@@ -48,7 +48,7 @@ public class Dissolve_Burn : MonoBehaviour
             Material.SetFloat("_DissolveAmount", value);
         }
     }
-    public float burnSpeed = 0.5f;
+    public float burnSpeed = 1.5f;
     public bool burnComplete;
 
     [Header("Debug")]

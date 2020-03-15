@@ -36,7 +36,8 @@ public class Item : MonoBehaviour
         if (!firstPickup)
             return;
 
-            pickupEvent?.Invoke(transform, null);
-            firstPickup = false;
+        pickupEvent?.Invoke(transform, null);
+        firstPickup = false;
+        print("First Pickup Event!!");
     }
 }

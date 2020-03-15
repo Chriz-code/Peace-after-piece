@@ -24,9 +24,9 @@ public class Dialog
     public bool playerInput = true;
 
     [Header("Dialog Event")]
-    public bool _DialogEvent;
+    public bool dialogEventCheck;
     //[ConditionalHide("_DialogEvent", true)] 
-    public DialogEvent unityEvent;
+    public DialogEvent dialogEvent;
 
     [Header("MultipleChoice")]
     public bool multipleChoice;
@@ -39,8 +39,13 @@ public class Dialog
     //[ConditionalHide("multipleChoice")]
     public DialogCaller no;
 
+    public Dialog()
+    {
 
-    public Dialog(DialogProfile profile, string message, float textVolume, float textWaitTime, float textSpeed, bool playerInput)
+    }
+    public Dialog(DialogProfile profile, string message, 
+        float textVolume, float textWaitTime, 
+        float textSpeed, bool playerInput)
     {
         this.profile = profile;
         this.message = message;
@@ -49,6 +54,43 @@ public class Dialog
         this.textSpeed = textSpeed;
         this.playerInput = playerInput;
     }
+
+    public Dialog(string message, DialogProfile profile, 
+                    bool overrideVolume, float textVolume, 
+                    float textWaitTime, float textSpeed, 
+                    bool playerInput, bool dialogEventCheck, 
+                    DialogEvent dialogEvent, bool multipleChoice, 
+                    string buttonTextYes, DialogCaller yes, 
+                    string buttonTextNo, DialogCaller no
+                  )
+    {
+        this.message = message;
+        this.profile = profile;
+        this.overrideVolume = overrideVolume;
+        this.textVolume = textVolume;
+        this.textWaitTime = textWaitTime;
+        this.textSpeed = textSpeed;
+        this.playerInput = playerInput;
+        this.dialogEventCheck = dialogEventCheck;
+        this.dialogEvent = dialogEvent;
+        this.multipleChoice = multipleChoice;
+        this.buttonTextYes = buttonTextYes;
+        this.yes = yes;
+        this.buttonTextNo = buttonTextNo;
+        this.no = no;
+    }
+
+    public Dialog Copy()
+    {
+        return new Dialog(message, profile, 
+            overrideVolume, textVolume,
+            textWaitTime, textSpeed, 
+            playerInput, dialogEventCheck, 
+            dialogEvent, multipleChoice, 
+            buttonTextYes, yes, 
+            buttonTextNo, no);
+    }
+
 }
 [System.Serializable]
 public class DialogEvent 

@@ -43,13 +43,18 @@ public class AudioController : MonoBehaviour
         sources.AddRange(GetComponents<AudioSource>());
     }
 
-    public void OneShot(AudioClip clip = null, float volume = 1, float timeUntilShot = 0f, float pitch = 1, float stereoPan = 0, float reverbZoneMix = 0, int priority = 128)
+    public void OneShot(AudioCall audioCall)
     {
-        shotSource.pitch = pitch;
-        shotSource.panStereo = stereoPan;
-        shotSource.reverbZoneMix = reverbZoneMix;
-        shotSource.priority = priority;
-        StartCoroutine(PlayOneShot(clip, volume, timeUntilShot));
+        if (audioCall.changeSourceValues)
+        {
+            shotSource.pitch = audioCall.pitch;
+            shotSource.panStereo = audioCall.stereoPan;
+            shotSource.reverbZoneMix = audioCall.reverbZoneMix;
+            shotSource.priority = audioCall.priority;
+        }
+
+        print("One shot: " + audioCall.clip.name + "!");
+        StartCoroutine(PlayOneShot(audioCall.clip, audioCall.volume, audioCall.timeUntilShot));
     }
     public IEnumerator PlayOneShot(AudioClip clip, float volume, float timeUntilShot = 0)
     {
@@ -58,23 +63,24 @@ public class AudioController : MonoBehaviour
         //AudioSource.PlayClipAtPoint(clip, Vector3.zero,volume);
     }
 
-    void AddSource()
+    public void AddSource()
     {
-        sources.Add(gameObject.AddComponent<AudioSource>());
+        sources.Add(mainSource.gameObject.AddComponent<AudioSource>());
     }
-    void AddSourceAndPlay(AudioClip clip, float volume = 1, bool loop = false, float timeUntilShot = 0f, float pitch = 0, float stereoPan = 0, float reverbZoneMix = 0, int priority = 128)
+    public void AddSourceAndPlay(AudioCall audioCall, bool loop)
     {
-        AudioSource source = gameObject.AddComponent<AudioSource>();
+        AudioSource source = mainSource.gameObject.AddComponent<AudioSource>();
 
-        source.pitch = pitch;
-        source.panStereo = stereoPan;
-        source.reverbZoneMix = reverbZoneMix;
-        source.priority = priority;
+        source.pitch = audioCall.pitch;
+        source.panStereo = audioCall.stereoPan;
+        source.reverbZoneMix = audioCall.reverbZoneMix;
+        source.priority = audioCall.priority;
         source.loop = loop;
-
-        StartCoroutine(PlayAudio(source, clip, volume, timeUntilShot));
+        print("Added Source And Played: " + audioCall.clip.name + "!");
+        StartCoroutine(PlayAudio(source, audioCall.clip, audioCall.volume, audioCall.timeUntilShot));
         sources.Add(source);
     }
+
     IEnumerator PlayAudio(AudioSource source, AudioClip clip, float volume, float timeUntilShot = 0)
     {
         yield return new WaitForSeconds(timeUntilShot);
@@ -83,10 +89,20 @@ public class AudioController : MonoBehaviour
         source.Play();
     }
 
-    public void ChangeTrack(int audioSourceID = 0, AudioClip clip = null, AnimationCurve volumeCurve = null, float curveSpeed = 2f)
+    public void ChangeTrack(AudioCall audioCall, int audioSourceID = 0)
     {
-        StartCoroutine(TrackChange(audioSourceID, clip, volumeCurve, curveSpeed));
+        if (audioCall.changeSourceValues)
+        {
+            sources[audioSourceID].volume = audioCall.volume;
+            sources[audioSourceID].priority = audioCall.priority;
+            sources[audioSourceID].pitch = audioCall.pitch;
+            sources[audioSourceID].panStereo = audioCall.stereoPan;
+            sources[audioSourceID].reverbZoneMix = audioCall.reverbZoneMix;
+        }
+        print("Track Changed To: " + audioCall.clip.name + "!");
+        StartCoroutine(TrackChange(audioSourceID, audioCall.clip, audioCall.volumeCurve, audioCall.curveSpeed));
     }
+
     bool trackIenumerating = false;
     IEnumerator TrackChange(int audioSourceID = 0, AudioClip clip = null, AnimationCurve volumeCurve = null, float curveSpeed = 2f)
     {
@@ -97,13 +113,17 @@ public class AudioController : MonoBehaviour
         if (volumeCurve == null)
             volumeCurve = defaultCurve;
 
-        for (float i = 0; i < 1; i += Time.deltaTime * curveSpeed)
+        bool switchSong = false;
+        Keyframe lastKey = volumeCurve.keys[volumeCurve.length];
+        for (float i = 0; i < lastKey.time; i += Time.deltaTime * curveSpeed)
         {
             //Debug.Log(i);
             sources[audioSourceID].volume = volumeCurve.Evaluate(i);
             yield return new WaitForSeconds(Time.deltaTime);
-            if(volumeCurve.Evaluate(i) <= 0.1f)
+            if(i >= lastKey.time/2 && !switchSong)
             {
+                switchSong = true;
+                print("Track Switched!");
                 float length = sources[audioSourceID].time;
                 sources[audioSourceID].Stop();
                 sources[audioSourceID].clip = clip;
