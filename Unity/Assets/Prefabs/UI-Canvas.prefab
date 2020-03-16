@@ -187,7 +187,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -100}
+  m_SizeDelta: {x: -50, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4989413509938027998
 CanvasRenderer:
@@ -1689,6 +1689,7 @@ MonoBehaviour:
   interactPopUp: {fileID: 8094447315752456525}
   inspectController: {fileID: 8094447315774450930}
   dialogController: {fileID: 8094447316976139388}
+  clearUI: []
   freezePlayer:
   - {fileID: 8094447316376311047}
   - {fileID: 3884287743190877642}
