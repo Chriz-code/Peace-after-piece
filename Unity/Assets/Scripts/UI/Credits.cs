@@ -15,12 +15,21 @@ public class Credits : MonoBehaviour
     {
         camera.transform.Translate(Vector3.down * Time.deltaTime * speed);
 
-        StartCoroutine(WaitFor());
+        StartCoroutine(HoldUp());
+        if(speed == 0)
+            StartCoroutine(ChangeScene());
+
     }
 
-    IEnumerator WaitFor()
+    IEnumerator HoldUp()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(80);
+        speed = 0;
+    }
+
+    IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(5);
         SceneManager.LoadScene(meny);
     }
 }
