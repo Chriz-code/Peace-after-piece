@@ -604,8 +604,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogChain:
-  - message: Done!
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+  - message: Why is there a painting in there?
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
     overrideVolume: 1
     textVolume: 1
     textWaitTime: 1
@@ -726,7 +726,7 @@ MonoBehaviour:
   dialogCaller: {fileID: 300971892}
   index: 0
   dialog:
-    message: Done!
+    message: Alright then.
     profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
     overrideVolume: 1
     textVolume: 1
@@ -2244,7 +2244,7 @@ PrefabInstance:
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
@@ -2298,6 +2298,36 @@ PrefabInstance:
         type: 3}
       propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1371478072}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CallDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
@@ -2435,18 +2465,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogChain:
-  - message: I AM OVEN!
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+  - message: There is something in there.
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
     overrideVolume: 1
     textVolume: 1
     textWaitTime: 1
     textSpeed: 0
     playerInput: 1
-    dialogEventCheck: 0
+    dialogEventCheck: 1
     dialogEvent:
       events:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1044449367}
+            m_MethodName: DialogSwitch
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
     multipleChoice: 0
@@ -2454,8 +2495,8 @@ MonoBehaviour:
     yes: {fileID: 0}
     buttonTextNo: No
     no: {fileID: 0}
-  - message: Do you want to open OVEN?
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+  - message: Should I open the oven?
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
     overrideVolume: 1
     textVolume: 1
     textWaitTime: 1
@@ -2472,7 +2513,7 @@ MonoBehaviour:
     buttonTextYes: Yes
     yes: {fileID: 300971892}
     buttonTextNo: No
-    no: {fileID: 0}
+    no: {fileID: 1588393216}
 --- !u!114 &577272477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2521,8 +2562,8 @@ MonoBehaviour:
   dialogCaller: {fileID: 577272476}
   index: 1
   dialog:
-    message: Do you want to close OVEN?
-    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+    message: Should I close the oven?
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
     overrideVolume: 0
     textVolume: 0
     textWaitTime: 0
@@ -3542,6 +3583,7 @@ GameObject:
   - component: {fileID: 1044449364}
   - component: {fileID: 1044449365}
   - component: {fileID: 1044449366}
+  - component: {fileID: 1044449367}
   m_Layer: 0
   m_Name: Hatch
   m_TagString: Untagged
@@ -3561,6 +3603,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 300971891}
+  - {fileID: 1588393213}
   m_Father: {fileID: 577272474}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3628,6 +3671,41 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: a0f3252bdea5e6a40a3c5fd7b5b7a654, type: 3}
   - {fileID: 21300000, guid: 755947c571e5f794d828b5268225524a, type: 3}
+--- !u!114 &1044449367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044449363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be45c4a8c8698c94ea8dc3a339055864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopBetween: 0
+  dialogCaller: {fileID: 577272476}
+  index: 0
+  dialog:
+    message: Hmm..
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
+    overrideVolume: 0
+    textVolume: 0.7
+    textWaitTime: 1
+    textSpeed: 0.05
+    playerInput: 1
+    dialogEventCheck: 0
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: Yes
+    yes: {fileID: 0}
+    buttonTextNo: No
+    no: {fileID: 0}
 --- !u!1 &1045845024
 GameObject:
   m_ObjectHideFlags: 0
@@ -4666,6 +4744,44 @@ Transform:
   m_Father: {fileID: 1045845025}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1371478070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5716787562443265468, guid: 06ffedf176d801c48b4df5d9840c84aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 571790353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1371478072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371478070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogChain:
+  - message: That's me, in the ring at 12 years old.
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
+    overrideVolume: 0
+    textVolume: 0.7
+    textWaitTime: 1
+    textSpeed: 0.05
+    playerInput: 1
+    dialogEventCheck: 0
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: Yes
+    yes: {fileID: 0}
+    buttonTextNo: No
+    no: {fileID: 0}
 --- !u!1 &1397872379
 GameObject:
   m_ObjectHideFlags: 0
@@ -5980,6 +6096,182 @@ MonoBehaviour:
     yes: {fileID: 0}
     buttonTextNo: No
     no: {fileID: 0}
+--- !u!1 &1588393212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1588393213}
+  - component: {fileID: 1588393216}
+  - component: {fileID: 1588393214}
+  - component: {fileID: 1588393215}
+  m_Layer: 0
+  m_Name: No
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1588393213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588393212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1044449364}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1588393214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588393212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be45c4a8c8698c94ea8dc3a339055864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopBetween: 0
+  dialogCaller: {fileID: 1588393216}
+  index: 0
+  dialog:
+    message: Alright then.
+    profile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
+    overrideVolume: 1
+    textVolume: 1
+    textWaitTime: 1
+    textSpeed: 0
+    playerInput: 1
+    dialogEventCheck: 1
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 577272478}
+            m_MethodName: DialogSwitch
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 1044449366}
+            m_MethodName: SpriteSwitch
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 278760056}
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 577272475}
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: 
+    yes: {fileID: 0}
+    buttonTextNo: 
+    no: {fileID: 0}
+--- !u!114 &1588393215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588393212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c572f45b5206224295be88607671b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioCallType: 0
+  audioSourceID: 0
+  loop: 1
+  audioCall:
+  - clip: {fileID: 0}
+    volume: 1
+    timeUntilShot: 0
+    changeSourceValues: 1
+    priority: 128
+    pitch: 1
+    stereoPan: 0
+    reverbZoneMix: 0
+    volumeCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    curveSpeed: 1
+  randomShot: 0
+--- !u!114 &1588393216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588393212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogChain:
+  - message: Alright then.
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
+    overrideVolume: 1
+    textVolume: 1
+    textWaitTime: 1
+    textSpeed: 0
+    playerInput: 1
+    dialogEventCheck: 0
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: 
+    yes: {fileID: 0}
+    buttonTextNo: 
+    no: {fileID: 0}
 --- !u!1 &1648550317
 GameObject:
   m_ObjectHideFlags: 0
@@ -6418,7 +6710,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 571790353}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1371478070}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ea4b144d3e9a2e42be452a9b39327d6, type: 3}
@@ -7684,6 +7976,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Players
       objectReference: {fileID: 0}
+    - target: {fileID: 4128426896449185037, guid: 3264ec412e6f9eb40bee54af153be429,
+        type: 3}
+      propertyPath: slot
+      value: 
+      objectReference: {fileID: 650492288}
+    - target: {fileID: 4128426896449185037, guid: 3264ec412e6f9eb40bee54af153be429,
+        type: 3}
+      propertyPath: oppositeRoom
+      value: 
+      objectReference: {fileID: 940701357}
+    - target: {fileID: 4128426897358698615, guid: 3264ec412e6f9eb40bee54af153be429,
+        type: 3}
+      propertyPath: slot
+      value: 
+      objectReference: {fileID: 904203716}
+    - target: {fileID: 4128426897358698615, guid: 3264ec412e6f9eb40bee54af153be429,
+        type: 3}
+      propertyPath: oppositeRoom
+      value: 
+      objectReference: {fileID: 1369742470}
     - target: {fileID: 4128426896167090877, guid: 3264ec412e6f9eb40bee54af153be429,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7739,25 +8051,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4128426896449185037, guid: 3264ec412e6f9eb40bee54af153be429,
-        type: 3}
-      propertyPath: slot
-      value: 
-      objectReference: {fileID: 650492288}
-    - target: {fileID: 4128426896449185037, guid: 3264ec412e6f9eb40bee54af153be429,
-        type: 3}
-      propertyPath: oppositeRoom
-      value: 
-      objectReference: {fileID: 940701357}
-    - target: {fileID: 4128426897358698615, guid: 3264ec412e6f9eb40bee54af153be429,
-        type: 3}
-      propertyPath: slot
-      value: 
-      objectReference: {fileID: 904203716}
-    - target: {fileID: 4128426897358698615, guid: 3264ec412e6f9eb40bee54af153be429,
-        type: 3}
-      propertyPath: oppositeRoom
-      value: 
-      objectReference: {fileID: 1369742470}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3264ec412e6f9eb40bee54af153be429, type: 3}
