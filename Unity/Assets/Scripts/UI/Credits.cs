@@ -10,13 +10,18 @@ public class Credits : MonoBehaviour
     public string meny;
     public Transform end;
     public Transform start;
+    public UnityEngine.UI.Text logo = null;
+    public float fadingSpeed = 3;
+    public float timeToFade = 3;
+    public float holdupTime = 6;
+
 
     void Update()
     {
         camera.transform.Translate(Vector3.down * Time.deltaTime * speed);
 
         StartCoroutine(HoldUp());
-        if(speed == 0)
+        if (speed == 0)
             StartCoroutine(ChangeScene());
 
     }
@@ -29,7 +34,17 @@ public class Credits : MonoBehaviour
 
     IEnumerator ChangeScene()
     {
-        yield return new WaitForSeconds(5);
+        for (float i = 0; i < holdupTime; i += Time.deltaTime)
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+            if (i > timeToFade)
+            {
+                Color color = logo.color;
+                color.a -= Time.deltaTime/fadingSpeed;
+                logo.color = color;
+            }
+        }
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(meny);
     }
 }

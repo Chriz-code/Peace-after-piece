@@ -1613,6 +1613,7 @@ MonoBehaviour:
   meny: Meny
   end: {fileID: 670601237}
   start: {fileID: 800743951}
+  logo: {fileID: 1295457540}
 --- !u!4 &836105342
 Transform:
   m_ObjectHideFlags: 0
@@ -1988,7 +1989,7 @@ GameObject:
   - component: {fileID: 1277544553}
   - component: {fileID: 1277544552}
   m_Layer: 5
-  m_Name: PeaceAfterPieace
+  m_Name: PeaceAfterPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2046,7 +2047,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Peace After Pieace
+  m_Text: Peace After Piece
 --- !u!222 &1277544553
 CanvasRenderer:
   m_ObjectHideFlags: 0
