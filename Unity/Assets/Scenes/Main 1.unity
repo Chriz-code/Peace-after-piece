@@ -5714,6 +5714,26 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2064531597, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064531597, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064531597, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064531597, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064531597, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -244.69998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
 --- !u!1001 &1454812209
