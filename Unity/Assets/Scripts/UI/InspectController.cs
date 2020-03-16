@@ -6,6 +6,7 @@ public class InspectController : MonoBehaviour
 {
     public GameObject panel = null;
     public UnityEngine.UI.Image image = null;
+    public DialogCaller dialogCaller;
 
     public void InspectItem(Item item)
     {
@@ -14,6 +15,37 @@ public class InspectController : MonoBehaviour
         if (panel.activeSelf)
         {
             image.sprite = Switch(item);
+            if (!item)
+                return;
+            Dialog[] dialogChain = new Dialog[1];
+            if (GameController.Get.CurrentPerspective == Perspective.Elenor)
+            {
+                dialogChain[0] = item.inspectDialogEleanor;
+
+            }
+            else if(GameController.Get.CurrentPerspective == Perspective.Angela)
+            {
+                dialogChain[0] = item.inspectDialogAngela;
+            }
+            UIController.Get.dialogController.StartDialog(dialogChain);
+        }
+        else
+        {
+            Debug.Log("No Object");
+            image.sprite = null;
+        }
+    }
+    public void InspectItem(GameObject gameObj)
+    {
+        panel.SetActive(!panel.activeSelf);
+        if (panel.activeSelf)
+        {
+            image.sprite = gameObj.GetComponent<SpriteRenderer>().sprite;
+            if (gameObj.GetComponent<DialogCaller>())
+            {
+                gameObj.GetComponent<DialogCaller>().CallDialog();
+            }
+            //image.SetNativeSize();
         }
         else
         {
@@ -39,6 +71,7 @@ public class InspectController : MonoBehaviour
                     return item.painting;
             }
         Debug.LogWarning("Unifentified Object");
+        panel.SetActive(false);
         return null;
     }
 
@@ -55,20 +88,5 @@ public class InspectController : MonoBehaviour
     {
         image.sprite = item.painting;
 
-    }
-    public void InspectItem(Sprite sprite)
-    {
-        panel.SetActive(!panel.activeSelf);
-
-        if (panel.activeSelf)
-        {
-            image.sprite = sprite;
-            //image.SetNativeSize();
-        }
-        else
-        {
-            Debug.Log("No Object");
-            image.sprite = null;
-        }
     }
 }

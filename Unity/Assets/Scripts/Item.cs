@@ -11,7 +11,8 @@ public class Item : MonoBehaviour
     [Header("OverWorldSprites")]
     public Sprite defaultSprite = null;
     [SerializeField] private Sprite changeSprite = null;
-
+    public Dialog inspectDialogAngela;
+    public Dialog inspectDialogEleanor;
 
     public Sprite ChangeSprite
     {

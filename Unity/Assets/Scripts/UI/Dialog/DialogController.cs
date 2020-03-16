@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class DialogController : MonoBehaviour
 {
     [Header("Refrences")]
+    [SerializeField] DialogProfile defaultProfile = null;
     [SerializeField] Image dialogProfile = null;
     [SerializeField] Image profile = null, dialogBox = null;
     [SerializeField]
@@ -28,8 +29,12 @@ public class DialogController : MonoBehaviour
 
     int deltaSpeedMultiplier = 1;
 
-    private void OnValidate()
+    private void OnValidated()
     {
+        if (!defaultProfile)
+        {
+            Debug.LogError("MISSING DEFAULT PROFILE!");
+        }
         if (!(profileBoxAngela && dialogBoxAngela && profileBoxElenor && dialogBoxElenor))
         {
             Debug.LogWarning("Dialog Controller is missing sprite refrences");
@@ -47,7 +52,7 @@ public class DialogController : MonoBehaviour
     }
     private void Start()
     {
-        OnValidate();
+        OnValidated();
     }
 
     public void StartDialog(Dialog[] dialogProfiles)
@@ -126,12 +131,15 @@ public class DialogController : MonoBehaviour
 
     public IEnumerator DialogIEnumerator(Dialog dialog)
     {
+        if (dialog.message == string.Empty)
+            yield break;
+
         CheckPerspective();
 
         if (dialog.profile == null)
         {
             Debug.LogWarning("DialogProfile Missing!");
-            dialog.profile = new DialogProfile(null, Color.white, new AudioClip[0]);
+            dialog.profile = defaultProfile;
         }
         //dialog.profile = new DialogProfile(null, Color.white, new AudioClip[0]);
 
@@ -145,6 +153,7 @@ public class DialogController : MonoBehaviour
 
         //Box
         dialogBox.gameObject.SetActive(true);
+
         string[] messages = dialog.message.Split('@'); // Split message into parts
 
         dialogText.text = "";

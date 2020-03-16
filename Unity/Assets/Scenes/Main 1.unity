@@ -3140,6 +3140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
       propertyPath: itemType
       value: 2
       objectReference: {fileID: 0}
@@ -3161,6 +3166,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 3e5d6d9f43125d04fbc6651793afcc76,
         type: 3}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1801873249}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -3406,6 +3436,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
       propertyPath: itemType
       value: 2
       objectReference: {fileID: 0}
@@ -3427,6 +3462,52 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c41243feb37e0d4459678d76b35a5e76,
         type: 3}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1863770795}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialog.message
+      value: Hellp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialog.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.message
+      value: YO
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.message
+      value: NO
+      objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -3451,7 +3532,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 901208622}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1863770793}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ea4b144d3e9a2e42be452a9b39327d6, type: 3}
@@ -5629,6 +5710,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -244.69998
       objectReference: {fileID: 0}
+    - target: {fileID: 8094447316976139388, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: defaultProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
 --- !u!1001 &1454812209
@@ -6692,13 +6779,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1795841284}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1801873246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5716787562443265468, guid: 06ffedf176d801c48b4df5d9840c84aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 857599072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1801873249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801873246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogChain:
+  - message: 'Oh shit, a picture of mom. '
+    profile: {fileID: 0}
+    overrideVolume: 0
+    textVolume: 0.7
+    textWaitTime: 1
+    textSpeed: 0.05
+    playerInput: 1
+    dialogEventCheck: 0
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: Yes
+    yes: {fileID: 0}
+    buttonTextNo: No
+    no: {fileID: 0}
 --- !u!114 &1809080722 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
     type: 3}
   m_PrefabInstance: {fileID: 857599072}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1801873246}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ea4b144d3e9a2e42be452a9b39327d6, type: 3}
@@ -6977,6 +7102,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ffedf176d801c48b4df5d9840c84aa, type: 3}
+--- !u!1 &1863770793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5716787562443265468, guid: 06ffedf176d801c48b4df5d9840c84aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 901208622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1863770795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863770793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogChain:
+  - message: What is this painting?
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
+    overrideVolume: 0
+    textVolume: 0.7
+    textWaitTime: 1
+    textSpeed: 0.05
+    playerInput: 1
+    dialogEventCheck: 0
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: Yes
+    yes: {fileID: 0}
+    buttonTextNo: No
+    no: {fileID: 0}
 --- !u!4 &1883778364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4128426897358698511, guid: 3264ec412e6f9eb40bee54af153be429,

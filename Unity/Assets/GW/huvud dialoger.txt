@@ -59,10 +59,10 @@ ugnen: “There’s something in there”
 *open?* (yes/no)
 *no* “Alright then.”
 *yes* -> oven opens “Why is there a painting in here?” 
-        examine painting (door & smoke) -> “What the hell is this?” 
+        examine painting (boxning) -> “That’s me, in the ring at 12 years old.” //(door & smoke) -> “What the hell is this?” 
 
 
-examine painting on wall (boxning) -> “That’s me, in the ring at 12 years old.” 
+examine painting on wall (mom) -> “Oh shit, a picture of mom.” 
 
 
 Klarade puzzel Eleanor men inte Angela: “Something is missing… *kicks the door*.” 
