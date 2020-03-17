@@ -955,6 +955,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 52570518a5f17bf40b56fcc3ba4773c6,
         type: 3}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.message
+      value: "I haven't been by any beach efter that day you died. \n@Thinking about
+        you makes my heart hurt and tears comes to my eyes. "
+      objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -2360,6 +2378,19 @@ PrefabInstance:
       propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.message
+      value: "Mom actually smiled here, and it wasn't malicious at all. \n@Dad was
+        so excited about me getting a prize. \n@It was just a participation award
+        \n@but dad made it feel like I had won the biggest prize in the world. \n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+        type: 2}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -2695,6 +2726,12 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
+--- !u!1 &597875036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 53610696569156604, guid: 75a0d51d452e1f645bcebaa588e299ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 53610696421745009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &650492288 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7226700424889708429, guid: 36101696f8f3bf94a88004b4eebd7726,
@@ -3226,6 +3263,18 @@ PrefabInstance:
       propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.message
+      value: "I remember that day after the funeral. \n@Mom refused to look at me.
+        \n@I can't believe she screamed 'I wished it was you who died' to me. . \n@"
+      objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -3536,12 +3585,12 @@ PrefabInstance:
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: inspectDialogAngela.message
-      value: YO
+      value: 'Who would be doing something like this to us? This is just cruelness. '
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: inspectDialogEleanor.message
-      value: NO
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
@@ -5528,6 +5577,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d5b7561a52b0c564d8fddeb32d9aef3a,
         type: 3}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.message
+      value: "The cries of my mom still echoes in my dreams, \n@maybe because she
+        cried every night for a month after  the funeral. "
+      objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -7187,6 +7254,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 737e9505f350ad34493375a40f7b54fb,
         type: 3}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.message
+      value: 'I hated that day. Why did you have to run in after me? Just. . why?
+
+        @Maybe you could''ve prevented mom from getting bad. '
+      objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
