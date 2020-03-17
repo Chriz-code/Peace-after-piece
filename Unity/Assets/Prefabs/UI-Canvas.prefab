@@ -567,6 +567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 3884287743190877642}
   image: {fileID: 2154741917660222216}
+  dialogCaller: {fileID: 0}
 --- !u!1 &8094447315922200601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8094447316976139391
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1179,6 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c402e1b39796b3489473ed24c95996c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultProfile: {fileID: 0}
   dialogProfile: {fileID: 2064531598}
   profile: {fileID: 8094447317093499862}
   dialogBox: {fileID: 8094447316376311045}

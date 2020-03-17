@@ -9,7 +9,8 @@ public class ItemHolder : PuzzelBase
     public Item lastHeldItem;
     [SerializeField] public Item matchItem = null;
     [SerializeField] Item heldItem = null;
-    [SerializeField] public Item HeldItem
+    [SerializeField]
+    public Item HeldItem
     {
         get
         {
@@ -45,6 +46,16 @@ public class ItemHolder : PuzzelBase
         if (HeldItem != null)
         {
             HeldItem.parent.GetComponent<SpriteRenderer>().sprite = HeldItem.ChangeSprite;
+        }
+    }
+
+    public void Start()
+    {
+        if (HeldItem)
+        {
+            HeldItem.GetComponent<Collider2D>().enabled = false;
+            HeldItem.parent.GetComponent<Collider2D>().enabled = false;
+            HeldItem.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 }

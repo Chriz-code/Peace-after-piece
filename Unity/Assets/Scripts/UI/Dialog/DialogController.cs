@@ -198,6 +198,8 @@ public class DialogController : MonoBehaviour
             }
             else
                 yield return new WaitForSeconds(dialog.textWaitTime / lowerWaitBy);//Wait between parts
+            if (!dialog.multipleChoice || (dialog.multipleChoice && i < messages.Length -1))
+                dialogText.text = "";
         }
     }
 

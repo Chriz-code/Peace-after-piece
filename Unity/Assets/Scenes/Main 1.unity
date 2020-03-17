@@ -2465,7 +2465,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogChain:
-  - message: There is something in there.
+  - message: 'There is something in there.
+
+      @Kakor
+
+      @Fler kakor.'
     profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
     overrideVolume: 1
     textVolume: 1
@@ -5690,6 +5694,12 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8094447316976139388, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+        type: 3}
+      propertyPath: defaultProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4,
+        type: 2}
     - target: {fileID: 2064531597, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -5710,12 +5720,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -244.69998
       objectReference: {fileID: 0}
-    - target: {fileID: 8094447316976139388, guid: 21d8c7f927cb3ec4aa406db8db213acb,
-        type: 3}
-      propertyPath: defaultProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d8c7f927cb3ec4aa406db8db213acb, type: 3}
 --- !u!1001 &1454812209
@@ -8139,26 +8143,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Players
       objectReference: {fileID: 0}
-    - target: {fileID: 4128426896449185037, guid: 3264ec412e6f9eb40bee54af153be429,
-        type: 3}
-      propertyPath: slot
-      value: 
-      objectReference: {fileID: 650492288}
-    - target: {fileID: 4128426896449185037, guid: 3264ec412e6f9eb40bee54af153be429,
-        type: 3}
-      propertyPath: oppositeRoom
-      value: 
-      objectReference: {fileID: 940701357}
-    - target: {fileID: 4128426897358698615, guid: 3264ec412e6f9eb40bee54af153be429,
-        type: 3}
-      propertyPath: slot
-      value: 
-      objectReference: {fileID: 904203716}
-    - target: {fileID: 4128426897358698615, guid: 3264ec412e6f9eb40bee54af153be429,
-        type: 3}
-      propertyPath: oppositeRoom
-      value: 
-      objectReference: {fileID: 1369742470}
     - target: {fileID: 4128426896167090877, guid: 3264ec412e6f9eb40bee54af153be429,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8214,5 +8198,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4128426896449185037, guid: 3264ec412e6f9eb40bee54af153be429,
+        type: 3}
+      propertyPath: slot
+      value: 
+      objectReference: {fileID: 650492288}
+    - target: {fileID: 4128426896449185037, guid: 3264ec412e6f9eb40bee54af153be429,
+        type: 3}
+      propertyPath: oppositeRoom
+      value: 
+      objectReference: {fileID: 940701357}
+    - target: {fileID: 4128426897358698615, guid: 3264ec412e6f9eb40bee54af153be429,
+        type: 3}
+      propertyPath: slot
+      value: 
+      objectReference: {fileID: 904203716}
+    - target: {fileID: 4128426897358698615, guid: 3264ec412e6f9eb40bee54af153be429,
+        type: 3}
+      propertyPath: oppositeRoom
+      value: 
+      objectReference: {fileID: 1369742470}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3264ec412e6f9eb40bee54af153be429, type: 3}

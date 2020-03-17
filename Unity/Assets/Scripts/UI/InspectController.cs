@@ -54,7 +54,6 @@ public class InspectController : MonoBehaviour
         }
     }
 
-
     Sprite Switch(Item item)
     {
         if (item)

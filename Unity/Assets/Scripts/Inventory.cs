@@ -137,6 +137,7 @@ public class Inventory : MonoBehaviour
             slot.ItemSlot = item;
             slot.GetComponent<UnityEngine.UI.Image>().sprite = item.defaultSprite;
 
+
             item.CallEvent();
             return;
         }
@@ -159,6 +160,7 @@ public class Inventory : MonoBehaviour
         Item item = slot.ItemSlot;
         slot.ItemSlot = null;
 
+        item.parent.GetComponent<Collider2D>().enabled = true;
         item.GetComponent<Collider2D>().enabled = true;
         item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         item.parent.localPosition = newPosition;
