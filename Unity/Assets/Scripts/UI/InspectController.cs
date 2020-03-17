@@ -35,17 +35,14 @@ public class InspectController : MonoBehaviour
             image.sprite = null;
         }
     }
-    public void InspectItem(GameObject gameObj)
+    public void InspectItem(DiaryPage diaryPage)
     {
         panel.SetActive(!panel.activeSelf);
         if (panel.activeSelf)
         {
-            image.sprite = gameObj.GetComponent<SpriteRenderer>().sprite;
-            if (gameObj.GetComponent<DialogCaller>())
-            {
-                gameObj.GetComponent<DialogCaller>().CallDialog();
-            }
-            //image.SetNativeSize();
+            image.sprite = diaryPage.pageSprite;
+            Dialog[] dialogChain = { diaryPage.inspectDialog };
+            UIController.Get.dialogController.StartDialog(dialogChain);
         }
         else
         {
