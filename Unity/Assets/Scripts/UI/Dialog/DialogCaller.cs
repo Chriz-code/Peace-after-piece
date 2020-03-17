@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogCaller : MonoBehaviour
 {
     public Dialog[] dialogChain = new Dialog[1];
+
     public void CallDialog()
     {
         UIController.Get.dialogController.StartDialog(dialogChain);
