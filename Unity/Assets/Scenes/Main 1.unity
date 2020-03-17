@@ -302,6 +302,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1761c7f1554d4989801fa101dfdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &187789344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5716787562443265468, guid: 06ffedf176d801c48b4df5d9840c84aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 408118890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &187789347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187789344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogChain:
+  - message: Is this us?
+    profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
+    overrideVolume: 0
+    textVolume: 0.7
+    textWaitTime: 1
+    textSpeed: 0.05
+    playerInput: 1
+    dialogEventCheck: 0
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: Yes
+    yes: {fileID: 0}
+    buttonTextNo: No
+    no: {fileID: 0}
 --- !u!4 &266881678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 53610696569156607, guid: 75a0d51d452e1f645bcebaa588e299ac,
@@ -934,6 +972,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
       propertyPath: itemType
       value: 2
       objectReference: {fileID: 0}
@@ -973,6 +1016,36 @@ PrefabInstance:
       value: "I haven't been by any beach efter that day you died. \n@Thinking about
         you makes my heart hurt and tears comes to my eyes. "
       objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.message
+      value: 'This is not mine. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 187789347}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -997,7 +1070,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 408118890}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 187789344}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ea4b144d3e9a2e42be452a9b39327d6, type: 3}
@@ -2391,6 +2464,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
         type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.message
+      value: 'This is Eleanor. '
+      objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -2527,11 +2611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogChain:
-  - message: 'There is something in there.
-
-      @Kakor
-
-      @Fler kakor.'
+  - message: There is something in there.
     profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
     overrideVolume: 1
     textVolume: 1
@@ -2726,12 +2806,6 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
---- !u!1 &597875036 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 53610696569156604, guid: 75a0d51d452e1f645bcebaa588e299ac,
-    type: 3}
-  m_PrefabInstance: {fileID: 53610696421745009}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &650492288 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7226700424889708429, guid: 36101696f8f3bf94a88004b4eebd7726,
@@ -2744,6 +2818,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8378b179d8087c54c89930f9118907a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &701316135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5716787562443265468, guid: 06ffedf176d801c48b4df5d9840c84aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843580365}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &701316138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701316135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogChain:
+  - message: 'Oh my god! Poor Eleanor. '
+    profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
+    overrideVolume: 0
+    textVolume: 0.7
+    textWaitTime: 1
+    textSpeed: 0.05
+    playerInput: 1
+    dialogEventCheck: 0
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: Yes
+    yes: {fileID: 0}
+    buttonTextNo: No
+    no: {fileID: 0}
 --- !u!1 &720630012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,8 +3385,20 @@ PrefabInstance:
         type: 3}
       propertyPath: inspectDialogEleanor.message
       value: "I remember that day after the funeral. \n@Mom refused to look at me.
-        \n@I can't believe she screamed 'I wished it was you who died' to me. . \n@"
+        \n@I can't believe she screamed 'I wished it was you who died' to me. . \n@Do
+        you even miss me mom? Are you even alive today?"
       objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.message
+      value: Could this be Eleanors mom?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -3590,8 +3714,20 @@ PrefabInstance:
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: inspectDialogEleanor.message
-      value: 
+      value: 'This is not mine. '
       objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+        type: 2}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -5556,6 +5692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
       propertyPath: itemType
       value: 2
       objectReference: {fileID: 0}
@@ -5595,6 +5736,36 @@ PrefabInstance:
       value: "The cries of my mom still echoes in my dreams, \n@maybe because she
         cried every night for a month after  the funeral. "
       objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogEleanor.message
+      value: What is this shit?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1701579174}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: m_Constraints
@@ -5619,7 +5790,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1403679574}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1701579171}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ea4b144d3e9a2e42be452a9b39327d6, type: 3}
@@ -6163,7 +6334,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1843580365}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 701316135}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ea4b144d3e9a2e42be452a9b39327d6, type: 3}
@@ -6675,6 +6846,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831fdf391995a5745ba0cd05012e4de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1701579171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5716787562443265468, guid: 06ffedf176d801c48b4df5d9840c84aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1403679574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1701579174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701579171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogChain:
+  - message: 'The second worst day of my life. '
+    profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
+    overrideVolume: 0
+    textVolume: 0.7
+    textWaitTime: 1
+    textSpeed: 0.05
+    playerInput: 1
+    dialogEventCheck: 0
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: Yes
+    yes: {fileID: 0}
+    buttonTextNo: No
+    no: {fileID: 0}
 --- !u!1001 &1733807166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6963,7 +7172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogChain:
   - message: 'Oh shit, a picture of mom. '
-    profile: {fileID: 0}
+    profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
     overrideVolume: 0
     textVolume: 0.7
     textWaitTime: 1
@@ -7233,6 +7442,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
       propertyPath: itemType
       value: 2
       objectReference: {fileID: 0}
@@ -7272,6 +7486,36 @@ PrefabInstance:
       value: 'I hated that day. Why did you have to run in after me? Just. . why?
 
         @Maybe you could''ve prevented mom from getting bad. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: inspectDialogAngela.message
+      value: 'This is about Eleanor. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 701316138}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CallDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
+        type: 3}
+      propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3979744346341993269, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
