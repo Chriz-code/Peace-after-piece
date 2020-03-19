@@ -14,6 +14,19 @@ public class Interact : MonoBehaviour
     [Header("Debug")]
     [SerializeField] public Collider2D currentCollision;
 
+
+    public bool firstInteract = true;
+
+    public void CallEvent()
+    {
+        if (!firstInteract)
+            return;
+
+        interactEvent?.Invoke(transform, currentCollision.transform);
+        firstInteract = false;
+        print("First Pickup Event!!");
+    }
+
     public bool Interactable
     {
         get
