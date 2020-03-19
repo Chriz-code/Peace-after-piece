@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioController : MonoBehaviour
 {
@@ -45,6 +46,23 @@ public class AudioController : MonoBehaviour
     private void Start()
     {
         OnValidate();
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.activeSceneChanged += StopIfEndCredits;
+    }
+    private void OnDisable()
+    {
+        SceneManager.activeSceneChanged -= StopIfEndCredits;
+    }
+
+    void StopIfEndCredits(Scene scene, Scene newScene)
+    {
+        if(newScene == SceneManager.GetSceneByName("Ending"))
+        {
+            Destroy(AudioController.Get.gameObject);
+        }
     }
 
     #region Public Calls
