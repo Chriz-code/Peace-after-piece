@@ -296,6 +296,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6363ff3e1c8fc5743b7b6b871857d1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &74179290
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1665528156}
+    m_Modifications:
+    - target: {fileID: 1215691881721838006, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_Name
+      value: FotoHylla
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].message
+      value: "My first science fair, the whole family was so proud of me. \n@I didn\u2019t
+        even win but he still bragged about \u2018su hermana genial\u2019 to his friends."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 070e22d24e6ddfd4694df8feacc036a9, type: 3}
+--- !u!4 &74179291 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 74179290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &115389626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1098,94 @@ MonoBehaviour:
     yes: {fileID: 0}
     buttonTextNo: 
     no: {fileID: 0}
+--- !u!1001 &402597965
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1665528156}
+    m_Modifications:
+    - target: {fileID: 1215691881721838006, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Soffan
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].message
+      value: "Wow\u2026 This is exactly like our old couch back home. Who\u2019s doing
+        this?\n@It even has the stain we could never get off from when I spilled chocolate
+        sauce on it."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 070e22d24e6ddfd4694df8feacc036a9, type: 3}
+--- !u!4 &402597966 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 402597965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &408118890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1197,8 +1372,8 @@ PrefabInstance:
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: inspectDialogAngela.message
-      value: "I haven't been by any beach efter that day you died. \n@Thinking about
-        you makes my heart hurt and tears comes to my eyes. "
+      value: "Nosotros \xE9ramos dos ni\xF1os, we thought that we could conquer the
+        world. \n@And nothing could stop us. Oh, how wrong we were\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
@@ -2400,8 +2575,15 @@ PrefabInstance:
     - target: {fileID: 6960494315132898617, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
       propertyPath: inspectDialog.message
-      value: 
+      value: "Dios mios, this was from when I first met Eleanor. It was really \u2018at
+        first sight\u2019 huh\u2026"
       objectReference: {fileID: 0}
+    - target: {fileID: 6960494315132898617, guid: 75a0d51d452e1f645bcebaa588e299ac,
+        type: 3}
+      propertyPath: inspectDialog.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a0d51d452e1f645bcebaa588e299ac, type: 3}
 --- !u!4 &540291899 stripped
@@ -2440,6 +2622,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1761c7f1554d4989801fa101dfdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &547434921
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1665528156}
+    m_Modifications:
+    - target: {fileID: 1215691881721838006, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_Name
+      value: "M\xE5ttV\xE4gg"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].message
+      value: "Qu\xE9 nost\xE1lgico\u2026 Mam\xE1 kept a close tab on our heights.
+        Until\u2026 \n@We stopped tracking my height after that. But I did it myself
+        once\u2026 \n@If only you could see how much I\u2019ve grown mi hermano... "
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 070e22d24e6ddfd4694df8feacc036a9, type: 3}
+--- !u!4 &547434922 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 547434921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &571790353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3032,7 +3302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogChain:
-  - message: 'Oh my god! Poor Eleanor. '
+  - message: What's this? A painting? And that motive... I don't recognize this...
     profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
     overrideVolume: 0
     textVolume: 0.7
@@ -3051,6 +3321,92 @@ MonoBehaviour:
     yes: {fileID: 0}
     buttonTextNo: No
     no: {fileID: 0}
+--- !u!1001 &718976797
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1665528156}
+    m_Modifications:
+    - target: {fileID: 1215691881721838006, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Skrivbord
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].message
+      value: "This desk\u2026 It reminds me of my fathers old desk.."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 070e22d24e6ddfd4694df8feacc036a9, type: 3}
+--- !u!4 &718976798 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 718976797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &720630012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3293,6 +3649,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9659ec256b133ba44a69679b9376c4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &815788816 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8094447316376311044, guid: 21d8c7f927cb3ec4aa406db8db213acb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1453975194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &836523374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4010,7 +4372,7 @@ PrefabInstance:
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: inspectDialogAngela.message
-      value: 'Who would be doing something like this to us? This is just cruelness. '
+      value: Who would be doing something like this to us? This is just cruelness.
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
@@ -4122,8 +4484,9 @@ Transform:
   - {fileID: 428351054}
   - {fileID: 1795841285}
   - {fileID: 540291899}
+  - {fileID: 1665528156}
   m_Father: {fileID: 2013911633}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &940701359
 SpriteRenderer:
@@ -4593,8 +4956,14 @@ PrefabInstance:
     - target: {fileID: 6960494315132898617, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
       propertyPath: inspectDialog.message
-      value: 
+      value: 'It''s sad that we didn''t had each other already back then. '
       objectReference: {fileID: 0}
+    - target: {fileID: 6960494315132898617, guid: 75a0d51d452e1f645bcebaa588e299ac,
+        type: 3}
+      propertyPath: inspectDialog.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a0d51d452e1f645bcebaa588e299ac, type: 3}
 --- !u!114 &1054046634 stripped
@@ -5580,6 +5949,93 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1357815835}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1357851552
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1665528156}
+    m_Modifications:
+    - target: {fileID: 1215691881721838006, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Tekopp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].message
+      value: "It smells like manzanilla\u2026 That is mom's favorite tea... and churros\u2026?
+        \n@She loved those too."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 070e22d24e6ddfd4694df8feacc036a9, type: 3}
+--- !u!4 &1357851553 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1357851552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1369742470
 GameObject:
   m_ObjectHideFlags: 0
@@ -6330,8 +6786,9 @@ PrefabInstance:
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
       propertyPath: inspectDialogAngela.message
-      value: "The cries of my mom still echoes in my dreams, \n@maybe because she
-        cried every night for a month after  the funeral. "
+      value: "I have never seen mam\xE1 and dad look so old. Their eyes empty and
+        every movement slow and heavy. \n@They still loved me, but I could see the
+        sadness they carried."
       objectReference: {fileID: 0}
     - target: {fileID: 7176930916349637644, guid: 06ffedf176d801c48b4df5d9840c84aa,
         type: 3}
@@ -7606,7 +8063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1608109954}
   m_Layer: 9
-  m_Name: RoomObject
+  m_Name: RoomObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7633,6 +8090,95 @@ Transform:
   m_Father: {fileID: 1369742472}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1644858280
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1665528156}
+    m_Modifications:
+    - target: {fileID: 1215691881721838006, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Kaktus
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].message
+      value: "This looks like the cactus Eleanor gave me. \n@She doesn\u2019t know
+        anything about plants so she\u2019d gotten me one that \u2018was hard to kill\u2019.
+        \n@She got mad at me for laughing at that, but I couldn\u2019t help myself.
+        \n@I saw her smile about it anyways though. "
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 070e22d24e6ddfd4694df8feacc036a9, type: 3}
+--- !u!4 &1644858281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1644858280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1648550317
 GameObject:
   m_ObjectHideFlags: 0
@@ -7724,6 +8270,149 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 20, y: 45, z: 60}
+--- !u!1 &1661343603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1661343604}
+  - component: {fileID: 1661343607}
+  - component: {fileID: 1661343606}
+  - component: {fileID: 1661343605}
+  m_Layer: 0
+  m_Name: RoomStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1661343604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661343603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.86, y: -2.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2013911633}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1661343605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661343603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db34f46eb24f3e43aa4ba77aedd60c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perspectiveCheck: 1
+  dialogCaller: {fileID: 1661343606}
+--- !u!114 &1661343606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661343603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c454d763029e54eb6292d2041be62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogChain:
+  - message: This place feels weird. Where are we?
+    profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
+    overrideVolume: 0
+    textVolume: 0.7
+    textWaitTime: 1
+    textSpeed: 0.05
+    playerInput: 1
+    dialogEventCheck: 0
+    dialogEvent:
+      events:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: InteractEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    multipleChoice: 0
+    buttonTextYes: Yes
+    yes: {fileID: 0}
+    buttonTextNo: No
+    no: {fileID: 0}
+--- !u!61 &1661343607
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661343603}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!1 &1665528155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1665528156}
+  m_Layer: 10
+  m_Name: RoomObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1665528156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665528155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 718976798}
+  - {fileID: 1644858281}
+  - {fileID: 402597966}
+  - {fileID: 2129223261}
+  - {fileID: 2100870091}
+  - {fileID: 1357851553}
+  - {fileID: 74179291}
+  - {fileID: 547434922}
+  m_Father: {fileID: 940701358}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1670218289
 GameObject:
   m_ObjectHideFlags: 0
@@ -7835,7 +8524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogChain:
-  - message: 'The second worst day of my life. '
+  - message: This painting... Why is this...
     profile: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7, type: 2}
     overrideVolume: 0
     textVolume: 0.7
@@ -7989,7 +8678,7 @@ PrefabInstance:
     - target: {fileID: 53610696569156607, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 53610696569156607, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
@@ -8105,8 +8794,16 @@ PrefabInstance:
     - target: {fileID: 6960494315132898617, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
       propertyPath: inspectDialog.message
-      value: 
+      value: "D\xEDos mios Eleanor\u2026 You never told me about this. Qu\xE9 horr\xEDble\u2026
+        \n@I didn\u2019t know you felt like that back then. \n@You were not to blame
+        for any of it and I hope you can realize that."
       objectReference: {fileID: 0}
+    - target: {fileID: 6960494315132898617, guid: 75a0d51d452e1f645bcebaa588e299ac,
+        type: 3}
+      propertyPath: inspectDialog.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a0d51d452e1f645bcebaa588e299ac, type: 3}
 --- !u!4 &1795841285 stripped
@@ -8683,6 +9380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1397872380}
+  - {fileID: 1661343604}
   - {fileID: 940701358}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -8901,6 +9599,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2047868762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047868763}
+  - component: {fileID: 2047868765}
+  - component: {fileID: 2047868764}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2047868763
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047868762}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2632253, y: 0.2632253, z: 0.2632253}
+  m_Children: []
+  m_Father: {fileID: 815788816}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 209.09998, y: -21.600006}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2047868764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047868762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: dd981c7fe8a62d549a0268339bcfc834, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2047868765
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047868762}
+  m_CullTransparentMesh: 0
 --- !u!1001 &2084487276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9263,11 +10036,194 @@ Transform:
   m_Father: {fileID: 1369742472}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2100870090
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1665528156}
+    m_Modifications:
+    - target: {fileID: 1215691881721838006, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Soffbord
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037196502223986692, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].message
+      value: "These old tables\u2026 \n@There\u2019s even the drawings me and And\xE9s
+        did on them when we were little\u2026"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 070e22d24e6ddfd4694df8feacc036a9, type: 3}
+--- !u!4 &2100870091 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2100870090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2128364704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2036735235311038024, guid: d8b282a1baa4a7a4e98c2b97df9baf37,
     type: 3}
   m_PrefabInstance: {fileID: 1348898866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2129223260
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1665528156}
+    m_Modifications:
+    - target: {fileID: 1215691881721838006, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_Name
+      value: "F\xF6nstret"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037196502223986692, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
+        type: 2}
+    - target: {fileID: 8768179368384604211, guid: 070e22d24e6ddfd4694df8feacc036a9,
+        type: 3}
+      propertyPath: dialogChain.Array.data[0].message
+      value: 'I hear thunder. Why does it have to be thunder... '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 070e22d24e6ddfd4694df8feacc036a9, type: 3}
+--- !u!4 &2129223261 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7586407561991745270, guid: 070e22d24e6ddfd4694df8feacc036a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2129223260}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2138445939
 GameObject:
@@ -9555,8 +10511,14 @@ PrefabInstance:
     - target: {fileID: 6960494315132898617, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
       propertyPath: inspectDialog.message
-      value: 
+      value: 'I was so happy seeing Angela in the audience. '
       objectReference: {fileID: 0}
+    - target: {fileID: 6960494315132898617, guid: 75a0d51d452e1f645bcebaa588e299ac,
+        type: 3}
+      propertyPath: inspectDialog.profile
+      value: 
+      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a0d51d452e1f645bcebaa588e299ac, type: 3}
 --- !u!114 &53610696421745010 stripped
