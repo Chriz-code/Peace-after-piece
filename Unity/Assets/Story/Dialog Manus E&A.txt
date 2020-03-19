@@ -1,0 +1,33 @@
+﻿Dialog mellan Elanor och Angela
+
+
+Eleanor är den spelaren börjar hos. Spelaren ska börja med att få alternativ att knacka på spegeln som visar Angela på andra sidan.
+
+
+Eleanor:         “Where am i? what’s going on?”
+		*knock on window?* (yes/no)
+        	“Angela? you there? can you hear me?” 
+
+It looks as if Angela is frozen for a second and then she turns towards the mirror.
+
+
+Angela:         “Eleanor! Oh thank goodness, you’re okay!” 
+
+
+Eleanor:         “Who cares about me, I’ve been through worse. How are you? are you
+okay?”
+
+
+Angela:        “who cares? I care! I’m doing fine now that I know you are fine.” 
+
+
+*Tystnad* 
+
+
+Angela:         “I think we need to look around to see if we can find a way to each other.”
+
+
+Eleanor:         “Alright, yeah. Sounds good, I’ll start looking over here then.”
+
+
+Spelaren är i tavelrummet, Eleanors sida.
