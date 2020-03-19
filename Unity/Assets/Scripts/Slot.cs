@@ -38,7 +38,6 @@ public class Slot : MonoBehaviour
                 else if (AttemptRippleAnimation(value)) { }
                 else
                 {
-                    print("HEWO");
                     item = value;
                     item.parent.localPosition = new Vector2(222, 222);
                     item.parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;

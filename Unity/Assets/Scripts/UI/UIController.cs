@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
     public static UIController Get { get; private set; }
 
     [SerializeField] Image interactPopUp = null;
+    [SerializeField] AudioCaller interactPopUpSound = null;
     [SerializeField] public InspectController inspectController = null;
     [SerializeField] public DialogController dialogController = null;
     bool active;
@@ -77,8 +78,6 @@ public class UIController : MonoBehaviour
             else if (GameController.Get.PlayerFrozen)
                 GameController.Get.UnFreezePlayer();
         }
-
-
         //active = false;
     }
     private void OnEnable()
@@ -95,7 +94,10 @@ public class UIController : MonoBehaviour
         if (addCaller)
         {
             if (!callers.Contains(caller))
+            {
                 callers.Add(caller);
+                interactPopUpSound.CallAudio();
+            }
         }
         else if (!addCaller)
         {
@@ -108,11 +110,16 @@ public class UIController : MonoBehaviour
     {
         if (addCaller)
         {
-            callers.Add(caller);
+            if (!callers.Contains(caller))
+            {
+                callers.Add(caller);
+                interactPopUpSound.CallAudio();
+            }
         }
         else if (!addCaller)
         {
-            callers.Remove(caller);
+            if (callers.Contains(caller))
+                callers.Remove(caller);
         }
 
         if (Caller == caller) // Bugfix; E_interact is now on the right place

@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c402e1b39796b3489473ed24c95996c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultProfile: {fileID: 0}
+  defaultProfile: {fileID: 11400000, guid: cf677ab1807f6d348892ed5860b3dfa4, type: 2}
   dialogProfile: {fileID: 2064531598}
   profile: {fileID: 8094447317093499862}
   dialogBox: {fileID: 8094447316376311045}

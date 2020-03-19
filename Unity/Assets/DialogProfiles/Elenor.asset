@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0968996055b35341a78c0a8e38ffded, type: 3}
   m_Name: Elenor
   m_EditorClassIdentifier: 
-  profileImage: {fileID: 21300000, guid: 9d93c15c89c372c47ad7a8412abae85d, type: 3}
+  profileImage: {fileID: 21300000, guid: a9f764e9f873ab84e84e33455b4d91e5, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   textSounds:
   - {fileID: 8300000, guid: 3be61a42c4e33e14eac896c1c5150ee0, type: 3}

@@ -19,20 +19,25 @@ public class Player_Movement : MonoBehaviour
         moveInput = horizontal;
         if (rb2D)
             rb2D.velocity = new Vector2(moveInput * speed, rb2D.velocity.y);
-        if (moveInput < 0)
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x) * -1;
-
-            this.gameObject.GetComponent<Transform>().localScale = scale;
-        }
-        else if (moveInput > 0)
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x);
-            this.gameObject.GetComponent<Transform>().localScale = scale;
-        }
         if (animator)
-            animator.SetFloat("Speed", Mathf.Abs(rb2D.velocity.x));
+        {
+            animator.SetFloat("Speed", rb2D.velocity.x);
+        }
+        else
+        {
+            if (moveInput < 0)
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = Mathf.Abs(scale.x) * -1;
+
+                this.gameObject.GetComponent<Transform>().localScale = scale;
+            }
+            else if (moveInput > 0)
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = Mathf.Abs(scale.x);
+                this.gameObject.GetComponent<Transform>().localScale = scale;
+            }
+        }
     }
 }

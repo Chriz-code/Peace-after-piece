@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0968996055b35341a78c0a8e38ffded, type: 3}
   m_Name: Angela
   m_EditorClassIdentifier: 
-  profileImage: {fileID: 21300000, guid: 8e70fcfc8e367b54db4c6f81c337c1fe, type: 3}
+  profileImage: {fileID: 21300000, guid: 64392ce53dd70dc40a2bb53ff169488d, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   textSounds:
   - {fileID: 8300000, guid: 3be61a42c4e33e14eac896c1c5150ee0, type: 3}
