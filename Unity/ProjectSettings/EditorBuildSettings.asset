@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main 2.unity
     guid: 3229b7c01fd8e134089c6bfc19c3b428
   - enabled: 1
-    path: Assets/Scenes/Christoffer.unity
-    guid: c8d95f83df67b6245a841ac7b94fdd4b
+    path: Assets/Scenes/Ending.unity
+    guid: e606fb05a07a15440b143507652bd7d5
   m_configObjects: {}
