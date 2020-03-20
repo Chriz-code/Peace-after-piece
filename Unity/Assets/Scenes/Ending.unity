@@ -457,6 +457,7 @@ RectTransform:
   - {fileID: 2022836262}
   - {fileID: 644226646}
   - {fileID: 1295457539}
+  - {fileID: 1036752544}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1799,6 +1800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1036752544}
   - component: {fileID: 1036752543}
+  - component: {fileID: 1036752546}
   m_Layer: 0
   m_Name: spel-logga
   m_TagString: Untagged
@@ -1855,20 +1857,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1036752544
-Transform:
+--- !u!224 &1036752544
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036752542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -13.28, z: 0}
-  m_LocalScale: {x: 0.275, y: 0.275, z: 0.275}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1825}
+  m_LocalScale: {x: 6.2149997, y: 6.2149997, z: 6.2149997}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 181541478}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.6779999, y: -300.12796}
+  m_SizeDelta: {x: 6.74, y: 9.65}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1036752546
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036752542}
+  m_CullTransparentMesh: 0
 --- !u!1 &1214474038
 GameObject:
   m_ObjectHideFlags: 0
