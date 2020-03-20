@@ -1159,7 +1159,7 @@ PrefabInstance:
     - target: {fileID: 53610696569156607, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 53610696569156607, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
@@ -3019,7 +3019,7 @@ PrefabInstance:
         type: 3}
       propertyPath: inspectDialog.profile
       value: 
-      objectReference: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd,
+      objectReference: {fileID: 11400000, guid: 6f6fdab974dbc3d4d9f7a659765bede7,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a0d51d452e1f645bcebaa588e299ac, type: 3}
@@ -4778,7 +4778,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 693051163}
+      objectReference: {fileID: 1200554198}
     - target: {fileID: 7608169677128070249, guid: e09dd95cfac73ad4cbd36a609ee17cd5,
         type: 3}
       propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -5305,11 +5305,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1162412672}
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: CallDialog
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5478,12 +5478,12 @@ PrefabInstance:
     - target: {fileID: 53610696569156607, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.24
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 53610696569156607, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.37
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 53610696569156607, guid: 75a0d51d452e1f645bcebaa588e299ac,
         type: 3}
@@ -7394,8 +7394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogChain:
   - message: "\u201DAngela put those up, she said that if I don\u2019t planning on
-      getting anything on the walls then she is going to add random stickers. I like
-      that.\u201D"
+      getting anything on the walls \n@then she is going to add random stickers. I
+      like that.\u201D"
     profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
     overrideVolume: 0
     textVolume: 0.7
@@ -9696,7 +9696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950841810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.849944, y: -1.5870974, z: -10.95}
+  m_LocalPosition: {x: 4.849944, y: -1.5870974, z: -0.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369742472}
@@ -10867,7 +10867,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1200554198}
+      objectReference: {fileID: 693051163}
     - target: {fileID: 7608169677128070249, guid: e09dd95cfac73ad4cbd36a609ee17cd5,
         type: 3}
       propertyPath: pickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
