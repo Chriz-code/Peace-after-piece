@@ -269,7 +269,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Eddie Frilund
+  m_Text: Eddie Fridlund
 --- !u!222 &154743640
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1701,7 +1701,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Leonard Whalund
+  m_Text: Leonard Wahlund
 --- !u!222 &939394391
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2769,7 +2769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hugo Fj\xE4rneg\xE5rdh"
+  m_Text: "Hugo F\xE4rneg\xE5rdh"
 --- !u!222 &2127651514
 CanvasRenderer:
   m_ObjectHideFlags: 0
