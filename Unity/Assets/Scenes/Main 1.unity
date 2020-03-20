@@ -1037,7 +1037,7 @@ MonoBehaviour:
   dialog:
     message: Alright then.
     profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
-    overrideVolume: 1
+    overrideVolume: 0
     textVolume: 1
     textWaitTime: 1
     textSpeed: 0
@@ -3084,7 +3084,7 @@ MonoBehaviour:
   dialogChain:
   - message: "There\u2019s something in there?"
     profile: {fileID: 11400000, guid: e61f4c0b6b34d9d4a8e98c8ec945d0cd, type: 2}
-    overrideVolume: 1
+    overrideVolume: 0
     textVolume: 1
     textWaitTime: 1
     textSpeed: 0
@@ -10496,6 +10496,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664072144568460460, guid: 23f9f5d9cbf890844b46826455c3b116,
+        type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23f9f5d9cbf890844b46826455c3b116, type: 3}
