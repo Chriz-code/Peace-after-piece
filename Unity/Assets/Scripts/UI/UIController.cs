@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour
     bool active;
     [SerializeField]
     GameObject[] clearUI = null;
-    [SerializeField] GameObject[] freezePlayer = null;
+    [SerializeField] List<GameObject> freezePlayer = new List<GameObject>();
 
     [Header("Debug")]
     [SerializeField] List<GameObject> callers = new List<GameObject>();
@@ -54,6 +54,17 @@ public class UIController : MonoBehaviour
             Get = this;
         }
     }
+    private void Start()
+    {
+        for (int i = 0; i < clearUI.Length; i++)
+        {
+            if (!freezePlayer.Contains(clearUI[i]))
+            {
+                freezePlayer.Add(clearUI[i]);
+            }
+            clearUI[i].SetActive(false);
+        }
+    }
     private void FixedUpdate()
     {
         if (interactPopUp && Caller)
@@ -68,7 +79,7 @@ public class UIController : MonoBehaviour
             interactPopUp.gameObject.SetActive(active);
         }
 
-        for (int i = 0; i < freezePlayer.Length; i++)
+        for (int i = 0; i < freezePlayer.Count; i++)
         {
             if (freezePlayer[i].activeSelf)
             {
