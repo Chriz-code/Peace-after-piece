@@ -57,6 +57,7 @@ public class DialogController : MonoBehaviour
 
     public void StartDialog(Dialog[] dialogProfiles)
     {
+        gameObject.SetActive(true);
         if (ready && ienumerating == false)
         {
             dialogStarter = StartDialogIEnumerator(dialogProfiles);

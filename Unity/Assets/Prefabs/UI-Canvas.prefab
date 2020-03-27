@@ -1849,7 +1849,9 @@ MonoBehaviour:
   interactPopUpSound: {fileID: 1441044848}
   inspectController: {fileID: 8094447315774450930}
   dialogController: {fileID: 8094447316976139388}
-  clearUI: []
+  clearUI:
+  - {fileID: 8094447315774450932}
+  - {fileID: 8094447316976139390}
   freezePlayer:
   - {fileID: 8094447316376311047}
   - {fileID: 3884287743190877642}
